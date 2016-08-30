@@ -28,10 +28,9 @@ public class CheckDB {
         try {
             con = DriverManager.getConnection(url, user, password);
             st = con.createStatement();
-            rs = st.executeQuery("SELECT VERSION()");
-            hasNext = rs.next();
-            if (hasNext) {
-                System.out.println(rs.getString(1));
+            rs = st.executeQuery("SELECT * FROM t");
+            for(int i = 1; rs.next(); i++) {
+                System.out.println(rs.getString(i));
             }
 
             if (rs != null) {
