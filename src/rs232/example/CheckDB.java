@@ -19,8 +19,8 @@ public class CheckDB {
     ResultSet rs = null;
 
     String url = "jdbc:mysql://localhost:3306/messagedb";
-    String user = "root";
-    String password = "Eastwind3";
+    String user = "javauser";
+    String password = "admin";
     boolean hasNext = false;
     
     public CheckDB () {
