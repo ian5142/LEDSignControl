@@ -41,10 +41,11 @@ public class CheckDB {
         try {
             con = DriverManager.getConnection(url, user, password);
             st = con.createStatement();
-            updated = con.prepareStatement("UPDATE t SET isupdated=FALSE");
+            updated = con.prepareStatement("UPDATE t SET isupdated=TRUE");
             DBopen = true;
-            updated.executeUpdate();
-            updated.close();
+//            To be put in the update methods.
+//            updated.executeUpdate();
+//            updated.close();
         } catch (SQLException ex) {
             Logger.getLogger(CheckDB.class.getName()).log(Level.SEVERE, null, ex);
         }
