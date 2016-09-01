@@ -23,6 +23,8 @@ public class CheckDB {
     private String user;
     private String password;
     
+    private PreparedStatement updated;
+    
     /**
      * 
      */
@@ -30,6 +32,8 @@ public class CheckDB {
         url = "jdbc:mysql://localhost:3306/messagedb";
         user = "javauser";
         password = "admin";
+        
+        
     }
     
     private boolean openDB () {
@@ -37,7 +41,10 @@ public class CheckDB {
         try {
             con = DriverManager.getConnection(url, user, password);
             st = con.createStatement();
+            updated = con.prepareStatement("UPDATE t SET isupdated=TRUE");
             DBopen = true;
+            updated.executeUpdate();
+            updated.close();
         } catch (SQLException ex) {
             Logger.getLogger(CheckDB.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -69,7 +76,7 @@ public class CheckDB {
         String message = "";
         try {
             if (openDB()) {
-                rs = st.executeQuery("SELECT * FROM t");
+                rs = st.executeQuery("SELECT message FROM t");
                 for (int i = 1; rs.next(); i++) {
                     message = rs.getString(i);
                 }
@@ -86,7 +93,7 @@ public class CheckDB {
         boolean isUpdated = false;
         try {
             if (openDB()) {
-                rs = st.executeQuery("SELECT * FROM t");
+                rs = st.executeQuery("SELECT isupdated FROM t");
                 for (int i = 1; rs.next(); i++) {
                     isUpdated = rs.getBoolean(i);
                 }
