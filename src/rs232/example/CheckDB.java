@@ -41,7 +41,7 @@ public class CheckDB {
         try {
             con = DriverManager.getConnection(url, user, password);
             st = con.createStatement();
-            updated = con.prepareStatement("UPDATE t SET isupdated=TRUE");
+            updated = con.prepareStatement("UPDATE t SET isupdated=FALSE");
             DBopen = true;
             updated.executeUpdate();
             updated.close();
