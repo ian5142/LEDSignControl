@@ -23,7 +23,10 @@ public class CheckDB {
     private String user;
     private String password;
     
+    private String message;
+    
     private PreparedStatement updated;
+    private PreparedStatement newMessage;
     
     /**
      * 
@@ -39,11 +42,15 @@ public class CheckDB {
     private boolean openDB () {
         boolean DBopen = false;
         try {
+            message = "This is a new message.";
             con = DriverManager.getConnection(url, user, password);
             st = con.createStatement();
             updated = con.prepareStatement("UPDATE t SET isupdated=TRUE");
+            newMessage = con.prepareStatement("UPDATE t SET message='" + message + "'");
             DBopen = true;
 //            To be put in the update methods.
+            newMessage.executeUpdate();
+            newMessage.close();
 //            updated.executeUpdate();
 //            updated.close();
         } catch (SQLException ex) {
