@@ -10,29 +10,43 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Creates CheckDB object, opens a conenction to the messagedb database on localhost
+ * Contains methods to select and update the database
  * @author Ian Van Schaick
  */
 public class CheckDB {
-    Connection con = null;
-    Statement st = null;
-    ResultSet rs = null;
+    private Connection con;
+    private Statement st;
+    private ResultSet rs;
 
-    String url = "jdbc:mysql://localhost:3306/messagedb";
-    String user = "javauser";
-    String password = "admin";
-    boolean hasNext = false;
+    private String url;
+    private String user;
+    private String password;
     
+    /**
+     * 
+     */
     public CheckDB () {
-        
+        url = "jdbc:mysql://localhost:3306/messagedb";
+        user = "javauser";
+        password = "admin";
+    }
+    
+    private boolean openDB () {
+        boolean DBopen = false;
         try {
             con = DriverManager.getConnection(url, user, password);
             st = con.createStatement();
-            rs = st.executeQuery("SELECT * FROM t");
-            for(int i = 1; rs.next(); i++) {
-                System.out.println(rs.getString(i));
-            }
-
+            DBopen = true;
+        } catch (SQLException ex) {
+            Logger.getLogger(CheckDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return DBopen;
+    }
+    
+    private boolean closeDB () {
+        boolean DBclose = false;
+        try {
             if (rs != null) {
                 rs.close();
             }
@@ -44,10 +58,45 @@ public class CheckDB {
             if (con != null) {
                 con.close();
             }
+            DBclose = true;
         } catch (SQLException ex) {
-            System.out.println(ex);
             Logger.getLogger(CheckDB.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return DBclose;
     }
+    
+    protected String selectMessage () {
+        String message = "";
+        try {
+            if (openDB()) {
+                rs = st.executeQuery("SELECT * FROM t");
+                for (int i = 1; rs.next(); i++) {
+                    message = rs.getString(i);
+                }
+                boolean closeDB = closeDB();
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CheckDB.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+        return message;
+    }
+    protected boolean selectisUpdated () {
+        boolean isUpdated = false;
+        try {
+            if (openDB()) {
+                rs = st.executeQuery("SELECT * FROM t");
+                for (int i = 1; rs.next(); i++) {
+                    isUpdated = rs.getBoolean(i);
+                }
+                boolean closeDB = closeDB();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CheckDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return isUpdated;
+    }
+    
 }
 
