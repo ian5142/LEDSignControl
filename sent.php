@@ -54,13 +54,25 @@ and open the template in the editor.
         if ($rs === false) {
             trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->error, E_USER_ERROR);
         } else {
-            $rows_returned = $rs->num_rows;
-            $rs->data_seek(0);
-            while ($row = $rs->fetch_row()) {
-                echo $row[0] . '<br>';
+//            $rows_returned2 = $rs->num_rows;
+//            $rs->data_seek(0);
+//            while ($row = $rs->fetch_row()) {
+//                echo 'The old message was: ' . $row[0] . '<br>';
+//            }
+
+            $v1 = "'" . $conn->real_escape_string($message) . "'";            
+            
+            $sql = "UPDATE t SET message=$v1, isupdated=FALSE";
+
+            if ($conn->query($sql) === false) {
+                trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->error, E_USER_ERROR);
+            } else if ($message !== "") {
+                $affected_rows = $conn->affected_rows;
+                echo "<script type='text/javascript'>alert('The message, \"$message\", was sent successfully to the display.');</script>";
             }
         }
         ?>
+        
     </div>
 </body>
 </html>
