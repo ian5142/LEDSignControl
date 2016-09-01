@@ -27,7 +27,8 @@ public class RS232Tester {
 //        System.out.println(line);
 
         CheckDB test = new CheckDB();
-
+        System.out.println("The message is: " + test.selectMessage());
+        System.out.println("Isupdated is: " + test.selectisUpdated());
 //        for (int i = 0; i < 75; i++) {
 //            boolean success = tester.testWrite();
 //            System.out.println("The write test was a success: " + success);
