@@ -49,8 +49,8 @@ public class CheckDB {
             newMessage = con.prepareStatement("UPDATE t SET message='" + message + "'");
             DBopen = true;
 //            To be put in the update methods.
-            newMessage.executeUpdate();
-            newMessage.close();
+//            newMessage.executeUpdate();
+//            newMessage.close();
 //            updated.executeUpdate();
 //            updated.close();
         } catch (SQLException ex) {
