@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 import javafx.application.Platform;
 import jssc.*; 
 /**
- *
+ * Contains methods to open, close, read, write to a serial port
  * @author Ian Van Schaick
  */
 public class Test {
@@ -22,6 +22,9 @@ public class Test {
     Boolean receivingMessage;
     SerialPortReader reader;
     
+    /**
+     * Creates a serial port object
+     */
     public Test() {
         portName = findPort();
         serialPort = new SerialPort(portName);
@@ -30,6 +33,12 @@ public class Test {
         reader = new SerialPortReader();
     }
     
+    /**
+     * Finds the serial port to be used, in Windows type COM1, for example
+     * In Linux, type /dev/pts/3 for example.
+     * All serial ports may not be listed.
+     * @return The serial port name in String format, used to open and close the port
+     */
     private String findPort () {
         System.out.println("What is the port you are using?");
         
@@ -67,6 +76,10 @@ public class Test {
         }
     }
     
+    /**
+     * Closes the serial port, can throw a SerialPortException error.
+     * @return 
+     */
     private boolean close () {
         boolean success = false;
         try {
@@ -77,6 +90,11 @@ public class Test {
         }
         return success;
     }
+    
+    /**
+     * Writes the String "Hello World Write" to the serial port
+     * @return Returns true if the write was successful
+     */
     protected boolean testWrite() {
         boolean success = false;
         try {
@@ -90,6 +108,11 @@ public class Test {
         return success;
     }
     
+    /**
+     * Writes the String message to the serial port
+     * @param message The string to write to the serial port
+     * @return Returns true if the write was successful
+     */
     protected boolean testWrite(String message) {
         boolean success = false;
         try {
@@ -103,6 +126,12 @@ public class Test {
         return success;
     }
     
+    /**
+     * Opens the serial port.
+     * Tries to read a string from the serial port.
+     * Closes the serial port.
+     * @return 
+     */
     protected String testRead() {
         boolean success = false;
         String line = "";
@@ -124,11 +153,11 @@ public class Test {
         
     }
 
-    /*
- * In this class must implement the method serialEvent, through it we learn about 
- * events that happened to our port. But we will not report on all events but only 
- * those that we put in the mask. In this case the arrival of the data and change the 
- * status lines CTS and DSR
+    /**
+     * In this class must implement the method serialEvent, through it we learn about 
+     * events that happened to our port. But we will not report on all events but only 
+     * those that we put in the mask. In this case the arrival of the data and change the 
+     * status lines CTS and DSR
      */
     class SerialPortReader implements SerialPortEventListener {
 //        StringBuilder message = new StringBuilder();
@@ -164,7 +193,12 @@ public class Test {
 //                }
 //            }
 //        }
-
+        
+        /**
+         * Reads the data bit by bit from the serial port
+         * Can throw a SerialPortException error
+         * @param event 
+         */
         public void serialEvent(SerialPortEvent event) {
     if(event.isRXCHAR() && event.getEventValue() == 10){
         try {
@@ -192,7 +226,6 @@ public class Test {
         }
         catch (SerialPortException ex) {
             System.out.println(ex);
-            System.out.println("serialEvent");
         }
     }
 }
@@ -223,6 +256,11 @@ public class Test {
 //            }
 //        }
     }
+    
+    /**
+     * Prints out the message read from the serial port
+     * @param message 
+     */
     protected void processMessage(String message) {
         System.out.println(message);
     }
