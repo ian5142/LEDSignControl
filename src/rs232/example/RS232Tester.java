@@ -3,7 +3,8 @@ package rs232.example;
 //import jssc.SerialPortException;
 
 /**
- *
+ * Creates a SeriesTwo and CheckDB objects
+ * calls the various methods in both classes
  * @author Ian Van Schaick
  */
 public class RS232Tester {
