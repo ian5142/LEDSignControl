@@ -19,9 +19,9 @@ public class CheckDB {
     private Statement st;
     private ResultSet rs;
 
-    private String url;
-    private String user;
-    private String password;
+    private final String url;
+    private final String user;
+    private final String password;
     
     private String message;
     
