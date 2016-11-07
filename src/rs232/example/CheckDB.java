@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Creates CheckDB object, opens a conenction to the messagedb database on localhost
+ * Creates CheckDB object, opens a connection to the messagedb database on localhost
  * Contains methods to select and update the database
  * @author Ian Van Schaick
  */
