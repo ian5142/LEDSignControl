@@ -2,6 +2,9 @@ package rs232.example;
 
 //import jssc.SerialPortException;
 
+import java.util.Timer;
+
+
 /**
  * Creates a SeriesTwo and CheckDB objects
  * calls the various methods in both classes
@@ -25,15 +28,21 @@ public class RS232Tester {
 //        String line = test2.read();
 //        
 //        System.out.println(line);
-
-        CheckDB test = new CheckDB();
-        String message = test.selectMessage();
-        SeriesTwo test2 = new SeriesTwo();
-        for (int i = 0; i < 30; i++) {
-            test2.write(message);
+                try {
+            while (true) {
+                CheckDB test = new CheckDB();
+                String message = test.selectMessage();
+                SeriesTwo test2 = new SeriesTwo();
+                for (int i = 0; i < 30; i++) {
+                    test2.write(message);
+                }
+                System.out.println("The message is: " + message);
+                System.out.println("Isupdated is: " + test.selectisUpdated());
+                Thread.sleep(60 * 1000);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-        System.out.println("The message is: " + message);
-        System.out.println("Isupdated is: " + test.selectisUpdated());
 //        for (int i = 0; i < 75; i++) {
 //            boolean success = tester.testWrite();
 //            System.out.println("The write test was a success: " + success);
