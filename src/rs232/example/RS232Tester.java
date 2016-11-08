@@ -31,13 +31,15 @@ public class RS232Tester {
                 try {
             while (true) {
                 CheckDB test = new CheckDB();
-                String message = test.selectMessage();
-                SeriesTwo test2 = new SeriesTwo();
-                for (int i = 0; i < 30; i++) {
-                    test2.write(message);
+                if (test.selectisUpdated()) {
+                    String message = test.selectMessage();
+                    SeriesTwo test2 = new SeriesTwo();
+                    for (int i = 0; i < 30; i++) {
+                        test2.write(message);
+                    }
+                    System.out.println("The message is: " + message);
+                    System.out.println("Isupdated is: " + test.selectisUpdated());
                 }
-                System.out.println("The message is: " + message);
-                System.out.println("Isupdated is: " + test.selectisUpdated());
                 Thread.sleep(60 * 1000);
             }
         } catch (InterruptedException e) {
