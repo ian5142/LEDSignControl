@@ -37,6 +37,8 @@ public class RS232Tester {
                     test2.write(message);
                     System.out.println("The message is: " + message);
                     System.out.println("Isupdated is: " + test.selectisUpdated());
+                    test.setisUpdated();
+                    System.out.println("Isupdated is: " + test.selectisUpdated());
                 }
                 Thread.sleep(60 * 1000);
             }
