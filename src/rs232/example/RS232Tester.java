@@ -29,9 +29,9 @@ public class RS232Tester {
 //        
 //        System.out.println(line);
                 try {
-            for (int j = 0; j<100; j++) {
+            for (int j = 0; j<10; j++) {
                 CheckDB test = new CheckDB();
-                if (!test.selectisUpdated()) {
+                if (test.selectisUpdated()) {
                     String message = test.selectMessage();
                     SeriesTwo test2 = new SeriesTwo();
                     test2.write(message);
@@ -45,14 +45,6 @@ public class RS232Tester {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-//        for (int i = 0; i < 75; i++) {
-//            boolean success = tester.testWrite();
-//            System.out.println("The write test was a success: " + success);
-//            String success2 = tester.testRead();
-//            System.out.println("The read test was a success: " + success2);
-//        }
-        
-        
     }
     
 }
