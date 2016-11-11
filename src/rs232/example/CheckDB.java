@@ -115,10 +115,11 @@ public class CheckDB {
     protected void setisUpdated () {
         try {
             if (openDB()) {
-                rs = st.executeQuery("SELECT isupdated FROM t");
-                for (int i = 1; rs.next(); i++) {
-                    rs.updateBoolean("isupdated", true);
-                }
+//                rs.updateBoolean("isupdated", true);
+//                String [] s = new String [1];
+//                s[0] = "isupdated";
+                st.executeQuery("UPDATE t SET isupdated=FALSE");
+//                st.executeUpdate("t", s);
                 boolean closeDB = closeDB();
             }
         } catch (SQLException ex) {
