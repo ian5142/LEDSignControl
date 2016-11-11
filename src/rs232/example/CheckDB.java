@@ -112,6 +112,18 @@ public class CheckDB {
         }
         return isUpdated;
     }
-    
+    protected void setisUpdated () {
+        try {
+            if (openDB()) {
+                rs = st.executeQuery("SELECT isupdated FROM t");
+                for (int i = 1; rs.next(); i++) {
+                    rs.updateBoolean("isupdated", true);
+                }
+                boolean closeDB = closeDB();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CheckDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
 
