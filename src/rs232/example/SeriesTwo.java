@@ -69,7 +69,6 @@ public class SeriesTwo {
      */
     protected void write (String body) {
         chksum = calculateChksum(body);    
-        
         String message = header + address + startMes + body + endMes + seq + 
                 chksum + newline + CR;
         boolean success = tester.testWrite(message);
