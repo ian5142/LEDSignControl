@@ -82,7 +82,6 @@ public class SeriesTwo {
 //        }
 //        System.out.println(s);
         checkSeq();
-//        System.out.println("The test was successful: " + success);
     }
     
     /**
