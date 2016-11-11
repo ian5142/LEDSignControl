@@ -118,7 +118,8 @@ public class CheckDB {
 //                rs.updateBoolean("isupdated", true);
 //                String [] s = new String [1];
 //                s[0] = "isupdated";
-                st.executeQuery("UPDATE t SET isupdated=FALSE");
+//                updated.setString(1, "TRUE");
+                updated.executeUpdate();
 //                st.executeUpdate("t", s);
                 boolean closeDB = closeDB();
             }
