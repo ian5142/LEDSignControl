@@ -29,14 +29,12 @@ public class RS232Tester {
 //        
 //        System.out.println(line);
                 try {
-            while (true) {
+            for (int j = 0; j<100; j++) {
                 CheckDB test = new CheckDB();
-                if (test.selectisUpdated()) {
+                if (!test.selectisUpdated()) {
                     String message = test.selectMessage();
                     SeriesTwo test2 = new SeriesTwo();
-                    for (int i = 0; i < 30; i++) {
-                        test2.write(message);
-                    }
+                    test2.write(message);
                     System.out.println("The message is: " + message);
                     System.out.println("Isupdated is: " + test.selectisUpdated());
                 }
