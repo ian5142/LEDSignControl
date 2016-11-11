@@ -112,19 +112,19 @@ public class CheckDB {
         }
         return isUpdated;
     }
-//    protected void setisUpdated () {
-//        try {
-//            if (openDB()) {
-////                rs.updateBoolean("isupdated", true);
-////                String [] s = new String [1];
-////                s[0] = "isupdated";
-//                st.executeQuery("UPDATE t SET isupdated=FALSE");
-////                st.executeUpdate("t", s);
-//                boolean closeDB = closeDB();
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(CheckDB.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//    }
+    protected void setisUpdated () {
+        try {
+            if (openDB()) {
+//                rs.updateBoolean("isupdated", true);
+//                String [] s = new String [1];
+//                s[0] = "isupdated";
+                st.executeQuery("UPDATE t SET isupdated=FALSE");
+//                st.executeUpdate("t", s);
+                boolean closeDB = closeDB();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CheckDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
 
