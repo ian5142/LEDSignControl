@@ -31,13 +31,13 @@ public class RS232Tester {
                 try {
             for (int j = 0; j<10; j++) {
                 CheckDB test = new CheckDB();
-                if (test.selectisUpdated()) {
+                if (!test.selectisUpdated()) {
                     String message = test.selectMessage();
                     SeriesTwo test2 = new SeriesTwo();
                     test2.write(message);
                     System.out.println("The message is: " + message);
                     System.out.println("Isupdated is: " + test.selectisUpdated());
-//                    test.setisUpdated();
+                    test.setisUpdated();
                     System.out.println("Isupdated is: " + test.selectisUpdated());
                 }
                 Thread.sleep(60 * 1000);
