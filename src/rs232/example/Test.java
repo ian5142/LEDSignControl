@@ -262,6 +262,6 @@ public class Test {
      * @param message 
      */
     protected void processMessage(String message) {
-        System.out.println(message);
+//        System.out.println(message);
     }
 }
