@@ -2,9 +2,6 @@ package rs232.example;
 
 //import jssc.SerialPortException;
 
-import java.util.Timer;
-
-
 /**
  * Creates a SeriesTwo and CheckDB objects
  * calls the various methods in both classes
