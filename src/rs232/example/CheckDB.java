@@ -112,6 +112,21 @@ public class CheckDB {
         }
         return isUpdated;
     }
+    protected boolean selectscrollON () {
+        boolean scrollON = false;
+        try {
+            if (openDB()) {
+                rs = st.executeQuery("SELECT scrollon FROM t");
+                for (int i = 1; rs.next(); i++) {
+                    scrollON = rs.getBoolean(i);
+                }
+                boolean closeDB = closeDB();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CheckDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return scrollON;
+    }
     protected void setisUpdated () {
         try {
             if (openDB()) {
