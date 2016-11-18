@@ -34,6 +34,9 @@ public class RS232Tester {
                 CheckDB test = new CheckDB();
                 if (!test.selectisUpdated()) {
                     String message = test.selectMessage();
+                    if (test.selectscrollON())  {
+                        message = Character.toString((char) 25) + message;
+                    }
                     test2.write(message);
                     System.out.println("The message is: " + message);
                     System.out.println("Isupdated is: " + test.selectisUpdated());
