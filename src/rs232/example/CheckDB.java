@@ -29,16 +29,18 @@ public class CheckDB {
     private PreparedStatement newMessage;
     
     /**
-     * 
+     * Creates a CheckDB object
+     * Assigns values to url, user, and password.
      */
     public CheckDB () {
         url = "jdbc:mysql://localhost:3306/messagedb";
         user = "javauser";
         password = "admin";
-        
-        
     }
-    
+    /**
+     * Opens the database
+     * @return Returns true if the database opened successfully.
+     */
     private boolean openDB () {
         boolean DBopen = false;
         try {
@@ -58,7 +60,10 @@ public class CheckDB {
         }
         return DBopen;
     }
-    
+    /**
+     * Closes the database
+     * @return Returns true if the database closed successfully.
+     */
     private boolean closeDB () {
         boolean DBclose = false;
         try {
@@ -79,9 +84,12 @@ public class CheckDB {
         }
         return DBclose;
     }
-    
+    /**
+     * Selects the message variable from the database
+     * @return Returns the message in String format
+     */
     protected String selectMessage () {
-        String message = "";
+        message = "";
         try {
             if (openDB()) {
                 rs = st.executeQuery("SELECT message FROM t");
@@ -97,6 +105,10 @@ public class CheckDB {
         }
         return message;
     }
+    /**
+     * Selects the isUpdated variable from the database
+     * @return Returns true if isUpdated is true in the table.
+     */
     protected boolean selectisUpdated () {
         boolean isUpdated = false;
         try {
@@ -112,6 +124,10 @@ public class CheckDB {
         }
         return isUpdated;
     }
+    /**
+     * Selects the scrollON variable from the database
+     * @return Returns true if scrollON is true
+     */
     protected boolean selectscrollON () {
         boolean scrollON = false;
         try {
@@ -127,6 +143,9 @@ public class CheckDB {
         }
         return scrollON;
     }
+    /**
+     * Sets isUpdated to true.
+     */
     protected void setisUpdated () {
         try {
             if (openDB()) {
