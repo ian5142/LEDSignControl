@@ -1,7 +1,7 @@
-<?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-?><!doctype html>
+<?php // error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+?>
+<!doctype html>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -106,7 +106,7 @@ value="NONE">None
 			//$blinkON = "'" . $conn->real_escape_string($blink) . "'";         
             
             $sql = "UPDATE t SET message='$v1', isupdated='FALSE', scrollon='$scrollON', blinkon='$blinkON'";
-            echo "<br />$sql<br />";
+//            echo "<br />$sql<br />";
 
             if ($conn->query($sql) === false) {
                 trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->error, E_USER_ERROR);
