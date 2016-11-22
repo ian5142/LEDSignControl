@@ -86,19 +86,19 @@ value="NONE">None
 //            }
 
             $v1 = $conn->real_escape_string($message);
-			$scrollON = FALSE;
-			$blinkON = FALSE;
+			$scrollON = 0;
+			$blinkON = 0;
 			if ($textdec=="NONE") {
-				$scrollON = FALSE;
-				$blinkON = FALSE;
+				$scrollON = 0;
+				$blinkON = 0;
 			}
 			else if ($textdec=="BLINK") {
-				$blinkON = TRUE;
-				$scrollON = FALSE;
+				$blinkON = 1;
+				$scrollON = 0;
 			}
 			else if ($textdec=="SCROLL") {
-				$blinkON = FALSE;
-				$scrollON = TRUE;
+				$blinkON = 0;
+				$scrollON = 1;
 			}
 			
 			//$scrollON = "'" . $conn->real_escape_string($scroll) . "'";
