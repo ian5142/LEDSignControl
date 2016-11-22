@@ -16,9 +16,11 @@ and open the template in the editor.
         <?php
         // define variables and set to empty values
         $message = "";
+		$textdec = "";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $message = test_input($_POST["message"]);
+			$textdec = test_input($_POST["textdec"]);
         }
 
         function test_input($data) {
@@ -33,9 +35,29 @@ and open the template in the editor.
             <p class="content">The LED Display can be updated by putting the new message in the textbox and clicking the Send to Display button.</p>
             <p class="content">
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">Message: <input type="text" name="message" value="" width="600px">
+            </p>
+            <p>
+            Sign options:
+            </p>
+            <p>
+            <input type="radio" name="textdec"
+            <?php if (isset($textdec) && $textdec=="SCROLL") echo "checked";?>
+value="SCROLL">Scrolling Text
+			</p>
+			<p>
+			<input type="radio" name="textdec"
+            <?php if (isset($textdec) && $textdec=="BLINK") echo "checked";?>
+value="BLINK">Blinking Text
+			</p>
+            <p>
+			<input type="radio" name="textdec"
+            <?php if (isset($textdec) && $textdec=="NONE") echo "checked";?>
+value="NONE">None
+			</p>
                 <p class="h1"><input type="submit" name="submit" value="Send to Display"></p>
             </form>
         </p>
+            
         <?php
         $DBServer = 'localhost';
         $DBUser = 'client';
@@ -60,14 +82,33 @@ and open the template in the editor.
 //                echo 'The old message was: ' . $row[0] . '<br>';
 //            }
 
-            $v1 = "'" . $conn->real_escape_string($message) . "'";            
+            $v1 = "'" . $conn->real_escape_string($message) . "'";
+			$scrollON = FALSE;
+			$blinkON = FALSE;
+			if ($textdec=="NONE") {
+				$scrollON = FALSE;
+				$blinkON = FALSE;
+			}
+			else if ($textdec=="BLINK") {
+				$blinkON = TRUE;
+				$scrollON = FALSE;
+			}
+			else if ($textdec=="SCROLL") {
+				$blinkON = FALSE;
+				$scrollON = TRUE;
+			}
+			
+			//$scrollON = "'" . $conn->real_escape_string($scroll) . "'";
+			
+			//$blinkON = "'" . $conn->real_escape_string($blink) . "'";         
             
-            $sql = "UPDATE t SET message=$v1, isupdated=FALSE";
+            $sql = "UPDATE t SET message=$v1, isupdated=FALSE, scrollon=$scrollON, blinkon=$blinkON";
 
             if ($conn->query($sql) === false) {
                 trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->error, E_USER_ERROR);
             } else if ($message !== "") {
                 $affected_rows = $conn->affected_rows;
+//			exec("java -jar RS232_Example.jar", $output);
                 echo "<script type='text/javascript'>alert('The message, \"$message\", was sent successfully to the display.');</script>";
             }
         }
