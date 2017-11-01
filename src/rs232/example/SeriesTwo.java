@@ -56,15 +56,16 @@ public class SeriesTwo {
      * @return The checksum in String format
      */
     private String calculateChksum (String body) {
-        int iheader = 1;
-        int iaddress = Integer.parseInt(address, 16);
-        int istartMes = 2;
-        int iendMes = 4;
-        int iseq = Integer.parseInt(seq, 16);
-        int sum = iheader + iaddress + istartMes + iendMes + iseq;
+        int hexheader = 1;
+        int hexAddress = Integer.parseInt(address, 16);
+        int hexStartMes = 2;
+        int hexEndMes = 4;
+        int hexSeq = Integer.parseInt(seq, 16);
+        int sum = hexheader + hexAddress + hexStartMes + hexEndMes + hexSeq;
         sum += Integer.parseInt(toHex(body), 16);
-        sum %= 100;
+        
         String checksum = sum + "";
+        checksum = checksum.substring(checksum.length()-2, checksum.length());
         if (checksum.length() == 1) {
             checksum = "0" + checksum;
         }
