@@ -34,15 +34,15 @@ public class SeriesTwo {
      * initializes all of the variables
      */
     private void init () {
-        header = Character.toString( (char) 1);
+        header = Integer.toHexString(1);
         address = "1";
-        startMes = Character.toString( (char) 2);
+        startMes = Integer.toHexString(2);
 //        body = "This is a Test by the way.";
-        endMes = Character.toString( (char) 4);
-        seq = "0";
+        endMes = Integer.toHexString(4);
+        seq = "1";
         numseq = 0;
-        CR = "\r";
-        newline = "\n";
+        CR = Integer.toHexString(13);
+        newline = Integer.toHexString(10);
         chksum = "";
     }
     
@@ -52,9 +52,16 @@ public class SeriesTwo {
      * @return The checksum in String format
      */
     private String calculateChksum (String body) {
-        String sum = header + address + startMes + endMes + seq;
+        int iheader = 1;
+        int iaddress = Integer.parseInt(address, 16);
+        int istartMes = 2;
+        int iendMes = 4;
+        int iseq = Integer.parseInt(seq, 16);
+        int sum = iheader + iaddress + istartMes + iendMes + iseq;
         for (int i = 0 ; i < body.length() ; i++) {
-            sum += body.charAt(i);
+            String s = body.charAt(i) + "";
+            int curChar = Integer.parseInt(s, 16);
+            sum += curChar;
         }
         sum = sum.substring(sum.length()-2);
         if (sum.length() == 1) {
