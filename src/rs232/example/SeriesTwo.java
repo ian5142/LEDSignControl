@@ -5,6 +5,7 @@
  */
 package rs232.example;
 
+import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import javax.xml.bind.DatatypeConverter;
@@ -77,7 +78,7 @@ public class SeriesTwo {
      * @param arg The string to be converted
      * @return The string in hexadecimal format
      */
-    public String toHex(String arg) {
+    public String toHex(String arg) throws UnsupportedEncodingException {
         return DatatypeConverter.printHexBinary(arg.getBytes(StandardCharsets.US_ASCII));
     }
     
