@@ -6,7 +6,6 @@
 package rs232.example;
 
 import java.io.UnsupportedEncodingException;
-import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import javax.xml.bind.DatatypeConverter;
 
@@ -56,7 +55,7 @@ public class SeriesTwo {
      * @param body The string to calculate a checksum for
      * @return The checksum in String format
      */
-    private String calculateChksum (String body) {
+    private String calculateChksum (String body) throws UnsupportedEncodingException {
         int hexheader = 1;
         int hexAddress = Integer.parseInt(address, 16);
         int hexStartMes = 2;
@@ -86,7 +85,7 @@ public class SeriesTwo {
      * Creates the final Message, sends it to the Test object
      * @param body The message to write to the screen.
      */
-    protected void write (String body) {
+    protected void write (String body) throws UnsupportedEncodingException {
         chksum = calculateChksum(body);    
         String message = header + address + startMes + body + endMes + seq + 
                 chksum + newline + CR;
