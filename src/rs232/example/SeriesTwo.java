@@ -5,6 +5,10 @@
  */
 package rs232.example;
 
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import javax.xml.bind.DatatypeConverter;
+
 /**
  * Creates string to send via RS232 via serial.
  * @author Ian Van Schaick
@@ -58,16 +62,22 @@ public class SeriesTwo {
         int iendMes = 4;
         int iseq = Integer.parseInt(seq, 16);
         int sum = iheader + iaddress + istartMes + iendMes + iseq;
-        for (int i = 0 ; i < body.length() ; i++) {
-            String s = body.charAt(i) + "";
-            int curChar = Integer.parseInt(s, 16);
-            sum += curChar;
+        sum += Integer.parseInt(toHex(body), 16);
+        sum %= 100;
+        String checksum = sum + "";
+        if (checksum.length() == 1) {
+            checksum = "0" + checksum;
         }
-        sum = sum.substring(sum.length()-2);
-        if (sum.length() == 1) {
-            chksum = "0" + sum;
-        }
-        return sum;
+        return checksum;
+    }
+    
+    /**
+     * Converts a String to a hexadecimal value
+     * @param arg The string to be converted
+     * @return The string in hexadecimal format
+     */
+    public String toHex(String arg) {
+        return DatatypeConverter.printHexBinary(arg.getBytes(StandardCharsets.US_ASCII));
     }
     
     /**
