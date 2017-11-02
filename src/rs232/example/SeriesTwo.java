@@ -6,6 +6,7 @@
 package rs232.example;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import javax.xml.bind.DatatypeConverter;
 
 /**
@@ -56,24 +57,32 @@ public class SeriesTwo {
      */
     protected String calculateChksum (String body) {
         System.out.println("Body: " + body);
-        int hexHeader = Integer.parseInt("01", 16);
-        int hexAddress = Integer.parseInt(address, 16);
+        int hexHeader = 1;
+        
+        ArrayList<String> addressArray = toHex(address);
+        
+        long hexAddress = Long.parseLong(addressArray.get(0) + "", 16);
         int hexStartMes = Integer.parseInt("02", 16);
         int hexEndMes = Integer.parseInt("04", 16);
-        int hexSeq = Integer.parseInt(seq, 16);
+        
+        ArrayList<String> seqArray = toHex(seq);
+        
+        long hexSeq = Long.parseLong(seqArray.get(0) + "", 16);
         long sum = hexHeader + hexAddress + hexStartMes + hexEndMes + hexSeq;
-        System.out.println("Sum: " + sum);
-        long hexBody = Long.parseLong(toHex(body), 16);
-        System.out.println("Hexbody: " + hexBody);
+        
+        ArrayList<String> bodyArray = toHex(body);
+        
+        long hexBody = 0;
+        for (int i = 0 ; i < bodyArray.size() ; i++) {
+            long l = Long.parseLong(bodyArray.get(i) + "", 16);
+            hexBody += l;
+        }
+        
         sum += hexBody;
+        sum = sum % 256;
         
         String checksum = Long.toHexString(sum);
         checksum = checksum.toUpperCase();
-        System.out.println("This is the sum in hex: " + checksum);
-        
-        while (checksum.length() > 2) {
-            checksum = checksum.substring(1);
-        }
         
         System.out.println("This is the final sum in hex: " + checksum);
         return checksum;
@@ -84,14 +93,21 @@ public class SeriesTwo {
      * @param arg The string to be converted
      * @return The string in hexadecimal format
      */
-    public String toHex(String arg) {
+    protected ArrayList<String> toHex(String arg) {
         String s;
         s = DatatypeConverter.printHexBinary(arg.getBytes(StandardCharsets.US_ASCII));
-        while (s.length() > 12) {
-            s = s.substring(1);
-        }        
-        System.out.println("To Hex: " + s);
-        return s;
+        ArrayList<String> hexBody = new ArrayList<>(s.length() );
+        System.out.println(s);
+        
+        char [] hexbody2 = s.toCharArray();
+        
+        int length = s.length();
+        
+        for (int i = 0 ; i < length ; ) {
+            hexBody.add( s.substring(i, i+2) );
+            i += 2;
+        }
+        return hexBody;
     }
     
     /**
