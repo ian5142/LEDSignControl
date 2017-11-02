@@ -77,7 +77,7 @@ public class SeriesTwo {
      * @return The string in hexadecimal format
      */
     public String toHex(String arg) {
-        String s = "";
+        String s;
         s = DatatypeConverter.printHexBinary(arg.getBytes(StandardCharsets.US_ASCII));
         return s;
     }
