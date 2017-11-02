@@ -56,19 +56,19 @@ public class SeriesTwo {
      */
     protected String calculateChksum (String body) {
         System.out.println("Body: " + body);
-        int hexHeader = 1;
+        int hexHeader = Integer.parseInt("01", 16);
         int hexAddress = Integer.parseInt(address, 16);
-        int hexStartMes = 2;
-        int hexEndMes = 4;
+        int hexStartMes = Integer.parseInt("02", 16);
+        int hexEndMes = Integer.parseInt("04", 16);
         int hexSeq = Integer.parseInt(seq, 16);
-        int sum = hexHeader + hexAddress + hexStartMes + hexEndMes + hexSeq;
-        String sum2 = toHex(sum + "");
-        System.out.println("This is the sum: " + sum2);
-        long hexBody = Long.parseLong(toHex("a="), 16);
+        long sum = hexHeader + hexAddress + hexStartMes + hexEndMes + hexSeq;
+        System.out.println("Sum: " + sum);
+        long hexBody = Long.parseLong(toHex(body), 16);
         System.out.println("Hexbody: " + hexBody);
         sum += hexBody;
         
-        String checksum = sum + "";
+        String checksum = Long.toHexString(sum);
+        checksum = checksum.toUpperCase();
         System.out.println("This is the sum in hex: " + checksum);
         
         while (checksum.length() > 2) {
