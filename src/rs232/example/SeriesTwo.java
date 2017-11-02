@@ -56,21 +56,26 @@ public class SeriesTwo {
      */
     protected String calculateChksum (String body) {
         System.out.println("Body: " + body);
-        int hexheader = 1;
+        int hexHeader = 1;
         int hexAddress = Integer.parseInt(address, 16);
         int hexStartMes = 2;
         int hexEndMes = 4;
         int hexSeq = Integer.parseInt(seq, 16);
-        int sum = hexheader + hexAddress + hexStartMes + hexEndMes + hexSeq;
-        int hexBody = Integer.parseInt(toHex(body), 16);
+        int sum = hexHeader + hexAddress + hexStartMes + hexEndMes + hexSeq;
+        String sum2 = toHex(sum + "");
+        System.out.println("This is the sum: " + sum2);
+        long hexBody = Long.parseLong(toHex("a="), 16);
         System.out.println("Hexbody: " + hexBody);
         sum += hexBody;
         
         String checksum = sum + "";
-        checksum = checksum.substring(checksum.length()-2, checksum.length());
-        if (checksum.length() == 1) {
-            checksum = "0" + checksum;
+        System.out.println("This is the sum in hex: " + checksum);
+        
+        while (checksum.length() > 2) {
+            checksum = checksum.substring(1);
         }
+        
+        System.out.println("This is the final sum in hex: " + checksum);
         return checksum;
     }
     
@@ -82,6 +87,9 @@ public class SeriesTwo {
     public String toHex(String arg) {
         String s;
         s = DatatypeConverter.printHexBinary(arg.getBytes(StandardCharsets.US_ASCII));
+        while (s.length() > 12) {
+            s = s.substring(1);
+        }        
         System.out.println("To Hex: " + s);
         return s;
     }
