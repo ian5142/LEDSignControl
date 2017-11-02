@@ -55,13 +55,16 @@ public class SeriesTwo {
      * @return The checksum in String format
      */
     private String calculateChksum (String body) {
+        System.out.println("Body: " + body);
         int hexheader = 1;
         int hexAddress = Integer.parseInt(address, 16);
         int hexStartMes = 2;
         int hexEndMes = 4;
         int hexSeq = Integer.parseInt(seq, 16);
         int sum = hexheader + hexAddress + hexStartMes + hexEndMes + hexSeq;
-        sum += Integer.parseInt(toHex(body), 16);
+        int hexBody = Integer.parseInt(toHex(body), 16);
+        System.out.println("Hexbody: " + hexBody);
+        sum += hexBody;
         
         String checksum = sum + "";
         checksum = checksum.substring(checksum.length()-2, checksum.length());
@@ -79,6 +82,7 @@ public class SeriesTwo {
     public String toHex(String arg) {
         String s;
         s = DatatypeConverter.printHexBinary(arg.getBytes(StandardCharsets.US_ASCII));
+        System.out.println("To Hex: " + s);
         return s;
     }
     
