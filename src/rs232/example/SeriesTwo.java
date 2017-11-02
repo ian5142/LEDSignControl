@@ -54,7 +54,7 @@ public class SeriesTwo {
      * @param body The string to calculate a checksum for
      * @return The checksum in String format
      */
-    private String calculateChksum (String body) {
+    protected String calculateChksum (String body) {
         System.out.println("Body: " + body);
         int hexheader = 1;
         int hexAddress = Integer.parseInt(address, 16);
