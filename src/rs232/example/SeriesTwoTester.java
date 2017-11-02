@@ -12,6 +12,6 @@ package rs232.example;
 public class SeriesTwoTester {
     public static void main(String[] args) {
         SeriesTwo test2 = new SeriesTwo();
-        String calculateChksum = test2.calculateChksum("a==4");
+        String calculateChksum = test2.calculateChksum("This is a test.");
     }
 }
