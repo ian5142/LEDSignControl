@@ -144,6 +144,25 @@ public class CheckDB {
         return scrollON;
     }
     /**
+     * Selects the blinkON variable from the database
+     * @return Returns true if blinkON is true
+     */
+    protected boolean selectblinkON () {
+        boolean scrollON = false;
+        try {
+            if (openDB()) {
+                rs = st.executeQuery("SELECT blinkon FROM t");
+                for (int i = 1; rs.next(); i++) {
+                    scrollON = rs.getBoolean(i);
+                }
+                boolean closeDB = closeDB();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CheckDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return scrollON;
+    }
+    /**
      * Sets isUpdated to true.
      */
     protected void setisUpdated () {
