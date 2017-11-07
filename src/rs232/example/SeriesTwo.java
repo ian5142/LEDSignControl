@@ -14,16 +14,16 @@ import javax.xml.bind.DatatypeConverter;
  * @author Ian Van Schaick
  */
 public class SeriesTwo {
-    String header;
+    char header;
     String address;
-    String startMes;
+    char startMes;
 //    String body;
-    String endMes;
+    char endMes;
     String seq;
     int numseq;
     String chksum;
-    String CR;
-    String newline;
+    char CR;
+    char newline;
     Test tester;
     
     /**
@@ -38,15 +38,15 @@ public class SeriesTwo {
      * initializes all of the variables
      */
     private void init () {
-        header = Integer.toHexString(1);
+        header = (char) 0x1;
         address = "1";
-        startMes = Integer.toHexString(2);
+        startMes = (char) 0x2;
 //        body = "This is a Test by the way.";
-        endMes = Integer.toHexString(4);
+        endMes = (char) 0x4;
         seq = "1";
         numseq = 0;
-        CR = Integer.toHexString(13);
-        newline = Integer.toHexString(10);
+        CR = (char) 0x13;
+        newline = (char) 0x10;
         chksum = "";
     }
     
@@ -116,7 +116,7 @@ public class SeriesTwo {
      */
     protected void write (String body) {
         chksum = calculateChksum(body);    
-        String message = header + address + startMes + body + endMes + seq + 
+        String message = header + address + startMes + body + endMes + numseq + 
                 chksum + newline + CR;
         boolean success = tester.testWrite(message);
 //        String s = "";
