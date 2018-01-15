@@ -1,0 +1,11 @@
+January 2016 – decided on Capstone Project, started researching software side
+
+Summer 2016 → January 2018 – Software design, both backend (Java, mysql) and frontend (php/HTML). Will add more details later based on Git commits. Stuff tried and didn’t work, mistakes made in code, etc.
+
+January 3rd, 2018 – Asked Robert about recommendations on hardware. Started looking up chips.
+January 9th, 2018 – Asked Robert opinion about FTDI FT232R IC. He told me it is UART and is not the correct chip. He recommended MAX232. Sought clarification from Brian on the voltage levels required for RS232. He recommended CP2202 chip. Researched difference between UART and RS232 online. After a discussion with Robert, determined by my own reading of the datasheets, that I require a MAX232 with a UART chip. I decided to use a MCP2200 as the UART chip because it is available as a SOIC, which is easier to solder to the board. The MAX232 is available as both a DIP and a SOIC. I plan on ordering the SOIC version of the MAX232.
+January 10th, 2018 – Discussed with Robert required power for the sign. Possibly 120V AC, not checked internally yet. Robert found seven MAX232 chips that I can use.
+January 11th, 2018 – Looked up online how to design custom chip (footprint only) in Multisim. Started designing custom chip in Multisim (for board layout) for MCP2200. Searched online looking for the differences between MCP2200 versions. Discussed in class fall-back options, in my case it would be to use an off-the-shelf USB to Serial RS232 cable. I already have one at home.
+	With Robert’s help, I took apart the Series Two screen to examine it. The screen is currently hooked up to accept a RS422 connection. I plan to reconfigure it to accept a RS232 connection with Rx, Tx, and GND. The Rx to accept the message plus checksum, etc. The Tx to send back a confirmation code. The screen currently has address 1. Sent e-mail to Robert asking him to order two MCP2200-I-SO chips.
+January 13, 2018 – Created a function diagram for the USB to RS232 board I plan to create. It is located in my Dropbox folder. Found typical circuit configuration for the MAX232, p.10 of its datasheet. It requires 4 – 1µF capacitors.
+January 15, 2018 – Discussion with Robert and Brian. Determined that I will solder a USB mini connector (female) on one side of the board and a DB9 (female) on the other side.
