@@ -18,3 +18,4 @@ January 17, 2018 - Robert told me that the MCP2200 chip had a 5 week lead time o
 January 18, 2018 - Discussion with Brian about solder mask, silk screening and other components required (other than MAX232 and MCP2200).
                     Created a Materials list spreadsheet, in Capstone folder. Built first version of the full circuit in Multisi, file in Capstone folder.
                     I searched for a 12MHz crystal oscillator among the boards in the soldering lab. Ordered crystal oscillator (12MHz) from Arrow, using my credit card.
+                    Built custom chips in ExpressPCB software, after asking Brian and Robert some questions about SOIC specifications.
