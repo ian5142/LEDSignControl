@@ -21,3 +21,4 @@ January 18, 2018 - Discussion with Brian about solder mask, silk screening and o
                     Built custom chips in ExpressPCB software, after asking Brian and Robert some questions about SOIC specifications.
 January 19, 2018 - Created a 12MHz crystal layout in ExpressPCB. Made some slight layout changes in Multisim (no wiring changes). 
                     Made the pin numbers line up with there respective pins by editing each chip manually and making the numbers visible.
+                    Tried to desolder mini-USB port and DB9 port, was not successful.
