@@ -24,3 +24,5 @@ January 19, 2018 - Created a 12MHz crystal layout in ExpressPCB. Made some sligh
                     Tried to desolder mini-USB port and DB9 port, was not successful.
                     Found datasheet for DB9 port (put in Capstone folder), started designing ExpressPCB part for it.
 January 22, 2018 - Sought help from Brian to desolder DB9 and mini-USB ports. Brian finished desoldering mini-USB port. He helped free up the DB9, I still have to finish desoldering that.
+                    I finished desoldering the DB9 port. I bent the pins slightly, but they bent back fine. Robert told me afterwards that he has some straight (not 90 degree) DB9 ports somewhere.
+                    I still have to get rid of the solder on the mounting pins on the DB9 port.
