@@ -28,3 +28,4 @@ January 22, 2018 - Sought help from Brian to desolder DB9 and mini-USB ports. Br
                     I still have to get rid of the solder on the mounting pins on the DB9 port.
                     I done up a fairly exhaustive parts list, including software that runs on the Raspberry Pi and my laptop.
                     Moved stuff around on the MultiSim schematic, it is now easier to read.
+                    Started writing Phase 1 Intro, Requirements, Specifications, and Objectives.
