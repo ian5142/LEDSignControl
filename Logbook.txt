@@ -31,3 +31,5 @@ January 22, 2018 - Sought help from Brian to desolder DB9 and mini-USB ports. Br
                     Started writing Phase 1 Intro, Requirements, Specifications, and Objectives.
 January 23, 2018 - Finished creating custom parts in ExpressPCB. Asked Brian a few questions about info on the schematic diagrams in the datasheets. Example: "What does rad mean on the diagram?"
 January 24, 2018 - Asked Robert for Vernier Calipers to verify the measurements of the mini USB port. I had to look up online how to read them correctly. The port's dimensions are almost exactly what is in the USB datasheet I used to design the pads.
+                    Completed Phase 1 report, including function diagram, MultiSim schematic, introduction, objectives, requirements, specifications, contingency. I also updated the parts list to add some tools that may be required.
+                    Sought clarification on the detail Robert is looking for in the Gant chart. Adjusted my Gant chart slightly to fit his outline. 
