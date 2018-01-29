@@ -41,3 +41,5 @@ January 29, 2018 - Added posAck and negAck for Verify mode in SeriesTwo file. Ad
                     Reason for these changes is because I forgot to account for verify mode returning a value.
                     Asked Robert about opening and closing ports, determined that did not have to close port at the end of testWrite or open a new port at the start of testRead.
                     Asked Robert and Brian for 1uF capacitors, have 4 of both electrolytic and ceramic now.
+                    Installed Putty to test java program's serial connection.
+                    Discussed with Brian some programming errors I am having regarding testRead(), it still comes up with Waiting for Read line but never actually reads anything you type in the connected putty terminal.
