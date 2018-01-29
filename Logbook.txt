@@ -39,3 +39,4 @@ January 26, 2018 - Started designing first revision of PCB.
 January 29, 2018 - Added posAck and negAck for Verify mode in SeriesTwo file. Added, but not completed readAck method in SeriesTwo file.
                     Finished writing readAck method. Changed write method to call readAck and recursively call write method if readAck returns false.
                     Reason for these changes is because I forgot to account for verify mode returning a value.
+                    Asked Robert about opening and closing ports, determined that did not have to close port at the end of testWrite or open a new port at the start of testRead.
