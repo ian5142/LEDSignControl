@@ -119,7 +119,7 @@ public class Test {
             openP();
             serialPort.writeString(message);
             success = true;
-            serialPort.closePort();
+            //serialPort.closePort();
         } catch (SerialPortException ex) {
             Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -136,7 +136,7 @@ public class Test {
         boolean success = false;
         String line = "";
         try {
-            openP();
+            //openP();
             line = serialPort.readString(128);
             success = true;
             serialPort.closePort();
