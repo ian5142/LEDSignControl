@@ -135,6 +135,11 @@ public class SeriesTwo {
         checkSeq();
     }
     
+    protected boolean readAck () {
+        
+        return true;
+    }
+    
     /**
      * Tries to read a line from the serial port
      * @return The line read from the serial port
