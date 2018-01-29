@@ -25,6 +25,8 @@ public class SeriesTwo {
     char CR;
     char newline;
     Test tester;
+    char posAck;
+    char negAck;
     
     /**
      * Calls init() method and creates a Test object 
@@ -48,6 +50,8 @@ public class SeriesTwo {
         CR = (char) 0x13;
         newline = (char) 0x10;
         chksum = "";
+        posAck = (char) 0x6;
+        negAck = (char) 0x15;
     }
     
     /**
