@@ -123,6 +123,12 @@ public class SeriesTwo {
         String message = header + address + startMes + body + endMes + numseq + 
                 chksum + newline + CR;
         boolean success = tester.testWrite(message);
+        if (success) {
+            boolean acknowledge = readAck();
+            while(! acknowledge) {
+                write(body);
+            }
+        }
 //        String s = "";
 //        for (int i = 0; i < message.length(); i++) {
 //            char [] array = message.toCharArray();
@@ -136,8 +142,17 @@ public class SeriesTwo {
     }
     
     protected boolean readAck () {
-        
-        return true;
+        String line = read();
+        boolean acknowledge = false;
+        if (line.equals(posAck)) {
+            System.out.print("The message was sent successfully.");
+            acknowledge = true;
+        }
+        else if (line.equals(negAck)) {
+            System.out.println("The message was not sent");
+            acknowledge = false;
+        }
+        return acknowledge;
     }
     
     /**
