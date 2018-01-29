@@ -142,7 +142,7 @@ public class SeriesTwo {
     protected String read() {
         System.out.println("Waiting for readline: ");
         String line = tester.testRead();
-        boolean testWrite = tester.testWrite(line);
+        //boolean testWrite = tester.testWrite(line);
         return line;
     }
     
