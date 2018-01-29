@@ -136,8 +136,7 @@ public class Test {
         boolean success = false;
         String line = "";
         try {
-            serialPort.openPort();
-            
+            openP();
             line = serialPort.readString(128);
             success = true;
             serialPort.closePort();
@@ -147,7 +146,7 @@ public class Test {
         if (success == true) {
             return line;
         } else {
-            line = "false";
+            line = "Did not read.";
             return line;
         }
         
