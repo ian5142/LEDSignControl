@@ -36,3 +36,4 @@ January 24, 2018 - Asked Robert for Vernier Calipers to verify the measurements 
 January 25, 2018 - Added MultiSim and ExpressPCB Plus to software parts list.
                     Formatting changes and correcting grammar in Phase 1 report. Found an error in my MultiSim schematic, RTS and CTS should be tied together.
 January 26, 2018 - Started designing first revision of PCB.
+January 29, 2018 - Added posAck and negAck for Verify mode in SeriesTwo file.
