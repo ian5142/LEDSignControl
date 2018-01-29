@@ -144,6 +144,7 @@ public class Test {
             Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
         }
         if (success == true) {
+            System.out.println("Line read: " + line);
             return line;
         } else {
             line = "Did not read.";
