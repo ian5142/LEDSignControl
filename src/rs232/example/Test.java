@@ -26,6 +26,7 @@ public class Test {
     SerialPortReader reader;
     String readLine;
     public final Object lock = new Object();
+    Boolean ready;
 
     /**
      * Creates a serial port object
@@ -82,6 +83,7 @@ public class Test {
             serialPort.addEventListener(reader);
             serialPort.setRTS(false);
             serialPort.setDTR(false);
+            ready = true;
         } catch (SerialPortException ex) {
             System.out.println("There is an error opening port т: " + ex);
         }
@@ -129,10 +131,12 @@ public class Test {
      */
     protected boolean testWrite(String message) {
         boolean success = false;
+        
         try {
             openP();
             serialPort.writeString(message);
             success = true;
+            ready = true;
             //serialPort.closePort();
         } catch (SerialPortException ex) {
             Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
@@ -166,20 +170,32 @@ public class Test {
 //            line = "Did not read.";
 //            return line;
 //        }
+            ready = false;
             openP();
-            //serialPort.addEventListener(new SerialPortReader());
-            readLine = serialPort.readString(10, 5000);
-            System.out.println("Read line: " + readLine);
-         
-        } catch (SerialPortException ex) {
-            System.out.println("Error in receiving string from COM-port: " + ex);
-        } catch (SerialPortTimeoutException ex) {
-            Logger.getLogger(Test.class.getName()).log(Level.INFO, null, ex);
-            try {
-                serialPort.closePort();
-            } catch (SerialPortException ex1) {
-                Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex1);
+            synchronized(lock) {
+                while(ready == false) {
+                    lock.wait();
+                }
             }
+            //serialPort.addEventListener(new SerialPortReader());
+//            readLine = serialPort.readString(10, 5000);
+            String temp = readLine;
+            readLine = "";
+            System.out.println("Read line: " + temp);
+         
+        } 
+//          catch (SerialPortException ex) {
+//            System.out.println("Error in receiving string from COM-port: " + ex);
+//        } catch (SerialPortTimeoutException ex) {
+//            Logger.getLogger(Test.class.getName()).log(Level.INFO, null, ex);
+//            try {
+//                serialPort.closePort();
+//            } catch (SerialPortException ex1) {
+//                Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex1);
+//            }
+        //} 
+        catch (InterruptedException ex) {
+            Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
         }
         return readLine;
     }
