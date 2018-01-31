@@ -4,13 +4,16 @@
  * and open the template in the editor.
  */
 package rs232.example;
+
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Platform;
-import jssc.*; 
+import jssc.*;
+
 /**
  * Contains methods to open, close, read, write to a serial port
+ *
  * @author Ian Van Schaick
  */
 public class Test {
@@ -21,7 +24,7 @@ public class Test {
     StringBuilder message;
     Boolean receivingMessage;
     SerialPortReader reader;
-    
+
     /**
      * Creates a serial port object
      */
@@ -32,32 +35,35 @@ public class Test {
         receivingMessage = false;
         reader = new SerialPortReader();
     }
-    
+
     /**
-     * Finds the serial port to be used, in Windows type COM1, for example
-     * In Linux, type /dev/pts/3 for example.
-     * All serial ports may not be listed.
-     * @return The serial port name in String format, used to open and close the port
+     * Finds the serial port to be used, in Windows type COM1, for example In
+     * Linux, type /dev/pts/3 for example. All serial ports may not be listed.
+     *
+     * @return The serial port name in String format, used to open and close the
+     * port
      */
-    private String findPort () {
+    private String findPort() {
         System.out.println("What is the port you are using?");
-        
+
         String[] portNames = SerialPortList.getPortNames();
         for (String portName1 : portNames) {
             System.out.println(portName1);
         }
-        
-        Scanner sc = new Scanner (System.in);
+
+        Scanner sc = new Scanner(System.in);
         String port = "";
         if (sc.hasNext()) {
             port = sc.next();
-        } else{
-            
+        } else {
+
         }
         return port;
     }
+
     /**
-     * Opens a COM port at the specified settings, can throw an error opening the port
+     * Opens a COM port at the specified settings, can throw an error opening
+     * the port
      */
     private void openP() {
         try {
@@ -69,18 +75,19 @@ public class Test {
 
             serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_XONXOFF_OUT);
             serialPort.addEventListener(reader);
-            serialPort.setRTS(false); 
+            serialPort.setRTS(false);
             serialPort.setDTR(false);
         } catch (SerialPortException ex) {
             System.out.println("There is an error opening port т: " + ex);
         }
     }
-    
+
     /**
      * Closes the serial port, can throw a SerialPortException error.
-     * @return 
+     *
+     * @return
      */
-    private boolean close () {
+    private boolean close() {
         boolean success = false;
         try {
             serialPort.closePort();
@@ -90,9 +97,10 @@ public class Test {
         }
         return success;
     }
-    
+
     /**
      * Writes the String "Hello World Write" to the serial port
+     *
      * @return Returns true if the write was successful
      */
     protected boolean testWrite() {
@@ -107,9 +115,10 @@ public class Test {
         }
         return success;
     }
-    
+
     /**
      * Writes the String message to the serial port
+     *
      * @param message The string to write to the serial port
      * @return Returns true if the write was successful
      */
@@ -125,15 +134,16 @@ public class Test {
         }
         return success;
     }
-    
+
     /**
-     * Opens the serial port.
-     * Tries to read a string from the serial port.
+     * Opens the serial port. Tries to read a string from the serial port.
      * Closes the serial port.
-     * @return 
+     *
+     * @return
      */
     protected String testRead() {
-//        boolean success = false;
+        try {
+            //        boolean success = false;
 //        String line = "";
 //        try {
 //            //openP();
@@ -150,15 +160,21 @@ public class Test {
 //            line = "Did not read.";
 //            return line;
 //        }
-        
+            int mask = SerialPort.MASK_RXCHAR;
+            serialPort.setEventsMask(mask);
+            serialPort.addEventListener(new SerialPortReader());
+
+        } catch (SerialPortException ex) {
+            System.out.println("Error in receiving string from COM-port: " + ex);
+        }
         return "";
     }
 
     /**
-     * In this class must implement the method serialEvent, through it we learn about 
-     * events that happened to our port. But we will not report on all events but only 
-     * those that we put in the mask. In this case the arrival of the data and change the 
-     * status lines CTS and DSR
+     * In this class must implement the method serialEvent, through it we learn
+     * about events that happened to our port. But we will not report on all
+     * events but only those that we put in the mask. In this case the arrival
+     * of the data and change the status lines CTS and DSR
      */
     private class SerialPortReader implements SerialPortEventListener {
 //        StringBuilder message = new StringBuilder();
@@ -194,18 +210,19 @@ public class Test {
 //                }
 //            }
 //        }
-        
+
         /**
-         * Reads the data bit by bit from the serial port
-         * Can throw a SerialPortException error
-         * @param event 
+         * Reads the data bit by bit from the serial port Can throw a
+         * SerialPortException error
+         *
+         * @param event
          */
         @Override
         public void serialEvent(SerialPortEvent event) {
-    if(event.isRXCHAR() && event.getEventValue() > 0){
-        try {
-            String receivedData = serialPort.readString(event.getEventValue());
-            System.out.println("Received response: " + receivedData);
+            if (event.isRXCHAR() && event.getEventValue() > 0) {
+                try {
+                    String receivedData = serialPort.readString(event.getEventValue());
+                    System.out.println("Received response: " + receivedData);
 //            byte buffer[] = serialPort.readBytes(10);
 //            for (byte b: buffer) {
 //                if (b == '>') {
@@ -227,14 +244,12 @@ public class Test {
 //                    }
 //                }
 //            }                
+                } catch (SerialPortException ex) {
+                    System.out.println("Error in receiving string from COM-port: " + ex);
+                }
+            }
         }
-        catch (SerialPortException ex) {
-            System.out.println("Error in receiving string from COM-port: " + ex);
-        }
-    }
-}
-        
-        
+
 //        public void serialEvent(SerialPortEvent event) {
 //            if (event.isRXCHAR()) {//If data is available
 //                if (event.getEventValue() == 10) {//Check bytes count in the input buffer
@@ -260,10 +275,11 @@ public class Test {
 //            }
 //        }
     }
-    
+
     /**
      * Prints out the message read from the serial port
-     * @param message 
+     *
+     * @param message
      */
     protected void processMessage(String message) {
 //        System.out.println(message);
