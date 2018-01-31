@@ -160,10 +160,11 @@ public class Test {
 //            line = "Did not read.";
 //            return line;
 //        }
+            openP();
             int mask = SerialPort.MASK_RXCHAR;
             serialPort.setEventsMask(mask);
-            serialPort.addEventListener(new SerialPortReader());
-
+            //serialPort.addEventListener(new SerialPortReader());
+            serialPort.closePort();
         } catch (SerialPortException ex) {
             System.out.println("Error in receiving string from COM-port: " + ex);
         }
