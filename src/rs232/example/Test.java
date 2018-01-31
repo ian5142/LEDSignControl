@@ -203,7 +203,8 @@ public class Test {
         public void serialEvent(SerialPortEvent event) {
     if(event.isRXCHAR() && event.getEventValue() > 0){
         try {
-            
+            String receivedData = serialPort.readString(event.getEventValue());
+            System.out.println("Received response: " + receivedData);
 //            byte buffer[] = serialPort.readBytes(10);
 //            for (byte b: buffer) {
 //                if (b == '>') {
@@ -227,7 +228,7 @@ public class Test {
 //            }                
         }
         catch (SerialPortException ex) {
-            System.out.println(ex);
+            System.out.println("Error in receiving string from COM-port: " + ex);
         }
     }
 }
