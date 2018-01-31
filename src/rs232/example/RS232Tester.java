@@ -25,29 +25,30 @@ public class RS232Tester {
 //        String line = test2.read();
 //        
 //        System.out.println(line);
-                try {
+//                try {
                     SeriesTwo test2 = new SeriesTwo();
-            for (int j = 0; j<10; j++) {
-                CheckDB test = new CheckDB();
-                if (!test.selectisUpdated()) {
-                    String message = test.selectMessage();
-                    if (test.selectscrollON())  {
-                        message = Character.toString((char) 25) + message;
-                    }
-                    //test2.write(message);
                     test2.read();
-                    System.out.println("The message is: " + message);
-                    System.out.println("Isupdated is: " + test.selectisUpdated());
-                    //boolean acknowledge = test2.readAck();
-                    //System.out.println("Acknowledged: " + acknowledge);
-                    test.setisUpdated();
-                    System.out.println("Isupdated is: " + test.selectisUpdated());
-                }
-                Thread.sleep(60 * 1000);
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//            for (int j = 0; j<10; j++) {
+//                CheckDB test = new CheckDB();
+//                if (!test.selectisUpdated()) {
+//                    String message = test.selectMessage();
+//                    if (test.selectscrollON())  {
+//                        message = Character.toString((char) 25) + message;
+//                    }
+//                    test2.write(message);
+//                    
+//                    System.out.println("The message is: " + message);
+//                    System.out.println("Isupdated is: " + test.selectisUpdated());
+//                    //boolean acknowledge = test2.readAck();
+//                    //System.out.println("Acknowledged: " + acknowledge);
+//                    test.setisUpdated();
+//                    System.out.println("Isupdated is: " + test.selectisUpdated());
+//                }
+//                Thread.sleep(60 * 1000);
+//            }
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
     
 }
