@@ -24,6 +24,7 @@ public class Test {
     StringBuilder message;
     Boolean receivingMessage;
     SerialPortReader reader;
+    String readLine;
 
     /**
      * Creates a serial port object
@@ -34,6 +35,7 @@ public class Test {
         message = new StringBuilder();
         receivingMessage = false;
         reader = new SerialPortReader();
+        readLine = "";
     }
 
     /**
@@ -144,7 +146,7 @@ public class Test {
      * @return
      */
     protected String testRead() {
-        String readLine = "";
+        
         try {
             //        boolean success = false;
 //        String line = "";
@@ -227,8 +229,10 @@ public class Test {
         public void serialEvent(SerialPortEvent event) {
             if (event.isRXCHAR() && event.getEventValue() > 0) {
                 try {
-                    String receivedData = serialPort.readString(event.getEventValue());
-                    System.out.println("Received response: " + receivedData);
+                    readLine = serialPort.readString(event.getEventValue());
+                    
+//                    System.out.println("Received response: " + receivedData);
+                    
 //            byte buffer[] = serialPort.readBytes(10);
 //            for (byte b: buffer) {
 //                if (b == '>') {
