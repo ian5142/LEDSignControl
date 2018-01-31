@@ -142,6 +142,7 @@ public class Test {
      * @return
      */
     protected String testRead() {
+        String readLine = "";
         try {
             //        boolean success = false;
 //        String line = "";
@@ -164,11 +165,13 @@ public class Test {
             int mask = SerialPort.MASK_RXCHAR;
             serialPort.setEventsMask(mask);
             //serialPort.addEventListener(new SerialPortReader());
+             readLine = serialPort.readString();
+             System.out.println(readLine);
             serialPort.closePort();
         } catch (SerialPortException ex) {
             System.out.println("Error in receiving string from COM-port: " + ex);
         }
-        return "";
+        return readLine;
     }
 
     /**
