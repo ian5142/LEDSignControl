@@ -165,11 +165,13 @@ public class Test {
             int mask = SerialPort.MASK_RXCHAR;
             serialPort.setEventsMask(mask);
             //serialPort.addEventListener(new SerialPortReader());
-             readLine = serialPort.readString();
+             readLine = serialPort.readString(10, 5000);
              System.out.println(readLine);
             serialPort.closePort();
         } catch (SerialPortException ex) {
             System.out.println("Error in receiving string from COM-port: " + ex);
+        } catch (SerialPortTimeoutException ex) {
+            System.out.println("Timeout error: " + ex);
         }
         return readLine;
     }
