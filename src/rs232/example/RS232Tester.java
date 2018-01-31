@@ -34,7 +34,8 @@ public class RS232Tester {
                     if (test.selectscrollON())  {
                         message = Character.toString((char) 25) + message;
                     }
-                    test2.write(message);
+                    //test2.write(message);
+                    test2.read();
                     System.out.println("The message is: " + message);
                     System.out.println("Isupdated is: " + test.selectisUpdated());
                     //boolean acknowledge = test2.readAck();
