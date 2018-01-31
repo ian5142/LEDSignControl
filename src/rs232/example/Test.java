@@ -159,7 +159,7 @@ public class Test {
      * those that we put in the mask. In this case the arrival of the data and change the 
      * status lines CTS and DSR
      */
-    class SerialPortReader implements SerialPortEventListener {
+    private static class SerialPortReader implements SerialPortEventListener {
 //        StringBuilder message = new StringBuilder();
 //        Boolean receivingMessage = false;
 //
