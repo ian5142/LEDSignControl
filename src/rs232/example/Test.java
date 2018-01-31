@@ -25,6 +25,7 @@ public class Test {
     Boolean receivingMessage;
     SerialPortReader reader;
     String readLine;
+    public final Object lock = new Object();
 
     /**
      * Creates a serial port object
