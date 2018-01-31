@@ -77,6 +77,8 @@ public class Test {
             serialPort.addEventListener(reader);
             serialPort.setRTS(false);
             serialPort.setDTR(false);
+            int mask = SerialPort.MASK_RXCHAR;
+            serialPort.setEventsMask(mask);
         } catch (SerialPortException ex) {
             System.out.println("There is an error opening port т: " + ex);
         }
@@ -162,8 +164,6 @@ public class Test {
 //            return line;
 //        }
             openP();
-            int mask = SerialPort.MASK_RXCHAR;
-            serialPort.setEventsMask(mask);
             //serialPort.addEventListener(new SerialPortReader());
              readLine = serialPort.readString(10, 5000);
              System.out.println(readLine);
