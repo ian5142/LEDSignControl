@@ -146,7 +146,7 @@ public class Test {
      * @return
      */
     protected String testRead() {
-        
+
         try {
             //        boolean success = false;
 //        String line = "";
@@ -167,13 +167,18 @@ public class Test {
 //        }
             openP();
             //serialPort.addEventListener(new SerialPortReader());
-             readLine = serialPort.readString(10, 5000);
-             System.out.println(readLine);
-            serialPort.closePort();
+            readLine = serialPort.readString(10, 5000);
+            System.out.println("Read line: " + readLine);
+         
         } catch (SerialPortException ex) {
             System.out.println("Error in receiving string from COM-port: " + ex);
         } catch (SerialPortTimeoutException ex) {
-            System.out.println("Timeout error: " + ex);
+            Logger.getLogger(Test.class.getName()).log(Level.INFO, null, ex);
+            try {
+                serialPort.closePort();
+            } catch (SerialPortException ex1) {
+                Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex1);
+            }
         }
         return readLine;
     }
@@ -230,9 +235,8 @@ public class Test {
             if (event.isRXCHAR() && event.getEventValue() > 0) {
                 try {
                     readLine = serialPort.readString(event.getEventValue());
-                    
-//                    System.out.println("Received response: " + receivedData);
-                    
+
+                    System.out.println("Received response: " + readLine);
 //            byte buffer[] = serialPort.readBytes(10);
 //            for (byte b: buffer) {
 //                if (b == '>') {
