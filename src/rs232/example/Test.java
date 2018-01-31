@@ -76,11 +76,11 @@ public class Test {
                     SerialPort.PARITY_NONE);
 
             serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_XONXOFF_OUT);
+            int mask = SerialPort.MASK_RXCHAR;
+            serialPort.setEventsMask(mask);
             serialPort.addEventListener(reader);
             serialPort.setRTS(false);
             serialPort.setDTR(false);
-            int mask = SerialPort.MASK_RXCHAR;
-            serialPort.setEventsMask(mask);
         } catch (SerialPortException ex) {
             System.out.println("There is an error opening port т: " + ex);
         }
