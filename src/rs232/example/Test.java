@@ -133,24 +133,25 @@ public class Test {
      * @return 
      */
     protected String testRead() {
-        boolean success = false;
-        String line = "";
-        try {
-            //openP();
-            line = serialPort.readString(128);
-            success = true;
-            serialPort.closePort();
-        } catch (SerialPortException ex) {
-            Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        if (success == true) {
-            System.out.println("Line read: " + line);
-            return line;
-        } else {
-            line = "Did not read.";
-            return line;
-        }
+//        boolean success = false;
+//        String line = "";
+//        try {
+//            //openP();
+//            line = serialPort.readString(128);
+//            success = true;
+//            serialPort.closePort();
+//        } catch (SerialPortException ex) {
+//            Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        if (success == true) {
+//            System.out.println("Line read: " + line);
+//            return line;
+//        } else {
+//            line = "Did not read.";
+//            return line;
+//        }
         
+        return "";
     }
 
     /**
