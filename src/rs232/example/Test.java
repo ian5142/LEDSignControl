@@ -199,30 +199,32 @@ public class Test {
          * Can throw a SerialPortException error
          * @param event 
          */
+        @Override
         public void serialEvent(SerialPortEvent event) {
-    if(event.isRXCHAR() && event.getEventValue() == 10){
+    if(event.isRXCHAR() && event.getEventValue() > 0){
         try {
-            byte buffer[] = serialPort.readBytes(10);
-            for (byte b: buffer) {
-                if (b == '>') {
-                    receivingMessage = true;
-                    message.setLength(0);
-                }
-                else if (receivingMessage == true) {
-                    if (b == '\r') {
-                        receivingMessage = false;
-                        String toProcess = message.toString();
-                        Platform.runLater(new Runnable() {
-                            @Override public void run() {
-                                processMessage(toProcess);
-                           }
-                        });
-                    }
-                    else {
-                        message.append((char)b);
-                    }
-                }
-            }                
+            
+//            byte buffer[] = serialPort.readBytes(10);
+//            for (byte b: buffer) {
+//                if (b == '>') {
+//                    receivingMessage = true;
+//                    message.setLength(0);
+//                }
+//                else if (receivingMessage == true) {
+//                    if (b == '\r') {
+//                        receivingMessage = false;
+//                        String toProcess = message.toString();
+//                        Platform.runLater(new Runnable() {
+//                            @Override public void run() {
+//                                processMessage(toProcess);
+//                           }
+//                        });
+//                    }
+//                    else {
+//                        message.append((char)b);
+//                    }
+//                }
+//            }                
         }
         catch (SerialPortException ex) {
             System.out.println(ex);
