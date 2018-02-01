@@ -47,3 +47,5 @@ January 31, 2018 - Various changes to testRead() and serialEvent methods in Test
                     Discussed with Brian, found my USB power traces were in the wrong places, switched VCC and GND.
                     More wiring in ExpressPCB.
 February 1, 2018 - Asked Robert for some 105 (1uF) capacitors and some large (2, 5.6, 10Mohm) resistors. He found them in the storage room.
+                    Encountered an inconvenience that I disregarded. A SOIC, which the MCP2200 is, is impossible to place in a breadboard. 
+                    After discussing with Robert and Brian, I have decided that I am going to solder wires to only the pins needed. Then place the wires in a zero-insertion-force socket to place it on the board.
