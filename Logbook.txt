@@ -50,3 +50,4 @@ February 1, 2018 - Asked Robert for some 105 (1uF) capacitors and some large (2,
                     Encountered an inconvenience that I disregarded. A SOIC, which the MCP2200 is, is impossible to place in a breadboard. 
                     After discussing with Robert and Brian, I have decided that I am going to solder wires to only the pins needed. Then place the wires in a zero-insertion-force socket to place it on the board.
                     Slight changes to wiring colours in MultSim, Tx wires are now Blue, Rx wires are now Green.
+                    Added yellow wire in MultiSim, will be yellow wires on bread board.
