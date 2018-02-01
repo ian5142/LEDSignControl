@@ -54,3 +54,4 @@ February 1, 2018 - Asked Robert for some 105 (1uF) capacitors and some large (2,
                     Attempted to solder wires to the approriate pins on the MCP2200, broke pin 1 off.
                     Ordered 2 more MCP2200-I-SO and a SOIC to DIP adapter from Arrow. Should arrive by Feb 6. Added some parts to the parts list (breadboard, adapter).
                     Added more parts and traces to ExpressPCB board design.
+                    Discussed with Robert some issues related to C5, C6, C7, and C8 placement.
