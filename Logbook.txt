@@ -51,3 +51,4 @@ February 1, 2018 - Asked Robert for some 105 (1uF) capacitors and some large (2,
                     After discussing with Robert and Brian, I have decided that I am going to solder wires to only the pins needed. Then place the wires in a zero-insertion-force socket to place it on the board.
                     Slight changes to wiring colours in MultSim, Tx wires are now Blue, Rx wires are now Green.
                     Added yellow wire in MultiSim, will be yellow wires on bread board.
+                    Attempted to solder wires to the approriate pins on the MCP2200, broke pin 1 off.
