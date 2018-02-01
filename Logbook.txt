@@ -46,3 +46,4 @@ January 29, 2018 - Added posAck and negAck for Verify mode in SeriesTwo file. Ad
 January 31, 2018 - Various changes to testRead() and serialEvent methods in Test.java, still does not read correctly. Did ask Brian a quick question about missing variable type, it was supposed to be declared as boolean (ready variable).
                     Discussed with Brian, found my USB power traces were in the wrong places, switched VCC and GND.
                     More wiring in ExpressPCB.
+February 1, 2018 - Asked Robert for some 105 (1uF) capacitors and some large (2, 5.6, 10Mohm) resistors. He found them in the storage room.
