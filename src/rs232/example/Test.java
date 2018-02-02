@@ -249,7 +249,8 @@ public class Test {
             if (event.isRXCHAR() && event.getEventValue() > 0) {
                 try {
                     String line = serialPort.readString(event.getEventValue());
-                    if (line.equals((char) 0x6 + "")) {
+                    String acknowledgeStr = 0x06 + "";
+                    if (line.equals( 0x06 + "")) {
                         acknowledge = true;
                     }
                     else {
