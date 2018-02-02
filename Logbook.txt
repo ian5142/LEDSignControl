@@ -56,3 +56,5 @@ February 1, 2018 - Asked Robert for some 105 (1uF) capacitors and some large (2,
                     Added more parts and traces to ExpressPCB board design.
                     Discussed with Robert some issues related to C5, C6, C7, and C8 placement.
                     Decided to change from R1 & T1 pins on the MAX232 to R2 & T2 pins. MultiSim schematic updated.
+February 2, 2018 - Asked Robert about programming issue with testRead() and serialEvent() methods.
+                    Robert came up with the solution to use a flag to see if the acknowledge has been checked.
