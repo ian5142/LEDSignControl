@@ -250,11 +250,11 @@ public class Test {
                 try {
                     String line = serialPort.readString(event.getEventValue());
                     String acknowledgeStr = 0x06 + "";
-                    if (line.equals( 0x06 + "")) {
+                    if (line.equals( (char) 0x06 + "")) {
                         acknowledge = true;
                     }
                     else {
-                        acknowledge = false;
+//                        acknowledge = false;
                     }
 //                    System.out.println("Received response: " + readLine);
 //            byte buffer[] = serialPort.readBytes(10);
