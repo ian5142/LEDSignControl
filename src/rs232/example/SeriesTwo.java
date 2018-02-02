@@ -142,16 +142,15 @@ public class SeriesTwo {
     }
     
     protected boolean readAck () {
-        String line = read();
-        boolean acknowledge = false;
-        if (line.equals(posAck)) {
-            System.out.print("The message was sent successfully.");
-            acknowledge = true;
-        }
-        else if (line.equals(negAck)) {
-            System.out.println("The message was not sent");
-            acknowledge = false;
-        }
+        boolean acknowledge = tester.testRead();
+//        if (line.equals(posAck)) {
+//            System.out.print("The message was sent successfully.");
+//            acknowledge = true;
+//        }
+//        else if (line.equals(negAck)) {
+//            System.out.println("The message was not sent");
+//            acknowledge = false;
+//        }
         return acknowledge;
     }
     
@@ -160,10 +159,10 @@ public class SeriesTwo {
      * @return The line read from the serial port
      */
     protected String read() {
-        System.out.println("Waiting for readline: ");
-        String line = tester.testRead();
+//        System.out.println("Waiting for readline: ");
+//        String line = tester.testRead();
         //boolean testWrite = tester.testWrite(line);
-        return line;
+        return "";
     }
     
     /**
