@@ -27,7 +27,7 @@ public class RS232Tester {
 //        System.out.println(line);
 //                try {
                     SeriesTwo test2 = new SeriesTwo();
-                    test2.read();
+                    test2.readAck();
 //            for (int j = 0; j<10; j++) {
 //                CheckDB test = new CheckDB();
 //                if (!test.selectisUpdated()) {
