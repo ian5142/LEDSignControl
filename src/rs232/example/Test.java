@@ -26,7 +26,7 @@ public class Test {
     SerialPortReader reader;
     String readLine;
     public final Object lock = new Object();
-    Boolean ready;
+    Boolean acknowledge;
 
     /**
      * Creates a serial port object
@@ -83,7 +83,7 @@ public class Test {
             serialPort.addEventListener(reader);
             serialPort.setRTS(false);
             serialPort.setDTR(false);
-            ready = true;
+            acknowledge = true;
         } catch (SerialPortException ex) {
             System.out.println("There is an error opening port т: " + ex);
         }
@@ -136,8 +136,7 @@ public class Test {
             openP();
             serialPort.writeString(message);
             success = true;
-            ready = true;
-            //serialPort.closePort();
+            serialPort.closePort();
         } catch (SerialPortException ex) {
             Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -170,19 +169,17 @@ public class Test {
 //            line = "Did not read.";
 //            return line;
 //        }
-            ready = false;
             openP();
-            synchronized(lock) {
-                while(ready == false) {
-                    lock.wait();
-                }
-            }
+            
             //serialPort.addEventListener(new SerialPortReader());
 //            readLine = serialPort.readString(10, 5000);
-            String temp = readLine;
-            readLine = "";
-            System.out.println("Read line: " + temp);
-         
+            if(acknowledge == true) {
+                System.out.println("The message was acknowledged");
+            } 
+            else {
+                System.out.println("Not acknowledged.");
+            }
+            serialPort.closePort();
         } 
 //          catch (SerialPortException ex) {
 //            System.out.println("Error in receiving string from COM-port: " + ex);
@@ -194,7 +191,7 @@ public class Test {
 //                Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex1);
 //            }
         //} 
-        catch (InterruptedException ex) {
+        catch (SerialPortException ex) {
             Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
         }
         return readLine;
@@ -251,9 +248,14 @@ public class Test {
         public void serialEvent(SerialPortEvent event) {
             if (event.isRXCHAR() && event.getEventValue() > 0) {
                 try {
-                    readLine = serialPort.readString(event.getEventValue());
-
-                    System.out.println("Received response: " + readLine);
+                    String line = serialPort.readString(event.getEventValue());
+                    if (line.equals((char) 0x6 + "")) {
+                        acknowledge = true;
+                    }
+                    else {
+                        acknowledge = false;
+                    }
+//                    System.out.println("Received response: " + readLine);
 //            byte buffer[] = serialPort.readBytes(10);
 //            for (byte b: buffer) {
 //                if (b == '>') {
