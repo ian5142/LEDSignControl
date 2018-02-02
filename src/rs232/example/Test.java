@@ -149,7 +149,7 @@ public class Test {
      *
      * @return
      */
-    protected String testRead() {
+    protected boolean testRead() {
 
         try {
             //        boolean success = false;
@@ -194,7 +194,7 @@ public class Test {
         catch (SerialPortException ex) {
             Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return readLine;
+        return acknowledge;
     }
 
     /**
