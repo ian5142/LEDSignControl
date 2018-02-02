@@ -58,3 +58,5 @@ February 1, 2018 - Asked Robert for some 105 (1uF) capacitors and some large (2,
                     Decided to change from R1 & T1 pins on the MAX232 to R2 & T2 pins. MultiSim schematic updated.
 February 2, 2018 - Asked Robert about programming issue with testRead() and serialEvent() methods.
                     Robert came up with the solution to use a flag to see if the acknowledge has been checked.
+                    Put the SeriesTwo sign back together, mostly anyway. Attached a 120V 3-wire plug.
+                    Tested the sign by plugging it in. It powers on and lights up all of the LEDs, then displays "Self Test Passed 2.50".
