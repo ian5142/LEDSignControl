@@ -25,8 +25,8 @@ public class Test {
     Boolean receivingMessage;
     SerialPortReader reader;
     String readLine;
-    public final Object lock = new Object();
     Boolean acknowledge;
+    static final char acknowledgeStr = '\u0006';
 
     /**
      * Creates a serial port object
@@ -38,6 +38,7 @@ public class Test {
         receivingMessage = false;
         reader = new SerialPortReader();
         readLine = "";
+        acknowledge = false;
     }
 
     /**
@@ -172,7 +173,8 @@ public class Test {
             openP();
             
             //serialPort.addEventListener(new SerialPortReader());
-//            readLine = serialPort.readString(10, 5000);
+            String readLine = serialPort.readString(10, 5000);
+            System.out.println(readLine + "");
             if(acknowledge == true) {
                 System.out.println("The message was acknowledged");
             } 
@@ -193,6 +195,12 @@ public class Test {
         //} 
         catch (SerialPortException ex) {
             Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SerialPortTimeoutException ex) {
+            try {
+                serialPort.closePort();
+            } catch (SerialPortException ex1) {
+                Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex1);
+            }
         }
         return acknowledge;
     }
@@ -249,8 +257,8 @@ public class Test {
             if (event.isRXCHAR() && event.getEventValue() > 0) {
                 try {
                     String line = serialPort.readString(event.getEventValue());
-                    String acknowledgeStr = 0x06 + "";
-                    if (line.equals( (char) 0x06 + "")) {
+                    
+                    if (line.equals( acknowledgeStr + acknowledgeStr + "c")) {
                         acknowledge = true;
                     }
                     else {
