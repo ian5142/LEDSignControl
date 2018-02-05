@@ -60,3 +60,4 @@ February 2, 2018 - Asked Robert about programming issue with testRead() and seri
                     Robert came up with the solution to use a flag to see if the acknowledge has been checked.
                     Put the SeriesTwo sign back together, mostly anyway. Attached a 120V 3-wire plug.
                     Tested the sign by plugging it in. It powers on and lights up all of the LEDs, then displays "Self Test Passed 2.50".
+February 5, 2018 - Tried several things in Test.java's serialEvent method, have not been able to test it successfully.
