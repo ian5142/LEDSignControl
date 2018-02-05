@@ -173,7 +173,7 @@ public class Test {
             openP();
             
             //serialPort.addEventListener(new SerialPortReader());
-            String readLine = serialPort.readString(10, 5000);
+            String readLine2 = serialPort.readString(10, 5000);
             System.out.println(readLine + "");
             if(acknowledge == true) {
                 System.out.println("The message was acknowledged");
@@ -257,9 +257,12 @@ public class Test {
             if (event.isRXCHAR() && event.getEventValue() > 0) {
                 try {
                     String line = serialPort.readString(event.getEventValue());
-                    
-                    if (line.equals( acknowledgeStr + acknowledgeStr + "c")) {
+//                    acknowledgeStr + acknowledgeStr + 
+                    System.out.println("serialEvent");
+                    if (line.equals((char) 0x6 + "")) {
                         acknowledge = true;
+                        System.out.println("Acknowledged");
+                        
                     }
                     else {
 //                        acknowledge = false;
