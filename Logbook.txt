@@ -63,3 +63,4 @@ February 2, 2018 - Asked Robert about programming issue with testRead() and seri
 February 5, 2018 - Tried several things in Test.java's serialEvent method, have not been able to test it successfully.
                     Cut off the male end of a DB9 cable. Stripped several wires until I was able to find the GND wire. Rx and Tx were easy. 
                     I looked online for DB9 colour code, the colours for Rx and Tx were correct, GND was not.
+                    Plugged in sign and tried to test serial output, it does not send anything back at the moment, it is not supposed to send anything back unless something is sent to it.
