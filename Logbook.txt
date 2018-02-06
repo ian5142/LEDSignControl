@@ -65,3 +65,4 @@ February 5, 2018 - Tried several things in Test.java's serialEvent method, have 
                     I looked online for DB9 colour code, the colours for Rx and Tx were correct, GND was not.
                     Plugged in sign and tried to test serial output, it does not send anything back at the moment, it is not supposed to send anything back unless something is sent to it.
                     Added the power cable to the Parts List.
+February 6, 2018 - Slight change to PCB, in ExpressPCB, updated C1 and C2 to the appropriate size (0.125 capacitors).
