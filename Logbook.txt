@@ -68,4 +68,5 @@ February 5, 2018 - Tried several things in Test.java's serialEvent method, have 
 February 6, 2018 - Slight change to PCB, in ExpressPCB, updated C1 and C2 to the appropriate size (0.125 capacitors).
                     Started to build circuit on breadboard. Waiting for SOIC adapter to arrive. I want to test the circuit on the bread board before ordering the PCB.
                     Added Pin numbers to MultiSim Schematic. Finished drawing the traces in ExpressPCB.
-February 7, 2018 - Determined I cut off the wrong end of the DB9 cable attached to the sign. Robert handed me a DB9 female port to solder to the end.
+February 7, 2018 - Determined I cut off the wrong end of the DB9 cable attached to the sign. Robert handed me a DB9 female port to solder to the end. 
+                    Robert would not let me cut off the correct end off new cable.
