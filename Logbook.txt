@@ -72,3 +72,4 @@ February 7, 2018 - Determined I cut off the wrong end of the DB9 cable attached 
                     Robert would not let me cut off the correct end off new cable.
                     Asked Robert some questions about how to put DB9 port kit together. Had to resolder green wire because it fell off.
                     Asked Brian about mounting hole allowances for the DB9 port. He said just use the ExpressPCB part.
+                    Changes to ExpressPCB board, changed out DB9 port for the one from default library. Added top cut line on board.
