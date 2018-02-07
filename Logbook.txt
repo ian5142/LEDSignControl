@@ -70,3 +70,4 @@ February 6, 2018 - Slight change to PCB, in ExpressPCB, updated C1 and C2 to the
                     Added Pin numbers to MultiSim Schematic. Finished drawing the traces in ExpressPCB.
 February 7, 2018 - Determined I cut off the wrong end of the DB9 cable attached to the sign. Robert handed me a DB9 female port to solder to the end. 
                     Robert would not let me cut off the correct end off new cable.
+                    Asked Robert some questions about how to put DB9 port kit together. Had to resolder green wire because it fell off.
