@@ -75,3 +75,4 @@ February 7, 2018 - Determined I cut off the wrong end of the DB9 cable attached 
                     Changes to ExpressPCB board, changed out DB9 port for the one from default library. Added top cut line on board.
 February 8, 2018 - Discussion with Robert on how to solder the MCP2200 SOIC to the SOIC-to-DIP converter. Read the instruction book that came with the converter board.
                     Soldered the chip to the board and the pin header to place on the bread board.
+                    Added USB A (male on one end and no end on other side) to Parts list. It will only be used for testing.
