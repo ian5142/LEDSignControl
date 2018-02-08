@@ -77,3 +77,4 @@ February 8, 2018 - Discussion with Robert on how to solder the MCP2200 SOIC to t
                     Soldered the chip to the board and the pin header to place on the bread board.
                     Asked Brian to check my surface soldering work, he told me to touch up two pads.
                     Added USB A (male on one end and no end on other side) to Parts list. It will only be used for testing.
+                    Cut off the end and tinned the wires of the USB cord using the solder pot.
