@@ -79,3 +79,8 @@ February 8, 2018 - Discussion with Robert on how to solder the MCP2200 SOIC to t
                     Added USB A (male on one end and no end on other side) to Parts list. It will only be used for testing.
                     Cut off the end and tinned the wires of the USB cord using the solder pot.
                     Finished building circuit on bread board, plugged in. Not tested yet, still looking for Windows 7 drivers.
+                    Tested the circuit. Can not get an oscillator signal. No device or Unknown USB device shows up in Window's Device Manager.
+                    Tried changing some things, R1 upped the Resistance, C3 changed from 424 Capacitor to 224. No change.
+                    Tried adding a pull down resistor to pin 4 (RST) on the MCP2200, also tried tying it HIGH or LOW.
+                    Removed the crystal and C1 and C2 capacitors from the circuit to try and test just the oscillator, can't figure out what signal to give it.
+                    Got Robert to look at the circuit, he suggested adding a pull up resistor to the D+ line. Have not tried this yet.
