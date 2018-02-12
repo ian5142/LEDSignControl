@@ -91,3 +91,6 @@ February 12, 2018 - Found reference to placing a 22ohm resistor on D+ and D-. Di
                     Discussed with Robert potential problems with the circuit, he believes something is missing. He suggested looking in the MCP2200 datasheet. I plan on reading more into it this week.
                     Robert also recommended plug in the pre-made USB-to-RS232 cable into the LED sign. He wants to see the sign working before I finish building the board. 
                     I plan on getting the sign and software interface working first, as he suggests.
+                    Plugged in sign and pre-made USB-to-RS232 cable. Reverted changes made to RS232Tester.java, uncommented write and CheckDB lines, commented out readAck line.
+                    Sat down with Robert and tested my pre-made serial cable on the oscilloscope. Got it to read a character of data.
+                    Brian suggested sending a single character to the screen from the computer, not Raspberry PI.
