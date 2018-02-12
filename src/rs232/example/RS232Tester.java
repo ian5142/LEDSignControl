@@ -39,7 +39,7 @@ public class RS232Tester {
                     
                     System.out.println("The message is: " + message);
                     System.out.println("Isupdated is: " + test.selectisUpdated());
-                    //boolean acknowledge = test2.readAck();
+                    boolean acknowledge = test2.readAck();
                     //System.out.println("Acknowledged: " + acknowledge);
                     test.setisUpdated();
                     System.out.println("Isupdated is: " + test.selectisUpdated());
