@@ -258,7 +258,7 @@ public class Test {
                 try {
                     String line = serialPort.readString(event.getEventValue());
 //                    acknowledgeStr + acknowledgeStr + 
-                    System.out.println("serialEvent");
+                    System.out.println("serialEvent: " + line);
                     if (line.equals((char) 0x6 + "")) {
                         acknowledge = true;
                         System.out.println("Acknowledged");
