@@ -94,3 +94,4 @@ February 12, 2018 - Found reference to placing a 22ohm resistor on D+ and D-. Di
                     Plugged in sign and pre-made USB-to-RS232 cable. Reverted changes made to RS232Tester.java, uncommented write and CheckDB lines, commented out readAck line.
                     Sat down with Robert and tested my pre-made serial cable on the oscilloscope. Got it to read a character of data.
                     Brian suggested sending a single character to the screen from the computer, not Raspberry PI.
+                    Robert and I were able to see the output on the Oscilloscope, 1ms window, 5V/div. Just clicked run/stop when noticed the data.
