@@ -85,3 +85,6 @@ February 8, 2018 - Discussion with Robert on how to solder the MCP2200 SOIC to t
                     Removed the crystal and C1 and C2 capacitors from the circuit to try and test just the oscillator, can't figure out what signal to give it.
                     Got Robert to look at the circuit, he suggested adding a pull up resistor to the D+ line. Have not tried this yet.
                     MultiSim and ExpressPCB not updated yet.
+February 12, 2018 - Found reference to placing a 22ohm resistor on D+ and D-. Did not try it yet. Tried placing a 10kohm + 470ohm resistor, with filtering capacitor to Reset (pin 4). 
+                    Did not come up in computer at all, neither USB not recognized or any new device. 
+                    Reverted circuit on breadboard and MultiSim back to what came up USB not recognized (Reset tied HIGH, nothing else).
