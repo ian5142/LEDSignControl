@@ -74,7 +74,7 @@ public class Test {
         try {
             serialPort.openPort();
             serialPort.setParams(SerialPort.BAUDRATE_9600,
-                    SerialPort.DATABITS_7,
+                    SerialPort.DATABITS_8,
                     SerialPort.STOPBITS_2,
                     SerialPort.PARITY_NONE);
 
