@@ -96,3 +96,5 @@ February 12, 2018 - Found reference to placing a 22ohm resistor on D+ and D-. Di
                     Brian suggested sending a single character to the screen from the computer, not Raspberry PI.
                     Robert and I were able to see the output on the Oscilloscope, 1ms window, 5V/div. Just clicked run/stop when noticed the data.
                     Brian recommended Bray's Terminal on Windows and Mini Terminal on Linux for serial I/O.
+                    Tried the following command: #0011#002This is a test.#00418C#013
+                    Did not work.
