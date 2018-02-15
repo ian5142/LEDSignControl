@@ -98,3 +98,4 @@ February 12, 2018 - Found reference to placing a 22ohm resistor on D+ and D-. Di
                     Brian recommended Bray's Terminal on Windows and Mini Terminal on Linux for serial I/O.
                     Tried the following command: #0011#002This is a test.#00418C#013
                     Did not work.
+February 15, 2018 - Discussed with Brian sending the sign a byte array instead of string or char. Trying to get Bray's Terminal to send info to sign. No luck yet.
