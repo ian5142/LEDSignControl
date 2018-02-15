@@ -75,10 +75,10 @@ public class Test {
             serialPort.openPort();
             serialPort.setParams(SerialPort.BAUDRATE_9600,
                     SerialPort.DATABITS_8,
-                    SerialPort.STOPBITS_2,
+                    SerialPort.STOPBITS_1,
                     SerialPort.PARITY_NONE);
 
-            serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_XONXOFF_OUT);
+            serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_NONE);
             int mask = SerialPort.MASK_RXCHAR;
             serialPort.setEventsMask(mask);
             serialPort.addEventListener(reader);
