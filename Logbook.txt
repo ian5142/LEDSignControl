@@ -101,3 +101,4 @@ February 12, 2018 - Found reference to placing a 22ohm resistor on D+ and D-. Di
 February 15, 2018 - Discussed with Brian sending the sign a byte array instead of string or char. Trying to get Bray's Terminal to send info to sign. No luck yet.
                     Tried using several different cables to send a character to the terminal (Rx and Tx tied together). It did not send. I even tried a different cable, no luck there either.
                     Sent Brian the pdf manuals for the sign (both programming and hardware).
+                    Figured out the problem, I forgot to click a Connect button (top left corner) on the Bray's Terminal screen. Now to get back to testing.
