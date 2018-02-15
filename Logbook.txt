@@ -102,3 +102,6 @@ February 15, 2018 - Discussed with Brian sending the sign a byte array instead o
                     Tried using several different cables to send a character to the terminal (Rx and Tx tied together). It did not send. I even tried a different cable, no luck there either.
                     Sent Brian the pdf manuals for the sign (both programming and hardware).
                     Figured out the problem, I forgot to click a Connect button (top left corner) on the Bray's Terminal screen. Now to get back to testing.
+                    Hooked up an oscilloscope to the ICL232CPE chip on the sign (RS232 driver), specifically the Rx pin (13) and GND.
+                    Changed to 600 baud and tried several commands. The working one was this: #002EET Marconi#003
+                    Changed it back to 9600 baud and sent the same command it worked. Next up try the same test via my program running the PI.
