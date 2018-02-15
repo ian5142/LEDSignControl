@@ -120,8 +120,9 @@ public class SeriesTwo {
      */
     protected void write (String body) {
         chksum = calculateChksum(body);    
-        String message = header + address + startMes + body + endMes + numseq + 
-                chksum + newline + CR;
+//        String message = header + address + startMes + body + endMes + numseq + 
+//                chksum + newline + CR;
+        String message = startMes + body + CR;
         boolean success = tester.testWrite(message);
         if (success) {
             boolean acknowledge = readAck();
