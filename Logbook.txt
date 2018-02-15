@@ -106,3 +106,4 @@ February 15, 2018 - Discussed with Brian sending the sign a byte array instead o
                     Changed to 600 baud and tried several commands. The working one was this: #002EET Marconi#003
                     Changed it back to 9600 baud and sent the same command it worked. Next up try the same test via my program running the PI.
                     Terminal Settings were: 8N1, 9600 baud, no handshaking.
+                    After slight changes to the SeriesTwo.java file, to copy the format sent from the PC, the sign display the message input from the MySQL database, via the webserver.
