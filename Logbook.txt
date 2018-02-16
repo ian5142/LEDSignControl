@@ -133,3 +133,4 @@ February 16, 2018 - Plan to try to send a message to the sign in Non-Verify Mode
                     Verified the output of the Pi, it is outputting exactly what the computer sends to the sign for verify mode.
                     When the first message is sent, the Pi first sends part of the message and then sends the whole thing again. It does not do this on subsequent messages.
                     Found an error, CR was set to 0x13, instead of 0xD.
+                    The working verify string is this: header + address + startMes + body + endMes + numseq + chksum + CR;
