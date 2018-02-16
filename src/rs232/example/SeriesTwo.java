@@ -122,7 +122,7 @@ public class SeriesTwo {
         chksum = calculateChksum(body);    
 //        String message = header + address + startMes + body + endMes + numseq + 
 //                chksum + newline + CR;
-        String message = startMes + body + endMes + CR;
+        String message = startMes + (char) 0x19 + body + endMes + CR;
         boolean success = tester.testWrite(message);
         if (success) {
             boolean acknowledge = readAck();
