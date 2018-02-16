@@ -134,3 +134,6 @@ February 16, 2018 - Plan to try to send a message to the sign in Non-Verify Mode
                     When the first message is sent, the Pi first sends part of the message and then sends the whole thing again. It does not do this on subsequent messages.
                     Found an error, CR was set to 0x13, instead of 0xD.
                     The working verify string is this: header + address + startMes + body + endMes + numseq + chksum + CR;
+                    Next step is to update either the java back-end or the PHP/HTML front-end to handle the 20 character max for blink/none and 120 character max for scroll.
+                    Also, java back-end does not handle scroll or blink at all. 
+                    Front-end needs a blink rework (should be blink on button and blink off button to insert the two characters).
