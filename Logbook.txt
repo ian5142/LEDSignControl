@@ -125,3 +125,4 @@ February 16, 2018 - Plan to try to send a message to the sign in Non-Verify Mode
                     Did not work on Pi: header + address + startMes + body + endMes + "4" + "8F" + CR;
                     Did not work on Pi: header + address + startMes + "This is a test" + endMes + "4" + "8F" + CR;
                     Did not work on Pi: header + address + startMes + "This is a test.3" + endMes + "3" + "C1" + CR;
+                    Did not work on Pi: header + address + startMes + "This is a test." + 3 + endMes + 3 + "C1" + CR;
