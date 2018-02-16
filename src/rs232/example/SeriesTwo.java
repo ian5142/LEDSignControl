@@ -49,7 +49,7 @@ public class SeriesTwo {
         endMes = (char) 0x4;
         seq = "1";
         numseq = 1;
-        CR = (char) 0x13;
+        CR = (char) 0xD;
         newline = (char) 0x10;
         chksum = "";
         posAck = (char) 0x6;
