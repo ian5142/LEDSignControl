@@ -127,7 +127,7 @@ public class SeriesTwo {
         char scroll = (char) 0x19;
 //        String message = (char) 0x1 + "1" + (char) 0x2 + "This is a test." + (char) 0x4 + "1" + "8C" + CR;
 //        String message = header + address + startMes + body + 3 + endMes + numseq + chksum + CR;
-        String nonVmessage = header + address + startMes + body + endMes + numseq + chksum + ETX + CR;
+        String nonVmessage = header + address + startMes + body + endMes + "2" + "8D" + CR;
         boolean success = tester.testWrite(nonVmessage);
         if (success) {
             boolean acknowledge = readAck();
