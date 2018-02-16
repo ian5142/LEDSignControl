@@ -125,8 +125,8 @@ public class SeriesTwo {
 //        String message = header + address + startMes + body + endMes + numseq + 
 //                chksum + newline + CR;
         char scroll = (char) 0x19;
-        String message = (char) 0x1 + (char) 0x31 + (char) 0x2 + "This is a test." + (char) 0x4 + (char) 0x31 + "8C" + CR;
-//        String message = header + address + startMes + body + endMes + "1" + "8C" + CR;
+//        String message = (char) 0x1 + "1" + (char) 0x2 + "This is a test." + (char) 0x4 + "1" + "8C" + CR;
+        String message = header + address + startMes + body + endMes + "1" + "8C" + CR;
         boolean success = tester.testWrite(message);
         if (success) {
             boolean acknowledge = readAck();
