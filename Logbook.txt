@@ -112,3 +112,5 @@ February 16, 2018 - Plan to try to send a message to the sign in Non-Verify Mode
                     Did not work: startMes + body + CR;
                     The following string worked: startMes + body + endMes + CR; Now to test scroll and blink.
                     Did not work: startMes + (char) 0x19 + body + endMes + CR;
+                    The following string worked in non-verify mode: header + address + startMes + scroll + body + endMes + ETX + CR;
+                    Decided to hardcode serial port into Test.java, /dev/ttyUSB0. Tested and it works fine.
