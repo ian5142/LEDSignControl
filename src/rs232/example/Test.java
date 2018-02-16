@@ -32,7 +32,7 @@ public class Test {
      * Creates a serial port object
      */
     public Test() {
-        portName = findPort();
+        portName = "/dev/ttyUSB0";
         serialPort = new SerialPort(portName);
         message = new StringBuilder();
         receivingMessage = false;
