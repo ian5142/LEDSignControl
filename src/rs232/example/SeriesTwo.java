@@ -48,7 +48,7 @@ public class SeriesTwo {
         ETX = (char) 0x3;
         endMes = (char) 0x4;
         seq = "1";
-        numseq = 0;
+        numseq = 1;
         CR = (char) 0x13;
         newline = (char) 0x10;
         chksum = "";
