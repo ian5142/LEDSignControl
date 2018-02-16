@@ -120,3 +120,4 @@ February 16, 2018 - Plan to try to send a message to the sign in Non-Verify Mode
                     Did not work: header + address + startMes + body + endMes + numseq + chksum + ETX + CR;
                     In Bray's Terminal this worked in verify mode: #0011#002This is a test.#00418C#013
                     Also: #0011#002This is a test.2#0042BF#013 and #0011#002This is a test.3#0043C1#013
+                    Set up 3 Macros in Bray's Terminal to test 3 different string in verify mode.
