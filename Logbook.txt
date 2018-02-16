@@ -129,3 +129,4 @@ February 16, 2018 - Plan to try to send a message to the sign in Non-Verify Mode
                     Went back to non-verify mode and tested the format that worked above, it still works. 
                     Went back to verify mode and tried this, did not work: header + address + startMes + body + endMes + numseq + chksum + ETX + CR;
                     Did not work on Pi: header + address + startMes + body + endMes + "2" + "8D" + CR;
+                    Decided to test the output from the Pi by connecting it to my computer instead of the sign.
