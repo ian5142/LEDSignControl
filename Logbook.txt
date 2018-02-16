@@ -111,3 +111,4 @@ February 16, 2018 - Plan to try to send a message to the sign in Non-Verify Mode
                     The following did not work: header + address + startMes + body + CR;
                     Did not work: startMes + body + CR;
                     The following string worked: startMes + body + endMes + CR; Now to test scroll and blink.
+                    Did not work: startMes + (char) 0x19 + body + endMes + CR;
