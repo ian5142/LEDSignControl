@@ -18,6 +18,7 @@ public class SeriesTwo {
     String address;
     char startMes;
 //    String body;
+    char ETX;
     char endMes;
     String seq;
     int numseq;
@@ -44,6 +45,7 @@ public class SeriesTwo {
         address = "1";
         startMes = (char) 0x2;
 //        body = "This is a Test by the way.";
+        ETX = (char) 0x3;
         endMes = (char) 0x4;
         seq = "1";
         numseq = 0;
@@ -122,7 +124,8 @@ public class SeriesTwo {
         chksum = calculateChksum(body);    
 //        String message = header + address + startMes + body + endMes + numseq + 
 //                chksum + newline + CR;
-        String message = startMes + (char) 0x19 + body + endMes + CR;
+        char scroll = (char) 0x19;
+        String message = header + address + startMes + scroll + body + endMes + ETX + CR;
         boolean success = tester.testWrite(message);
         if (success) {
             boolean acknowledge = readAck();
