@@ -117,3 +117,4 @@ February 16, 2018 - Plan to try to send a message to the sign in Non-Verify Mode
                     Decided to hardcode serial port into Test.java, /dev/ttyUSB0. Tested and it works fine.
                     Tried verify mode using this string, did not work: header + address + startMes + scroll + body + endMes + numseq + chksum + ETX + CR;
                     Did not work: header + address + startMes + body + endMes + numseq + chksum + CR;
+                    Did not work: header + address + startMes + body + endMes + numseq + chksum + ETX + CR;
