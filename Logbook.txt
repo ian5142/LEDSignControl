@@ -137,3 +137,6 @@ February 16, 2018 - Plan to try to send a message to the sign in Non-Verify Mode
                     Next step is to update either the java back-end or the PHP/HTML front-end to handle the 20 character max for blink/none and 120 character max for scroll.
                     Also, java back-end does not handle scroll or blink at all. 
                     Front-end needs a blink rework (should be blink on button and blink off button to insert the two characters).
+February 18, 2018 - Started changing the PHP front end to better handle Blinking. 
+                    Added Blink ON and Blink OFF buttons, not yet tested. 
+                    Removed Blink ON radio button.
