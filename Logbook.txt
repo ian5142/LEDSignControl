@@ -144,3 +144,4 @@ February 20, 2018 - Talked to Brian this morning. He informed me that I had the 
                     He was able to get the sign to work in terminal mode via the Arduino.
                     Tested PHP front-end, Blink ON and Blink OFF buttons do not work.
                     Asked Brian about how to concatenate strings in PHP. He was not sure on it.
+                    Trying this instead of +: "$message .= "~^|""
