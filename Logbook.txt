@@ -147,3 +147,5 @@ February 20, 2018 - Talked to Brian this morning. He informed me that I had the 
                     Trying this instead of +: "$message .= "~^|""
                     Did not work, trying this instead: "this.form.message.value .= "...
                     Trying this: "this.form.message.value = this.form.value.concat("|^~");"
+                    Got an error message: The requested URL /name="form""/index.php" was not found on this server.
+                    I added a name to the form and it did not like it.
