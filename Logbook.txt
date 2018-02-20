@@ -155,3 +155,12 @@ February 20, 2018 - Talked to Brian this morning. He informed me that I had the 
                     Found a good example online and started to implement it.
                     https://stackoverflow.com/questions/13941055/add-a-string-of-text-into-an-input-field-when-user-clicks-a-button
                     Installed Firefox on the Raspberry Pi. Still can't get the javascript code to add text via buttons.
+                    Tried various things in javascript.
+                    This ended up working: 
+                        function blinkONtext() {
+                            var newtext = document.form1.message.value;
+                            document.form1.message.value += "~|^";
+                        }
+                        <form name="form1">
+                        <input type="button" value="Blink ON" id="button" onClick="blinkONtext()"/>
+                        </form>
