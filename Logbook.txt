@@ -164,3 +164,7 @@ February 20, 2018 - Talked to Brian this morning. He informed me that I had the 
                         <form name="form1">
                         <input type="button" value="Blink ON" id="button" onClick="blinkONtext()"/>
                         </form>
+                    Robert provided me with a power plug to plug the sign into for easy sign Resetting.
+                    Added it to parts list.
+                    Tested the above code and it appends the appropriate string to what is already in the textbox.
+                    Next step is to add the Java code to handle the Scroll and Blink
