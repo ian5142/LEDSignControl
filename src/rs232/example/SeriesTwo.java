@@ -195,14 +195,13 @@ public class SeriesTwo {
     
     private String checkBlink (String body) {
         String blinkfix = body;
-        int blinkONindex = 0;
-        int blinkOFFindex = 0;
         if (body.contains("~|^")) {
             blinkfix = blinkfix.replaceAll("~|^", (char) 0x10 + "");
         }
         if (body.contains("^|~")) {
             blinkfix = blinkfix.replaceAll("^|~", (char) 0x12 + "");
         }
+        System.out.println("Blink fix: " + blinkfix);
         return blinkfix;
     }
 }
