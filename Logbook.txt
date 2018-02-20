@@ -143,3 +143,4 @@ February 18, 2018 - Started changing the PHP front end to better handle Blinking
 February 20, 2018 - Talked to Brian this morning. He informed me that I had the Tx line in the wrong spot on the sign. 
                     He was able to get the sign to work in terminal mode via the Arduino.
                     Tested PHP front-end, Blink ON and Blink OFF buttons do not work.
+                    Asked Brian about how to  concatenate strings in PHP. He was not sure on it.
