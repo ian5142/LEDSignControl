@@ -140,3 +140,5 @@ February 16, 2018 - Plan to try to send a message to the sign in Non-Verify Mode
 February 18, 2018 - Started changing the PHP front end to better handle Blinking. 
                     Added Blink ON and Blink OFF buttons, not yet tested. 
                     Removed Blink ON radio button.
+February 20, 2018 - Talked to Brian this morning. He informed me that I had the Tx line in the wrong spot on the sign. 
+                    He was able to get the sign to work in terminal mode via the Arduino.
