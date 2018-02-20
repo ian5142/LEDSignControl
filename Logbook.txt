@@ -171,3 +171,4 @@ February 20, 2018 - Talked to Brian this morning. He informed me that I had the 
                     Scroll code was slightly changed to handle hex correctly.
                     Added a checkBlink method to replace ^|~ and ~|^ with the respective control codes (0x10 and 0x12). 
                     Not tested yet.
+                    Neither blink or scroll work at the moment. Going to test the format using Bray's Terminal.
