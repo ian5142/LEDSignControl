@@ -125,6 +125,7 @@ public class SeriesTwo {
 //        String message = header + address + startMes + body + endMes + numseq + 
 //                chksum + newline + CR;
         char scroll = (char) 0x19;
+        body = checkBlink(body);
 //        String message = (char) 0x1 + "1" + (char) 0x2 + "This is a test." + (char) 0x4 + "1" + "8C" + CR;
 //        String message = header + address + startMes + body + 3 + endMes + numseq + chksum + CR;
         String message = header + address + startMes + body + endMes + numseq + chksum + CR;
@@ -190,5 +191,18 @@ public class SeriesTwo {
         else {
             
         }
+    }
+    
+    private String checkBlink (String body) {
+        String blinkfix = body;
+        int blinkONindex = 0;
+        int blinkOFFindex = 0;
+        if (body.contains("~|^")) {
+            blinkfix = blinkfix.replaceAll("~|^", (char) 0x10 + "");
+        }
+        if (body.contains("^|~")) {
+            blinkfix = blinkfix.replaceAll("^|~", (char) 0x12 + "");
+        }
+        return blinkfix;
     }
 }
