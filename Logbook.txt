@@ -145,3 +145,4 @@ February 20, 2018 - Talked to Brian this morning. He informed me that I had the 
                     Tested PHP front-end, Blink ON and Blink OFF buttons do not work.
                     Asked Brian about how to concatenate strings in PHP. He was not sure on it.
                     Trying this instead of +: "$message .= "~^|""
+                    Did not work, trying this instead: "this.form.message.value .= "...
