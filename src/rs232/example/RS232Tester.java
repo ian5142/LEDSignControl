@@ -33,7 +33,7 @@ public class RS232Tester {
                 if (!test.selectisUpdated()) {
                     String message = test.selectMessage();
                     if (test.selectscrollON())  {
-                        message = Character.toString((char) 0x19) + message;
+                        message = (char) 0x19 + message;
                     }
                     test2.write(message);
                     
