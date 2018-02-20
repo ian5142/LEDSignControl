@@ -150,3 +150,6 @@ February 20, 2018 - Talked to Brian this morning. He informed me that I had the 
                     Got an error message: The requested URL /name="form""/index.php" was not found on this server.
                     I added a name to the form and it did not like it.
                     Did not work, trying this instead: onClick="this.form.message.value=this.form.value.concat('~^|');"
+                    Also did not work.
+                    Discussion with Brian, determined that I need to use javascript instead of PHP to handle the blinkON and blinkOFF buttons.
+                    Found a good example online and started to implement it.
