@@ -146,3 +146,4 @@ February 20, 2018 - Talked to Brian this morning. He informed me that I had the 
                     Asked Brian about how to concatenate strings in PHP. He was not sure on it.
                     Trying this instead of +: "$message .= "~^|""
                     Did not work, trying this instead: "this.form.message.value .= "...
+                    Trying this: "this.form.message.value = this.form.value.concat("|^~");"
