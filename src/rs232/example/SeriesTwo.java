@@ -142,7 +142,7 @@ public class SeriesTwo {
                     write(body);
                 }
             }
-        }
+//        } //end of for lopp.
 
 //        String s = "";
 //        for (int i = 0; i < message.length(); i++) {
