@@ -138,12 +138,12 @@ public class SeriesTwo {
 //        String message = header + address + startMes + body + 3 + endMes + numseq + chksum + CR;
             String message = header + address + startMes + scroll + body + endMes + numseq + chksum + CR;
             boolean success = tester.testWrite(message);
-            if (success) {
-                boolean acknowledge = readAck();
-                while (!acknowledge) {
-                    write(body);
-                }
-            }
+//            if (success) {
+//                boolean acknowledge = readAck();
+//                while (!acknowledge) {
+//                    write(body);
+//                }
+//            }
             try {
                 Thread.sleep(500);
             } catch (InterruptedException ex) {
