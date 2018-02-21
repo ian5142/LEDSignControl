@@ -126,10 +126,11 @@ public class SeriesTwo {
      * @param body The message to write to the screen.
      */
     protected void write(String body) {
-        chksum = calculateChksum(body);
+        
 //        String message = header + address + startMes + body + endMes + numseq + 
 //                chksum + newline + CR;
         for (int scroll = 0x6 ; scroll < 128 ; scroll++) {
+            chksum = calculateChksum(body + scroll);
 //            body = checkBlink(body);
 //        String message = (char) 0x1 + "1" + (char) 0x2 + "This is a test." + (char) 0x4 + "1" + "8C" + CR;
 //        String message = header + address + startMes + body + 3 + endMes + numseq + chksum + CR;
