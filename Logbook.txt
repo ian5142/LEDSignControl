@@ -185,3 +185,5 @@ February 21, 2018 - Testing Scroll in verify mode on Bray's Terminal.
                     Did not work: #0011#002#025This is a test.#004#013
                     Decided to test via the Raspberry Pi instead, in verify mode.
                     Changed the hex code to 0x25 in RS232Tester.java, displays %Hello (when sent Hello and scroll).
+                    Tried looping through all of the hex values between 0x6 and 0x128. 
+                    Nothing displayed on the screen (just SELFTEST message).
