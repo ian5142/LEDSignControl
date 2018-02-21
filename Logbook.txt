@@ -187,3 +187,6 @@ February 21, 2018 - Testing Scroll in verify mode on Bray's Terminal.
                     Changed the hex code to 0x25 in RS232Tester.java, displays %Hello (when sent Hello and scroll).
                     Tried looping through all of the hex values between 0x6 and 0x128. 
                     Nothing displayed on the screen (just SELFTEST message).
+                    Commented out for loop and tested write again, it writes fine without any scroll.
+                    Uncomment all of the for loop stuff and test again. Did not work.
+                    Changed scroll from int to char, added Thread.sleep so that I may see the scroll.
