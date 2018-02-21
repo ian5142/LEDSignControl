@@ -11,9 +11,11 @@ import javax.xml.bind.DatatypeConverter;
 
 /**
  * Creates string to send via RS232 via serial.
+ *
  * @author Ian Van Schaick
  */
 public class SeriesTwo {
+
     char header;
     String address;
     char startMes;
@@ -28,19 +30,19 @@ public class SeriesTwo {
     Test tester;
     char posAck;
     char negAck;
-    
+
     /**
-     * Calls init() method and creates a Test object 
+     * Calls init() method and creates a Test object
      */
-    public SeriesTwo () {
+    public SeriesTwo() {
         init();
         tester = new Test();
     }
-    
+
     /**
      * initializes all of the variables
      */
-    private void init () {
+    private void init() {
         header = (char) 0x1;
         address = "1";
         startMes = (char) 0x2;
@@ -55,87 +57,92 @@ public class SeriesTwo {
         posAck = (char) 0x6;
         negAck = (char) 0x15;
     }
-    
+
     /**
      * Calculates the checksum from a given String body
+     *
      * @param body The string to calculate a checksum for
      * @return The checksum in String format
      */
-    protected String calculateChksum (String body) {
+    protected String calculateChksum(String body) {
         System.out.println("Body: " + body);
         int hexHeader = 1;
-        
+
         ArrayList<String> addressArray = toHex(address);
-        
+
         long hexAddress = Long.parseLong(addressArray.get(0) + "", 16);
         int hexStartMes = Integer.parseInt("02", 16);
         int hexEndMes = Integer.parseInt("04", 16);
-        
+
         ArrayList<String> seqArray = toHex(seq);
-        
+
         long hexSeq = Long.parseLong(seqArray.get(0) + "", 16);
         long sum = hexHeader + hexAddress + hexStartMes + hexEndMes + hexSeq;
-        
+
         ArrayList<String> bodyArray = toHex(body);
-        
+
         long hexBody = 0;
-        for (int i = 0 ; i < bodyArray.size() ; i++) {
+        for (int i = 0; i < bodyArray.size(); i++) {
             long l = Long.parseLong(bodyArray.get(i) + "", 16);
             hexBody += l;
         }
-        
+
         sum += hexBody;
         sum = sum % 256;
-        
+
         String checksum = Long.toHexString(sum);
         checksum = checksum.toUpperCase();
-        
+
         System.out.println("This is the final sum in hex: " + checksum);
         return checksum;
     }
-    
+
     /**
      * Converts a String to a hexadecimal value
+     *
      * @param arg The string to be converted
      * @return The string in hexadecimal format
      */
     protected ArrayList<String> toHex(String arg) {
         String s;
         s = DatatypeConverter.printHexBinary(arg.getBytes(StandardCharsets.US_ASCII));
-        ArrayList<String> hexBody = new ArrayList<>(s.length() );
+        ArrayList<String> hexBody = new ArrayList<>(s.length());
         System.out.println(s);
-        
-        char [] hexbody2 = s.toCharArray();
-        
+
+        char[] hexbody2 = s.toCharArray();
+
         int length = s.length();
-        
-        for (int i = 0 ; i < length ; ) {
-            hexBody.add( s.substring(i, i+2) );
+
+        for (int i = 0; i < length;) {
+            hexBody.add(s.substring(i, i + 2));
             i += 2;
         }
         return hexBody;
     }
-    
+
     /**
      * Creates the final Message, sends it to the Test object
+     *
      * @param body The message to write to the screen.
      */
-    protected void write (String body) {
-        chksum = calculateChksum(body);    
+    protected void write(String body) {
+        chksum = calculateChksum(body);
 //        String message = header + address + startMes + body + endMes + numseq + 
 //                chksum + newline + CR;
-        char scroll = (char) 0x19;
-        body = checkBlink(body);
+        for (int scroll = 0x6; scroll < 100; scroll++) {
+            body = checkBlink(body);
 //        String message = (char) 0x1 + "1" + (char) 0x2 + "This is a test." + (char) 0x4 + "1" + "8C" + CR;
 //        String message = header + address + startMes + body + 3 + endMes + numseq + chksum + CR;
-        String message = header + address + startMes + scroll + body + endMes + numseq + chksum + CR;
-        boolean success = tester.testWrite(message);
-        if (success) {
-            boolean acknowledge = readAck();
-            while(! acknowledge) {
-                write(body);
+            String message = header + address + startMes + scroll + body + endMes + numseq + chksum + CR;
+            boolean success = tester.testWrite(message);
+            if (success) {
+                boolean acknowledge = readAck();
+                while (!acknowledge) {
+                    write(body);
+                }
             }
         }
+
 //        String s = "";
 //        for (int i = 0; i < message.length(); i++) {
 //            char [] array = message.toCharArray();
@@ -147,8 +154,8 @@ public class SeriesTwo {
 //        System.out.println(s);
         checkSeq();
     }
-    
-    protected boolean readAck () {
+
+    protected boolean readAck() {
         boolean acknowledge = tester.testRead();
 //        if (line.equals(posAck)) {
 //            System.out.print("The message was sent successfully.");
@@ -160,9 +167,10 @@ public class SeriesTwo {
 //        }
         return acknowledge;
     }
-    
+
     /**
      * Tries to read a line from the serial port
+     *
      * @return The line read from the serial port
      */
     protected String read() {
@@ -171,29 +179,26 @@ public class SeriesTwo {
         //boolean testWrite = tester.testWrite(line);
         return "";
     }
-    
+
     /**
      * Updates the sequence number, numseq.
      */
-    private void checkSeq () {
+    private void checkSeq() {
         if (numseq == 9) {
             numseq = 0;
             seq = numseq + "";
-        }
-        else if (numseq >= 1) {
+        } else if (numseq >= 1) {
             numseq++;
             seq = numseq + "";
-        }
-        else if (numseq == 0) {
+        } else if (numseq == 0) {
             numseq++;
             seq = numseq + "";
-        }
-        else {
-            
+        } else {
+
         }
     }
-    
-    private String checkBlink (String body) {
+
+    private String checkBlink(String body) {
         String blinkfix = body;
         if (body.contains("~|^")) {
             blinkfix = blinkfix.replaceAll("~|^", (char) 0x10 + "");
