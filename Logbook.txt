@@ -174,3 +174,7 @@ February 20, 2018 - Talked to Brian this morning. He informed me that I had the 
                     Neither blink or scroll work at the moment. Going to test the format using Bray's Terminal.
                     Tried sending via Bray's Terminal this, did not work: #0011#002#019This is a test.2#0042D8#013
                     Got a NAK from the sign.
+February 21, 2018 - Testing Scroll in verify mode on Bray's Terminal.
+                    This did not work: #0011#002#019This is a test.#0041A5#013
+                    Nor this: #0011#002#019This is a test.#004#0031A8#013
+                    Nor this: #0011#002#019This is a test.#003#0041A8#013
