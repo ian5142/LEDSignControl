@@ -180,3 +180,6 @@ February 21, 2018 - Testing Scroll in verify mode on Bray's Terminal.
                     Nor this: #0011#002#019This is a test.#003#0041A8#013
                     In non-verify mode this worked for scrolled text: #0011#002#025This is a test.#004#003#013
                     Note, scroll character is 0x25, not 0x19 like the manual is says.
+                    Changed back to verify mode and test with this: #0011#002#025This is a test.#0041B1#003#013 (did not work)
+                    Tried all of the hex values between 0x19 and 0x26 (none work), each time changed the checksum to match.
+                    Did not work: #0011#002#025This is a test.#004#013
