@@ -7,6 +7,8 @@ package rs232.example;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.xml.bind.DatatypeConverter;
 
 /**
@@ -129,7 +131,7 @@ public class SeriesTwo {
         
 //        String message = header + address + startMes + body + endMes + numseq + 
 //                chksum + newline + CR;
-        for (int scroll = 0x6 ; scroll < 0x7F ; scroll++) {
+        for (char scroll = (char) 0x6 ; scroll < 0x7F ; scroll++) {
             chksum = calculateChksum(body + scroll);
 //            body = checkBlink(body);
 //        String message = (char) 0x1 + "1" + (char) 0x2 + "This is a test." + (char) 0x4 + "1" + "8C" + CR;
@@ -141,6 +143,11 @@ public class SeriesTwo {
                 while (!acknowledge) {
                     write(body);
                 }
+            }
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(SeriesTwo.class.getName()).log(Level.SEVERE, null, ex);
             }
         } //end of for loop.
 
