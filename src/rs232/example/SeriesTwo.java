@@ -129,12 +129,12 @@ public class SeriesTwo {
         
 //        String message = header + address + startMes + body + endMes + numseq + 
 //                chksum + newline + CR;
-//        for (int scroll = 0x6 ; scroll < 128 ; scroll++) {
-            chksum = calculateChksum(body);
+        for (int scroll = 0x6 ; scroll < 0x7F ; scroll++) {
+            chksum = calculateChksum(body + scroll);
 //            body = checkBlink(body);
 //        String message = (char) 0x1 + "1" + (char) 0x2 + "This is a test." + (char) 0x4 + "1" + "8C" + CR;
 //        String message = header + address + startMes + body + 3 + endMes + numseq + chksum + CR;
-            String message = header + address + startMes + body + endMes + numseq + chksum + CR;
+            String message = header + address + startMes + scroll + body + endMes + numseq + chksum + CR;
             boolean success = tester.testWrite(message);
             if (success) {
                 boolean acknowledge = readAck();
@@ -142,7 +142,7 @@ public class SeriesTwo {
                     write(body);
                 }
             }
-//        } //end of for lopp.
+        } //end of for loop.
 
 //        String s = "";
 //        for (int i = 0; i < message.length(); i++) {
