@@ -190,3 +190,4 @@ February 21, 2018 - Testing Scroll in verify mode on Bray's Terminal.
                     Commented out for loop and tested write again, it writes fine without any scroll.
                     Uncomment all of the for loop stuff and test again. Did not work.
                     Changed scroll from int to char, added Thread.sleep so that I may see the scroll.
+                    Did not work, I let the for loop go to 0x27 but it never did scroll or change the display.
