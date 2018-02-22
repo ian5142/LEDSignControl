@@ -140,8 +140,10 @@ public class SeriesTwo {
 //        String message = (char) 0x1 + "1" + (char) 0x2 + "This is a test." + (char) 0x4 + "1" + "8C" + CR;
 //        String message = header + address + startMes + body + 3 + endMes + numseq + chksum + CR;
         String message;
+        System.out.println("Scroll ON: " + scroll);
         if (scroll) {
-            message = header + address + startMes + "25" + body + endMes + numseq + chksum + CR;
+            char scrollChar = (char) 0x19;
+            message = header + address + startMes + scrollChar + body + endMes + numseq + chksum + CR;
         }
         else {
             message = header + address + startMes + body + endMes + numseq + chksum + CR;
