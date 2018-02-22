@@ -196,3 +196,4 @@ February 22, 2018 - Discussed with Brian possible solutions to scrolling in veri
                     Wrote a CheckSumCalc java program to calculate the check sum of a typed in text and scroll character. 
                     Tested it with just the body and it output the correct checksum.
                     The checksum calculated was the same as what I calculated manually yesterday, A5 if a scroll character is 0x19.
+                    Tested other strings without the scroll character and they display fine with the calculated checksum.
