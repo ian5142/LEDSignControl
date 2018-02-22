@@ -66,7 +66,7 @@ public class SeriesTwo {
      * @param body The string to calculate a checksum for
      * @return The checksum in String format
      */
-    protected String calculateChksum(String body) {
+    protected String calculateChksum(String body, boolean scroll) {
         System.out.println("Body: " + body);
         int hexHeader = 0x1;
 
@@ -80,7 +80,11 @@ public class SeriesTwo {
 
         long hexSeq = Long.parseLong(seqArray.get(0) + "", 16);
         long sum = hexHeader + hexAddress + hexStartMes + hexEndMes + hexSeq;
-
+        if (scroll) {
+            int scrollint = 25;
+            sum += scrollint;
+        }
+            
         ArrayList<String> bodyArray = toHex(body);
 
         long hexBody = 0;
@@ -131,8 +135,8 @@ public class SeriesTwo {
         
 //        String message = header + address + startMes + body + endMes + numseq + 
 //                chksum + newline + CR;
-        for (char scroll = (char) 0x6 ; scroll < 0x7F ; scroll++) {
-            chksum = calculateChksum(scroll + body);
+            boolean scroll = true;
+            chksum = calculateChksum(body, scroll);
 //            body = checkBlink(body);
 //        String message = (char) 0x1 + "1" + (char) 0x2 + "This is a test." + (char) 0x4 + "1" + "8C" + CR;
 //        String message = header + address + startMes + body + 3 + endMes + numseq + chksum + CR;
@@ -144,12 +148,6 @@ public class SeriesTwo {
 //                    write(body);
 //                }
 //            }
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(SeriesTwo.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } //end of for loop.
 
 //        String s = "";
 //        for (int i = 0; i < message.length(); i++) {
