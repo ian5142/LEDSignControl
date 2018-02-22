@@ -242,12 +242,12 @@ public class SeriesTwo {
             blinkfix.add(current);
         }
         for (int j = 0 ; j < body.length() ; ) {
-            if (j == blinkON) {
+            if (j == blinkON && blinkON != 0) {
                 blinkfix.remove(j+1);
                 blinkfix.remove(j+2);
                 j += 2;
             }
-            else if (j == blinkOFF) {
+            else if (j == blinkOFF && blinkOFF != 0) {
                 blinkfix.remove(j+1);
                 blinkfix.remove(j+2);
                 j += 2;
