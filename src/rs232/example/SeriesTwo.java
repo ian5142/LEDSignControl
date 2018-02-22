@@ -68,7 +68,6 @@ public class SeriesTwo {
      * @return The checksum in String format
      */
     protected String calculateChksum(String body, boolean scroll) {
-        System.out.println("Body: " + body);
         int hexHeader = 0x1;
 
         ArrayList<String> addressArray = toHex(address);
@@ -114,7 +113,6 @@ public class SeriesTwo {
         String s;
         s = DatatypeConverter.printHexBinary(arg.getBytes(StandardCharsets.US_ASCII));
         ArrayList<String> hexBody = new ArrayList<>(s.length());
-        System.out.println(s);
 
         char[] hexbody2 = s.toCharArray();
 
