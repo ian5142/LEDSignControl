@@ -136,7 +136,7 @@ public class SeriesTwo {
 //        String message = header + address + startMes + body + endMes + numseq + 
 //                chksum + newline + CR;
         chksum = calculateChksum(body, scroll);
-//            body = checkBlink(body);
+        body = checkBlink(body);
 //        String message = (char) 0x1 + "1" + (char) 0x2 + "This is a test." + (char) 0x4 + "1" + "8C" + CR;
 //        String message = header + address + startMes + body + 3 + endMes + numseq + chksum + CR;
         String message;
@@ -144,8 +144,7 @@ public class SeriesTwo {
         if (scroll) {
             char scrollChar = (char) 0x19;
             message = header + address + startMes + scrollChar + body + endMes + numseq + chksum + CR;
-        }
-        else {
+        } else {
             message = header + address + startMes + body + endMes + numseq + chksum + CR;
         }
         boolean success = tester.testWrite(message);
