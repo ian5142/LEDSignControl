@@ -199,3 +199,6 @@ February 22, 2018 - Discussed with Brian possible solutions to scrolling in veri
                     Tested other strings without the scroll character and they display fine with the calculated checksum.
                     Brian did suggest to verify that this specific model of the Series Two sign supports scroll and blink.
                     Made small changes to calculateChksum method, no change in calculated checksum though.
+                    Tried Blink ON and Blink OFF using Bray's Terminal and calculated checksum.
+                    Tried reversing 0x10 and 0x12, placing them at start and end of body, placing them around a single word, etc.
+                    Nothing worked.
