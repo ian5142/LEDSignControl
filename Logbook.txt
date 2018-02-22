@@ -221,3 +221,4 @@ February 22, 2018 - Discussed with Brian possible solutions to scrolling in veri
                     Working scroll code:    char scrollChar = (char) 0x19;
                                             message = header + address + startMes + scrollChar + body + endMes + numseq + chksum + CR;
                     Determined that LED Display Message webpage must be reloaded before a new message is sent.
+                    Discussion with Robert and Brian about what to do with Blink. Decided Character array is the best option.
