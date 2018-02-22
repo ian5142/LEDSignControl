@@ -220,11 +220,11 @@ public class SeriesTwo {
         }
         for (int i = 0; i < body.length(); i++) {
             char current = body.charAt(i);
-            if ( i == blinkON ) {
+            if ( i == blinkON && blinkON != 0) {
                 current = (char) 0x10;
                 i += 2;
             }
-            if ( i == blinkOFF ) {
+            if ( i == blinkOFF && blinkOFF != 0) {
                 current = (char) 0x12;
                 i += 2;
             }
