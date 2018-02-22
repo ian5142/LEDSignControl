@@ -213,11 +213,9 @@ public class SeriesTwo {
     private String checkBlink(String body) {
         ArrayList<Character> blinkfix = new ArrayList<Character>();
         int blinkON = 0;
-        if (body.contains("~|^")) {
-            blinkON = body.indexOf("~|^");
-        }
         int blinkOFF = 0;
-        if (body.contains("^|~")) {
+        if (body.contains("~|^") && body.contains("^|~")) {
+            blinkON = body.indexOf("~|^");
             blinkOFF = body.indexOf("^|~");
         }
         for (int i = 0; i < body.length(); i++) {
