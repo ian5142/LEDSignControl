@@ -212,3 +212,4 @@ February 22, 2018 - Discussed with Brian possible solutions to scrolling in veri
                     The following worked in Bray's Terminal, in verify mode (scroll character is 25 decimal, 0x19: #0011#002#025This is a test.#0041A5#013
                     #000 is decimal in Bray's Terminal, $00 is hex.
                     Blink mode also works in verify mode: #0011#002This is a $10test$12.#0041AE#013
+                    Now that I know the format, I will update the java code to match.
