@@ -252,6 +252,9 @@ public class SeriesTwo {
                 blinkfix.remove(j+2);
                 j += 2;
             }
+            else {
+                j++;
+            }
         }
 //        if (body.contains("~|^")) {
 //            blinkfix = blinkfix.replaceAll("~|^", (char) 0x10 + "");
