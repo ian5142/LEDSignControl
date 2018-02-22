@@ -212,19 +212,19 @@ public class SeriesTwo {
 
     private String checkBlink(String body) {
         ArrayList<Character> blinkfix = new ArrayList<Character>();
-        int blinkON = 0;
-        int blinkOFF = 0;
+        int blinkON = -1;
+        int blinkOFF = -1;
         if (body.contains("~|^") && body.contains("^|~")) {
             blinkON = body.indexOf("~|^");
             blinkOFF = body.indexOf("^|~");
         }
         for (int i = 0; i < body.length(); i++) {
             char current = body.charAt(i);
-            if ( i == blinkON && blinkON != 0) {
+            if ( i == blinkON && blinkON != -1) {
                 current = (char) 0x10;
                 i += 2;
             }
-            if ( i == blinkOFF && blinkOFF != 0) {
+            if ( i == blinkOFF && blinkOFF != -1) {
                 current = (char) 0x12;
                 i += 2;
             }
