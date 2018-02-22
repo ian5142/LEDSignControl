@@ -222,9 +222,11 @@ public class SeriesTwo {
             char current = body.charAt(i);
             if ( i == blinkON ) {
                 current = (char) 0x10;
+                i += 2;
             }
             if ( i == blinkOFF ) {
                 current = (char) 0x12;
+                i += 2;
             }
 //            if (current == '~') {
 //                if ((i + 1) < body.length()) {
@@ -239,21 +241,21 @@ public class SeriesTwo {
 //            }
             blinkfix.add(current);
         }
-        for (int j = 0 ; j < body.length() ; ) {
-            if (j == blinkON && blinkON != 0) {
-                blinkfix.remove(j+1);
-                blinkfix.remove(j+2);
-                j += 2;
-            }
-            else if (j == blinkOFF && blinkOFF != 0) {
-                blinkfix.remove(j+1);
-                blinkfix.remove(j+2);
-                j += 2;
-            }
-            else {
-                j++;
-            }
-        }
+//        for (int j = 0 ; j < body.length() ; ) {
+//            if (j == blinkON && blinkON != 0) {
+//                blinkfix.remove(j+1);
+//                blinkfix.remove(j+2);
+//                j += 2;
+//            }
+//            else if (j == blinkOFF && blinkOFF != 0) {
+//                blinkfix.remove(j+1);
+//                blinkfix.remove(j+2);
+//                j += 2;
+//            }
+//            else {
+//                j++;
+//            }
+//        }
 //        if (body.contains("~|^")) {
 //            blinkfix = blinkfix.replaceAll("~|^", (char) 0x10 + "");
 //        }
