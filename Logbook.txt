@@ -204,3 +204,6 @@ February 22, 2018 - Discussed with Brian possible solutions to scrolling in veri
                     Nothing worked.
                     Went back to scroll. The following worked in non-verify mode: #0011#002#025This is a test.#004#003#013 
                     Note: scroll character is 0x25 not 0x19 as per manual
+                    When a checksum is added in non-verify mode it still displays correctly.
+                    The checksum was added between #004 and #003.
+                    My guess is that it just does not check the checksum.
