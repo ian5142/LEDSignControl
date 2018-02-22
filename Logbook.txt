@@ -198,3 +198,4 @@ February 22, 2018 - Discussed with Brian possible solutions to scrolling in veri
                     The checksum calculated was the same as what I calculated manually yesterday, A5 if a scroll character is 0x19.
                     Tested other strings without the scroll character and they display fine with the calculated checksum.
                     Brian did suggest to verify that this specific model of the Series Two sign supports scroll and blink.
+                    Made small changes to calculateChksum method, no change in calculated checksum though.
