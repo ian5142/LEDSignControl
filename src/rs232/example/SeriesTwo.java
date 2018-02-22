@@ -132,7 +132,7 @@ public class SeriesTwo {
 //        String message = header + address + startMes + body + endMes + numseq + 
 //                chksum + newline + CR;
         for (char scroll = (char) 0x6 ; scroll < 0x7F ; scroll++) {
-            chksum = calculateChksum(body + scroll);
+            chksum = calculateChksum(scroll + body);
 //            body = checkBlink(body);
 //        String message = (char) 0x1 + "1" + (char) 0x2 + "This is a test." + (char) 0x4 + "1" + "8C" + CR;
 //        String message = header + address + startMes + body + 3 + endMes + numseq + chksum + CR;
@@ -145,7 +145,7 @@ public class SeriesTwo {
 //                }
 //            }
             try {
-                Thread.sleep(500);
+                Thread.sleep(200);
             } catch (InterruptedException ex) {
                 Logger.getLogger(SeriesTwo.class.getName()).log(Level.SEVERE, null, ex);
             }
