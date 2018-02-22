@@ -83,6 +83,7 @@ public class SeriesTwo {
         if (scroll) {
             int scrollint = 25;
             sum += scrollint;
+            sum -= 1;
         }
 
         ArrayList<String> bodyArray = toHex(body);
