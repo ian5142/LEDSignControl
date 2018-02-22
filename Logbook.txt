@@ -207,3 +207,7 @@ February 22, 2018 - Discussed with Brian possible solutions to scrolling in veri
                     When a checksum is added in non-verify mode it still displays correctly.
                     The checksum was added between #004 and #003.
                     My guess is that it just does not check the checksum.
+                    Tried the same string: #0011#002#025This is a test.#0041B1#003#013 in verify mode and it did not respond at all.
+                    Changed back to non-verify mode to try and find the correct Blink characters.
+                    The following worked in Bray's Terminal, in verify mode (scroll character is 25 decimal, 0x19: #0011#002#025This is a test.#0041A5#013
+                    #000 is decimal in Bray's Terminal, $00 is hex.
