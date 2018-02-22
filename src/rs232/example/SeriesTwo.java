@@ -141,7 +141,7 @@ public class SeriesTwo {
 //        String message = header + address + startMes + body + 3 + endMes + numseq + chksum + CR;
         String message;
         if (scroll) {
-            message = header + address + startMes + "19" + body + endMes + numseq + chksum + CR;
+            message = header + address + startMes + "25" + body + endMes + numseq + chksum + CR;
         }
         else {
             message = header + address + startMes + body + endMes + numseq + chksum + CR;
