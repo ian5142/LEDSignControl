@@ -222,3 +222,7 @@ February 22, 2018 - Discussed with Brian possible solutions to scrolling in veri
                                             message = header + address + startMes + scrollChar + body + endMes + numseq + chksum + CR;
                     Determined that LED Display Message webpage must be reloaded before a new message is sent.
                     Discussion with Robert and Brian about what to do with Blink. Decided Character array is the best option.
+                    Blink and Scroll now both work via the Raspberry Pi. checkBlink needed significant overhaul.
+                    I decided to put the String body (with or without the blink delimiters) in an ArrayList.
+                    As the program is adding the characters to the ArrayList it checks for the delimiters. 
+                    If they are found it replaces them with the hex code and does not add the other two delimiters.
