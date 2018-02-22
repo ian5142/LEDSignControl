@@ -211,14 +211,59 @@ public class SeriesTwo {
     }
 
     private String checkBlink(String body) {
-        String blinkfix = body;
+        ArrayList<Character> blinkfix = new ArrayList<Character>();
+        int blinkON = 0;
         if (body.contains("~|^")) {
-            blinkfix = blinkfix.replaceAll("~|^", (char) 0x10 + "");
+            blinkON = body.indexOf("~|^");
         }
+        int blinkOFF = 0;
         if (body.contains("^|~")) {
-            blinkfix = blinkfix.replaceAll("^|~", (char) 0x12 + "");
+            blinkOFF = body.indexOf("^|~");
         }
-        System.out.println("Blink fix: " + blinkfix);
-        return blinkfix;
+        for (int i = 0; i < body.length(); i++) {
+            char current = body.charAt(i);
+            if ( i == blinkON ) {
+                current = (char) 0x10;
+            }
+            if ( i == blinkOFF ) {
+                current = (char) 0x12;
+            }
+//            if (current == '~') {
+//                if ((i + 1) < body.length()) {
+//                    if (body.charAt(i + 1) == '|') {
+//                        if ((i + 2) < body.length()) {
+//                            if (body.charAt(i + 2) == '^') {
+//
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+            blinkfix.add(current);
+        }
+        for (int j = 0 ; j < body.length() ; ) {
+            if (blinkfix.get(j) == (char) 0x10) {
+                blinkfix.remove(j+1);
+                blinkfix.remove(j+2);
+                j += 2;
+            }
+            else if (blinkfix.get(j) == (char) 0x12) {
+                blinkfix.remove(j+1);
+                blinkfix.remove(j+2);
+                j += 2;
+            }
+        }
+//        if (body.contains("~|^")) {
+//            blinkfix = blinkfix.replaceAll("~|^", (char) 0x10 + "");
+//        }
+//        if (body.contains("^|~")) {
+//            blinkfix = blinkfix.replaceAll("^|~", (char) 0x12 + "");
+//        }
+//        System.out.println("Blink fix: " + blinkfix);
+        String newbody = "";
+        for (int i = 0 ; i < blinkfix.size() ; i++) {
+            newbody = newbody + blinkfix.get(i);
+        }
+        return newbody;
     }
 }
