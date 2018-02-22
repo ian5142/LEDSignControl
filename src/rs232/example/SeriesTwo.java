@@ -64,6 +64,7 @@ public class SeriesTwo {
      * Calculates the checksum from a given String body
      *
      * @param body The string to calculate a checksum for
+     * @param scroll
      * @return The checksum in String format
      */
     protected String calculateChksum(String body, boolean scroll) {
