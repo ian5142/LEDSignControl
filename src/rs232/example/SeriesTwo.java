@@ -84,7 +84,7 @@ public class SeriesTwo {
             int scrollint = 25;
             sum += scrollint;
         }
-            
+
         ArrayList<String> bodyArray = toHex(body);
 
         long hexBody = 0;
@@ -130,18 +130,24 @@ public class SeriesTwo {
      * Creates the final Message, sends it to the Test object
      *
      * @param body The message to write to the screen.
+     * @param scroll
      */
-    protected void write(String body) {
-        
+    protected void write(String body, boolean scroll) {
+
 //        String message = header + address + startMes + body + endMes + numseq + 
 //                chksum + newline + CR;
-            boolean scroll = true;
-            chksum = calculateChksum(body, scroll);
+        chksum = calculateChksum(body, scroll);
 //            body = checkBlink(body);
 //        String message = (char) 0x1 + "1" + (char) 0x2 + "This is a test." + (char) 0x4 + "1" + "8C" + CR;
 //        String message = header + address + startMes + body + 3 + endMes + numseq + chksum + CR;
-            String message = header + address + startMes + 0x25 + body + endMes + numseq + chksum + CR;
-            boolean success = tester.testWrite(message);
+        String message;
+        if (scroll) {
+            message = header + address + startMes + 0x19 + body + endMes + numseq + chksum + CR;
+        }
+        else {
+            message = header + address + startMes + body + endMes + numseq + chksum + CR;
+        }
+        boolean success = tester.testWrite(message);
 //            if (success) {
 //                boolean acknowledge = readAck();
 //                while (!acknowledge) {
