@@ -195,3 +195,4 @@ February 21, 2018 - Testing Scroll in verify mode on Bray's Terminal.
 February 22, 2018 - Discussed with Brian possible solutions to scrolling in verify mode problem. No definitive suggestion came out of it though.
                     Wrote a CheckSumCalc java program to calculate the check sum of a typed in text and scroll character. 
                     Tested it with just the body and it output the correct checksum.
+                    The checksum calculated was the same as what I calculated manually yesterday, A5 if a scroll character is 0x19.
