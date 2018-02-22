@@ -213,3 +213,5 @@ February 22, 2018 - Discussed with Brian possible solutions to scrolling in veri
                     #000 is decimal in Bray's Terminal, $00 is hex.
                     Blink mode also works in verify mode: #0011#002This is a $10test$12.#0041AE#013
                     Now that I know the format, I will update the java code to match.
+                    Did not work: message = header + address + startMes + "19" + body + endMes + numseq + chksum + CR;
+                    Did not display "19" anywhere.
