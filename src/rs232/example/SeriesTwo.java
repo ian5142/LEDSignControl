@@ -68,7 +68,7 @@ public class SeriesTwo {
      */
     protected String calculateChksum(String body) {
         System.out.println("Body: " + body);
-        int hexHeader = 1;
+        int hexHeader = 0x1;
 
         ArrayList<String> addressArray = toHex(address);
 
