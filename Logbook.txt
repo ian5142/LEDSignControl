@@ -226,3 +226,5 @@ February 22, 2018 - Discussed with Brian possible solutions to scrolling in veri
                     I decided to put the String body (with or without the blink delimiters) in an ArrayList.
                     As the program is adding the characters to the ArrayList it checks for the delimiters. 
                     If they are found it replaces them with the hex code and does not add the other two delimiters.
+                    Robert suggested I add code to support temperature sensors and other dynamic data. I told him that was not the plan.
+                    I plan on sticking with Static data.
