@@ -73,8 +73,8 @@ public class SeriesTwo {
         ArrayList<String> addressArray = toHex(address);
 
         long hexAddress = Long.parseLong(addressArray.get(0) + "", 16);
-        int hexStartMes = Integer.parseInt("02", 16);
-        int hexEndMes = Integer.parseInt("04", 16);
+        int hexStartMes = 0x2;
+        int hexEndMes = 0x4;
 
         ArrayList<String> seqArray = toHex(seq);
 
