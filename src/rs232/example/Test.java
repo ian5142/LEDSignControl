@@ -172,25 +172,25 @@ public class Test {
 //        }
             openP();
             
-            //serialPort.addEventListener(new SerialPortReader());
-            String readLine2 = null;
-            while ( (readLine2 == null) ){
-                try {
-                    readLine2 = serialPort.readString(10, 5000);
-                } catch (SerialPortTimeoutException ex) {
-                    System.out.println("Timed out.");
-                }
-                if (readLine2 != null) {
-                    System.out.println("Readline2: " + readLine2 + "");
-                }
-            }
-            System.out.println("Readline2: " + readLine2 + "");
-            if(acknowledge == true) {
-                System.out.println("The message was acknowledged");
-            } 
-            else {
-                System.out.println("Not acknowledged.");
-            }
+//            //serialPort.addEventListener(new SerialPortReader());
+//            String readLine2 = null;
+//            while ( (readLine2 == null) ){
+//                try {
+//                    readLine2 = serialPort.readString(10, 5000);
+//                } catch (SerialPortTimeoutException ex) {
+//                    System.out.println("Timed out.");
+//                }
+//                if (readLine2 != null) {
+//                    System.out.println("Readline2: " + readLine2 + "");
+//                }
+//            }
+//            System.out.println("Readline2: " + readLine2 + "");
+//            if(acknowledge == true) {
+//                System.out.println("The message was acknowledged");
+//            } 
+//            else {
+//                System.out.println("Not acknowledged.");
+//            }
             serialPort.closePort();
         } 
 //          catch (SerialPortException ex) {
