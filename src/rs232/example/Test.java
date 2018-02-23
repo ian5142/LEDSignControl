@@ -254,7 +254,7 @@ public class Test {
          */
         @Override
         public void serialEvent(SerialPortEvent event) {
-            if (event.isRXCHAR() && event.getEventValue() > 0) {
+            if (event.isRXCHAR() && event.getEventValue() == 10) {
                 try {
                     String line = serialPort.readString(event.getEventValue());
 //                    acknowledgeStr + acknowledgeStr + 
