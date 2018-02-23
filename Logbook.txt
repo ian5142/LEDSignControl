@@ -243,3 +243,7 @@ February 23, 2018 - Changed sleep to 15 seconds in RS232Tester.java.
                     Did not work: ( (readLine2 == null) || (readLine2.equals("S")) )
                     Loops forever currently but does not cause a null pointer exception: ( (readLine2 == null) )
                     Did not work: readHexString(10)
+                    Tried leaving port open after writing, do not open a new port for read.
+                    Tried commenting out all of the write code and testing with just the read code. Can get it to read sometimes but it seems random.
+                    Tried commenting out all of testRead except for openP() and closeport(). Still did not work.
+                    The basic call to readString() works in testRead() but it outputs a ton of nulls and never gets the whole string.
