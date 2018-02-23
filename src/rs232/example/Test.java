@@ -171,7 +171,8 @@ public class Test {
 //            return line;
 //        }
             openP();
-            
+            String readLine3 = serialPort.readString();
+            System.out.println("readLine3: " + readLine3);
 //            //serialPort.addEventListener(new SerialPortReader());
 //            String readLine2 = null;
 //            while ( (readLine2 == null) ){
