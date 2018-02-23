@@ -170,7 +170,7 @@ public class Test {
 //            line = "Did not read.";
 //            return line;
 //        }
-//            openP();
+            openP();
             
             //serialPort.addEventListener(new SerialPortReader());
             String readLine2 = null;
