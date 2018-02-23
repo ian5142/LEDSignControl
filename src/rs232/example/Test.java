@@ -171,9 +171,9 @@ public class Test {
 //            return line;
 //        }
 //            openP();
-            byte [] readArray = serialPort.readBytes(10);
+            byte [] readArray = serialPort.readBytes(9);
 //            String readLine3 = serialPort.readString(10);
-            for (int i = 0 ; i < 10 ; i++) {
+            for (int i = 0 ; i < 9 ; i++) {
                 System.out.print(" " + readArray[i]);
             }
             System.out.println();
