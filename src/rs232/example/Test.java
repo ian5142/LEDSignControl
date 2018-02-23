@@ -170,9 +170,13 @@ public class Test {
 //            line = "Did not read.";
 //            return line;
 //        }
-            openP();
-            String readLine3 = serialPort.readString();
-            System.out.println("readLine3: " + readLine3);
+//            openP();
+            byte [] readArray = serialPort.readBytes(10);
+//            String readLine3 = serialPort.readString(10);
+            for (int i = 0 ; i < 10 ; i++) {
+                System.out.print(" " + readArray[i]);
+            }
+            System.out.println();
 //            //serialPort.addEventListener(new SerialPortReader());
 //            String readLine2 = null;
 //            while ( (readLine2 == null) ){
