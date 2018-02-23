@@ -175,7 +175,7 @@ public class Test {
             //serialPort.addEventListener(new SerialPortReader());
             String readLine2 = null;
             while ( (readLine2 == null) ){
-                readLine2 = serialPort.readString();
+                readLine2 = serialPort.readHexString(10);
                 if (readLine2 != null) {
                     System.out.println("Readline2: " + readLine2 + "");
                 }
