@@ -45,7 +45,7 @@ public class RS232Tester {
                     test.setisUpdated();
                     System.out.println("Isupdated is: " + test.selectisUpdated());
                 }
-                Thread.sleep(60 * 1000);
+                Thread.sleep(15 * 1000);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
