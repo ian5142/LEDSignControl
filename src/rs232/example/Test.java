@@ -173,8 +173,8 @@ public class Test {
             openP();
             
             //serialPort.addEventListener(new SerialPortReader());
-            String readLine2 = serialPort.readString(10, 5000);
-            System.out.println(readLine + "");
+            String readLine2 = serialPort.readString();
+            System.out.println("Readline2: " + readLine2 + "");
             if(acknowledge == true) {
                 System.out.println("The message was acknowledged");
             } 
@@ -195,12 +195,6 @@ public class Test {
         //} 
         catch (SerialPortException ex) {
             Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SerialPortTimeoutException ex) {
-            try {
-                serialPort.closePort();
-            } catch (SerialPortException ex1) {
-                Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex1);
-            }
         }
         return acknowledge;
     }
