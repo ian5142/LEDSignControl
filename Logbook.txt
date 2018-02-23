@@ -247,3 +247,8 @@ February 23, 2018 - Changed sleep to 15 seconds in RS232Tester.java.
                     Tried commenting out all of the write code and testing with just the read code. Can get it to read sometimes but it seems random.
                     Tried commenting out all of testRead except for openP() and closeport(). Still did not work.
                     The basic call to readString() works in testRead() but it outputs a ton of nulls and never gets the whole string.
+                    This: serialPort.readString(10); only reads in 10 characters and it will wait for it to receive them.
+                    The following works, it waits for 10 bytes: serialPort.readBytes(10);
+                    Uncommented the write code and tested the read code by hooking it back up to the sign.
+                    The program is waiting for more bytes. 
+                    Going to try lowering the byte count by 1 until it works with the test string "This is a test." at least.
