@@ -230,3 +230,16 @@ February 22, 2018 - Discussed with Brian possible solutions to scrolling in veri
                     I plan on sticking with Static data.
 February 23, 2018 - Changed sleep to 15 seconds in RS232Tester.java. 
                     Removed for loop in the same file, not needed.
+                    Had to add a while (true) forever loop so the program is always running.
+                    Changes to testRead method in Test.java, readString does not have a timeout or byte count now.
+                    Removed check for getEventValue = 0 in serialEvent method.
+                    Added a while loop in testRead method.
+                    Removed check for readLine2 == null, in testRead method.
+                    Still getting a null pointer exception on Line 177 (the while method I just added).
+                    Did not work: ( readLine2.equals("S")) or ( (readLine2.equals("S")) || (readLine2 == null) )
+                    Did not work: ( readLine2.equals("S") || (readLine2 != null && !readLine2.equals("")) )
+                    Did not work: ( (readLine2.equals("S")) || (readLine2 != null && !readLine2.isEmpty()) )
+                    Did not work: ( (readLine2.equals("S")) || (readLine2 == null) )
+                    Did not work: ( (readLine2 == null) || (readLine2.equals("S")) )
+                    Loops forever currently but does not cause a null pointer exception: ( (readLine2 == null) )
+                    Did not work: readHexString(10)
