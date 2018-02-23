@@ -174,7 +174,7 @@ public class Test {
             
             //serialPort.addEventListener(new SerialPortReader());
             String readLine2 = "S";
-            while ( (readLine2.equals("S")) || (readLine2 == null) ){
+            while ( (readLine2 == null) || (readLine2.equals("S")) ){
                 readLine2 = serialPort.readString();
                 if (readLine2 != null) {
                     System.out.println("Readline2: " + readLine2 + "");
