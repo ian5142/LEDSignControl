@@ -175,7 +175,11 @@ public class Test {
             //serialPort.addEventListener(new SerialPortReader());
             String readLine2 = null;
             while ( (readLine2 == null) ){
-                readLine2 = serialPort.readHexString(10);
+                try {
+                    readLine2 = serialPort.readString(10, 5000);
+                } catch (SerialPortTimeoutException ex) {
+                    System.out.println("Timed out.");
+                }
                 if (readLine2 != null) {
                     System.out.println("Readline2: " + readLine2 + "");
                 }
