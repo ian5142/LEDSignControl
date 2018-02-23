@@ -254,12 +254,12 @@ public class Test {
          */
         @Override
         public void serialEvent(SerialPortEvent event) {
-            if (event.isRXCHAR()) {
+            if (event.isRXCHAR() && event.getEventValue() > 0) {
                 try {
                     String line = serialPort.readString(event.getEventValue());
 //                    acknowledgeStr + acknowledgeStr + 
                     System.out.println("serialEvent: " + line);
-                    if (line.equals((char) 0x6 + "")) {
+                    if (line.contains((char) 0x6 + "")) {
                         acknowledge = true;
                         System.out.println("Acknowledged");
                         
