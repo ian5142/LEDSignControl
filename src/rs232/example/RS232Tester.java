@@ -17,18 +17,18 @@ public class RS232Tester {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-//        char c = 'C';
-//        byte b = 3;
-//        System.out.println(c + " is equal to " + b);]
-
-////Test Code
-//        String line = test2.read();
-//        
-//        System.out.println(line);
-        try {
+////        char c = 'C';
+////        byte b = 3;
+////        System.out.println(c + " is equal to " + b);]
+//
+//////Test Code
+////        String line = test2.read();
+////        
+////        System.out.println(line);
+//        try {
             SeriesTwo test2 = new SeriesTwo();
-//                    test2.readAck();
-            CheckDB test = new CheckDB();
+////                    test2.readAck();
+//            CheckDB test = new CheckDB();
             while (true) {
 //                if (!test.selectisUpdated()) {
 //                    String message = test.selectMessage();
@@ -41,15 +41,15 @@ public class RS232Tester {
 //                    System.out.println("The message is: " + message);
 //                    System.out.println("Isupdated is: " + test.selectisUpdated());
                     boolean acknowledge = test2.readAck();
-                    //System.out.println("Acknowledged: " + acknowledge);
+//                    //System.out.println("Acknowledged: " + acknowledge);
 //                    test.setisUpdated();
 //                    System.out.println("Isupdated is: " + test.selectisUpdated());
 //                }
-                Thread.sleep(15 * 1000);
+//                Thread.sleep(15 * 1000);
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 
 }
