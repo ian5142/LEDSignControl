@@ -228,3 +228,5 @@ February 22, 2018 - Discussed with Brian possible solutions to scrolling in veri
                     If they are found it replaces them with the hex code and does not add the other two delimiters.
                     Robert suggested I add code to support temperature sensors and other dynamic data. I told him that was not the plan.
                     I plan on sticking with Static data.
+February 23, 2018 - Changed sleep to 15 seconds in RS232Tester.java. 
+                    Removed for loop in the same file, not needed.
