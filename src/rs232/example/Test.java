@@ -176,7 +176,9 @@ public class Test {
             String readLine2 = "S";
             while ( (readLine2.equals("S")) || (readLine2 == null) ){
                 readLine2 = serialPort.readString();
-                System.out.println("Readline2: " + readLine2 + "");
+                if (readLine2 != null) {
+                    System.out.println("Readline2: " + readLine2 + "");
+                }
             }
             System.out.println("Readline2: " + readLine2 + "");
             if(acknowledge == true) {
