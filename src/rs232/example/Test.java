@@ -117,7 +117,7 @@ public class Test {
             openP();
             serialPort.writeString("Hello World Write");
             success = true;
-            serialPort.closePort();
+//            serialPort.closePort();
         } catch (SerialPortException ex) {
             Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -137,7 +137,7 @@ public class Test {
             openP();
             serialPort.writeString(message);
             success = true;
-            serialPort.closePort();
+//            serialPort.closePort();
         } catch (SerialPortException ex) {
             Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -170,7 +170,7 @@ public class Test {
 //            line = "Did not read.";
 //            return line;
 //        }
-            openP();
+//            openP();
             
             //serialPort.addEventListener(new SerialPortReader());
             String readLine2 = null;
