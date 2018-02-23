@@ -173,7 +173,11 @@ public class Test {
             openP();
             
             //serialPort.addEventListener(new SerialPortReader());
-            String readLine2 = serialPort.readString();
+            String readLine2 = "S";
+            while ( (readLine2.equals("S")) || (readLine2 == null) ){
+                readLine2 = serialPort.readString();
+                System.out.println("Readline2: " + readLine2 + "");
+            }
             System.out.println("Readline2: " + readLine2 + "");
             if(acknowledge == true) {
                 System.out.println("The message was acknowledged");
