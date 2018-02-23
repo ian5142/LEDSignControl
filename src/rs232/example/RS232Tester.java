@@ -30,21 +30,21 @@ public class RS232Tester {
 //                    test2.readAck();
             CheckDB test = new CheckDB();
             while (true) {
-                if (!test.selectisUpdated()) {
-                    String message = test.selectMessage();
-                    boolean scroll = false;
-                    if (test.selectscrollON()) {
-                        scroll = true;
-                    }
-                    test2.write(message, scroll);
-
-                    System.out.println("The message is: " + message);
-                    System.out.println("Isupdated is: " + test.selectisUpdated());
+//                if (!test.selectisUpdated()) {
+//                    String message = test.selectMessage();
+//                    boolean scroll = false;
+//                    if (test.selectscrollON()) {
+//                        scroll = true;
+//                    }
+//                    test2.write(message, scroll);
+//
+//                    System.out.println("The message is: " + message);
+//                    System.out.println("Isupdated is: " + test.selectisUpdated());
                     boolean acknowledge = test2.readAck();
                     //System.out.println("Acknowledged: " + acknowledge);
-                    test.setisUpdated();
-                    System.out.println("Isupdated is: " + test.selectisUpdated());
-                }
+//                    test.setisUpdated();
+//                    System.out.println("Isupdated is: " + test.selectisUpdated());
+//                }
                 Thread.sleep(15 * 1000);
             }
         } catch (InterruptedException e) {
