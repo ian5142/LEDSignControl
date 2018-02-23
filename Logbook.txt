@@ -252,3 +252,6 @@ February 23, 2018 - Changed sleep to 15 seconds in RS232Tester.java.
                     Uncommented the write code and tested the read code by hooking it back up to the sign.
                     The program is waiting for more bytes. 
                     Going to try lowering the byte count by 1 until it works with the test string "This is a test." at least.
+                    It works with 9. 
+                    Acknowledge code (0x6) is in 4th in the array.
+                    The output for "This is a test." is "1 48 49 6 4 49 57 68 13"
