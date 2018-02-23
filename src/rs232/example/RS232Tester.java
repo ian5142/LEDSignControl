@@ -25,31 +25,31 @@ public class RS232Tester {
 ////        String line = test2.read();
 ////        
 ////        System.out.println(line);
-//        try {
+        try {
             SeriesTwo test2 = new SeriesTwo();
 ////                    test2.readAck();
-//            CheckDB test = new CheckDB();
+            CheckDB test = new CheckDB();
             while (true) {
-//                if (!test.selectisUpdated()) {
-//                    String message = test.selectMessage();
-//                    boolean scroll = false;
-//                    if (test.selectscrollON()) {
-//                        scroll = true;
-//                    }
-//                    test2.write(message, scroll);
-//
-//                    System.out.println("The message is: " + message);
-//                    System.out.println("Isupdated is: " + test.selectisUpdated());
+                if (!test.selectisUpdated()) {
+                    String message = test.selectMessage();
+                    boolean scroll = false;
+                    if (test.selectscrollON()) {
+                        scroll = true;
+                    }
+                    test2.write(message, scroll);
                     boolean acknowledge = test2.readAck();
-//                    //System.out.println("Acknowledged: " + acknowledge);
-//                    test.setisUpdated();
-//                    System.out.println("Isupdated is: " + test.selectisUpdated());
-//                }
-//                Thread.sleep(15 * 1000);
+                    System.out.println("The message is: " + message);
+                    System.out.println("Isupdated is: " + test.selectisUpdated());
+                    
+                    //System.out.println("Acknowledged: " + acknowledge);
+                    test.setisUpdated();
+                    System.out.println("Isupdated is: " + test.selectisUpdated());
+                }
+                Thread.sleep(15 * 1000);
             }
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }
