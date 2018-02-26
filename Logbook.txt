@@ -255,3 +255,5 @@ February 23, 2018 - Changed sleep to 15 seconds in RS232Tester.java.
                     It works with 9. 
                     Acknowledge code (0x6) is in 4th in the array.
                     The output for "This is a test." is "1 48 49 6 4 49 57 68 13"
+February 25, 2018 - Wrote sections of the Phase 2 Report.
+February 26, 2018 - Finished the Phase 2 Report, updated Function Diagram to show how acknowledge boolean is handled. Same process but in reverse.
