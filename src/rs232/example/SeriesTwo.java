@@ -168,7 +168,12 @@ public class SeriesTwo {
     }
 
     protected boolean readAck() {
-        boolean acknowledge = tester.testRead();
+        byte [] readArray = tester.testRead();
+        boolean acknowledge = false;
+        if (readArray[3] == 6) {
+            acknowledge = true;
+            System.out.print("The message was sent successfully.");
+        }
 //        if (line.equals(posAck)) {
 //            System.out.print("The message was sent successfully.");
 //            acknowledge = true;
