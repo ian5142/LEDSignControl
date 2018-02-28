@@ -257,3 +257,6 @@ February 23, 2018 - Changed sleep to 15 seconds in RS232Tester.java.
                     The output for "This is a test." is "1 48 49 6 4 49 57 68 13"
 February 25, 2018 - Wrote sections of the Phase 2 Report.
 February 26, 2018 - Finished the Phase 2 Report, updated Function Diagram to show how acknowledge boolean is handled. Same process but in reverse.
+February 28, 2018 - Changed testRead (in Test.java) so that it returns byte [] readArray instead of boolean.
+                    Changes to readAck to handle the byte array (readArray) and check if 
+                    4th byte is 6 (positive acknowledge). If it is, return true, else return false.
