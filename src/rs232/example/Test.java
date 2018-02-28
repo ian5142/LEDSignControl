@@ -150,8 +150,8 @@ public class Test {
      *
      * @return
      */
-    protected boolean testRead() {
-
+    protected byte [] testRead() {
+        byte [] readArray = null;
         try {
             //        boolean success = false;
 //        String line = "";
@@ -171,7 +171,7 @@ public class Test {
 //            return line;
 //        }
 //            openP();
-            byte [] readArray = serialPort.readBytes(9);
+            readArray = serialPort.readBytes(9);
 //            String readLine3 = serialPort.readString(10);
             for (int i = 0 ; i < 9 ; i++) {
                 System.out.print(" " + readArray[i]);
@@ -211,7 +211,7 @@ public class Test {
         catch (SerialPortException ex) {
             Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return acknowledge;
+        return readArray;
     }
 
     /**
