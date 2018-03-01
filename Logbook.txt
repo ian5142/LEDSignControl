@@ -268,3 +268,6 @@ March 1, 2018 -     Set a static ip on the eth0 interface on the Raspberry Pi, a
                         static routers=10.1.1.1
                         static domain_name_servers=10.1.1.1
                     Tried to access the webserver at 192.168.60.200, from lab computer. Did not work.
+                    Asked Brian why and it was because some of the computers in the lab are not on the 192.168.60.* network.
+                    I was logged into one of those computers. Right-hand under station 54.
+                    Was able to access the webserver from the computer in front of station 60.
