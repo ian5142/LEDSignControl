@@ -31,8 +31,8 @@ public class RS232Tester {
 
             while (true) {
                 boolean portConnected = test2.getConnected();
+                test.setPortError(portConnected);
                 if (!test.selectisUpdated()) {
-                    test.setPortError(portConnected);
                     String message = test.selectMessage();
                     boolean scroll = false;
                     if (test.selectscrollON()) {
