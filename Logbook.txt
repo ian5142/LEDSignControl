@@ -271,3 +271,21 @@ March 1, 2018 -     Set a static ip on the eth0 interface on the Raspberry Pi, a
                     Asked Brian why and it was because some of the computers in the lab are not on the 192.168.60.* network.
                     I was logged into one of those computers. Right-hand under station 54.
                     Was able to access the webserver from the computer in front of station 60.
+                    Tested readAck changes, they work fine. Just commented out not required print statements.
+                    MariaDB changes: added a column to hold error codes, int type. Removed column blinkON.
+                    Added a serialConnected method to check if the serial port is connected, Test.java
+                    Added a getConnected method, SeriesTwo.java, to send the get the connected boolean 
+                    (true if serialport is connected) back to the main method (RS232Tester.java).
+                    Added setPortError, CheckDB.java, to handle port not found errors.
+                    Added code to handle port not connected error, RS232Tester.java. Not tested.
+                    Moved portConnected condition inside of while (true) loop, RS232Tester.java. It checks it every time it loops.
+                    Tried to send a new message after removing the BlinkON column and got an error on the PHP side.
+                    Edited the PHP file to remove all instances of BlinkON column and BlinkON variable (not the new BlinkON button).
+                    Changed so that getConnected is called every loop and test.setPortError is only called when the sign needs to be updated. (RS232Tester.java)
+                    CheckDB's setPortError now accepts a boolean portConnected. The method updates the Error column based on the boolean.
+                    Sets it to 1 if the port is not connected, 0 if it is.
+                    Moved setPortError call above selectisUpdated condition, RS232Tester.java.
+                    Tested, would through a bunch of errors (Port not opened, etc), if the port is removed.
+                    Added portConnected condition to the if statement, RS232Tester.java.
+                    Asked Brian opinion about the 15sec sleep in java. He said 15 seconds is reasonable.
+                    It is not a real time application so 15 second delay is fine.
