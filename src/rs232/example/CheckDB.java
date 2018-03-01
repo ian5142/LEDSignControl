@@ -26,6 +26,8 @@ public class CheckDB {
     private String message;
     
     private PreparedStatement updated;
+    private PreparedStatement portError;
+    private PreparedStatement messageError;
     private PreparedStatement newMessage;
     
     /**
@@ -48,6 +50,7 @@ public class CheckDB {
             con = DriverManager.getConnection(url, user, password);
             st = con.createStatement();
             updated = con.prepareStatement("UPDATE t SET isupdated=TRUE");
+            portError = con.prepareStatement("UPDATE t SET error=1");
 //            newMessage = con.prepareStatement("UPDATE t SET message='" + message + "'");
             DBopen = true;
 //            To be put in the update methods.
@@ -174,6 +177,20 @@ public class CheckDB {
 //                updated.setString(1, "TRUE");
                 updated.executeUpdate();
 //                st.executeUpdate("t", s);
+                boolean closeDB = closeDB();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CheckDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    /**
+     * Sets error to 1 in the database, called when serial port can not be found.
+     */
+    protected void setPortError () {
+        try {
+            if (openDB()) {
+                portError.executeUpdate();
                 boolean closeDB = closeDB();
             }
         } catch (SQLException ex) {
