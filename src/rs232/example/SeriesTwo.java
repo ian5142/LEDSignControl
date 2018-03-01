@@ -59,7 +59,16 @@ public class SeriesTwo {
         posAck = (char) 0x6;
         negAck = (char) 0x15;
     }
-
+    
+    /**
+     * Calls the serialConnected method in Test.java
+     * @return Returns the value sent by serialConnected, true if the serial port is connected.
+     */
+    protected boolean getConnected () {
+        boolean connected = tester.serialConnected();
+        return connected;
+    }
+    
     /**
      * Calculates the checksum from a given String body
      *
