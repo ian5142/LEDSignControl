@@ -260,3 +260,11 @@ February 26, 2018 - Finished the Phase 2 Report, updated Function Diagram to sho
 February 28, 2018 - Changed testRead (in Test.java) so that it returns byte [] readArray instead of boolean.
                     Changes to readAck to handle the byte array (readArray) and check if 
                     4th byte is 6 (positive acknowledge). If it is, return true, else return false.
+March 1, 2018 -     Set a static ip on the eth0 interface on the Raspberry Pi, as per this: 
+                    Edit /etc/dhcpcd.conf as follows:-
+                    Here is an example which configures a static address, routes and dns.
+                        interface eth0
+                        static ip_address=10.1.1.30/24
+                        static routers=10.1.1.1
+                        static domain_name_servers=10.1.1.1
+                    Tried to access the webserver at 192.168.60.200, from lab computer. Did not work.
