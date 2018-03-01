@@ -301,3 +301,5 @@ March 1, 2018 -     Set a static ip on the eth0 interface on the Raspberry Pi, a
                                 echo "error: " . $row["error"];
                             }
                         }
+                    Discussed with Robert next steps, finish PHP error handling and then focus on hardware.
+                    Told Robert about the FTDI chip. He suggested finding a crystal oscillator test circuit.
