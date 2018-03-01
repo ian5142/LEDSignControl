@@ -173,10 +173,10 @@ public class Test {
 //            openP();
             readArray = serialPort.readBytes(9);
 //            String readLine3 = serialPort.readString(10);
-            for (int i = 0 ; i < 9 ; i++) {
-                System.out.print(" " + readArray[i]);
-            }
-            System.out.println();
+//            for (int i = 0 ; i < 9 ; i++) {
+//                System.out.print(" " + readArray[i]);
+//            }
+//            System.out.println();
 //            //serialPort.addEventListener(new SerialPortReader());
 //            String readLine2 = null;
 //            while ( (readLine2 == null) ){
