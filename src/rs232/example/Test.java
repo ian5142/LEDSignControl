@@ -65,6 +65,21 @@ public class Test {
         }
         return port;
     }
+    
+    /**
+     * Checks if the serial port is connected
+     * @return Returns true if any of the serial ports found using getPortNames() matches the portName global variable ("/dev/ttyUSB0").
+     */
+    protected boolean serialConnected () {
+        boolean connected = false;
+        String[] portNames = SerialPortList.getPortNames();
+        for (String portName1 : portNames) {
+            if (portName1.equals(portName) ) {
+                connected = true;
+            }
+        }
+        return connected;
+    }
 
     /**
      * Opens a COM port at the specified settings, can throw an error opening
