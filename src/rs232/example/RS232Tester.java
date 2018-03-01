@@ -30,11 +30,12 @@ public class RS232Tester {
             CheckDB test = new CheckDB();
 
             boolean portConnected = test2.getConnected();
-            if (!portConnected) {
-                test.setPortError();
-            } else {
-                while (true) {
-                    if (!test.selectisUpdated()) {
+
+            while (true) {
+                if (!test.selectisUpdated()) {
+                    if (!portConnected) {
+                        test.setPortError();
+                    } else {
                         String message = test.selectMessage();
                         boolean scroll = false;
                         if (test.selectscrollON()) {
@@ -49,8 +50,8 @@ public class RS232Tester {
                         test.setisUpdated();
                         System.out.println("Isupdated is: " + test.selectisUpdated());
                     }
-                    Thread.sleep(15 * 1000);
                 }
+                Thread.sleep(15 * 1000);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
