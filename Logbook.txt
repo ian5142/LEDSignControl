@@ -289,3 +289,15 @@ March 1, 2018 -     Set a static ip on the eth0 interface on the Raspberry Pi, a
                     Added portConnected condition to the if statement, RS232Tester.java.
                     Asked Brian opinion about the 15sec sleep in java. He said 15 seconds is reasonable.
                     It is not a real time application so 15 second delay is fine.
+                    Added PHP code to handle error checking on front-end, not tested yet.
+                    The following echos the data to the user's screen: 
+                        $sql = 'SELECT error FROM t';
+                        $rs = $conn->query($sql);
+		
+                        if ($rs->num_rows > 0) {
+                            // output data of each row
+                            $error = 0;
+                            while($row = $rs->fetch_assoc()) {
+                                echo "error: " . $row["error"];
+                            }
+                        }
