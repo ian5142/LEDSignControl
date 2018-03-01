@@ -172,7 +172,7 @@ public class SeriesTwo {
         boolean acknowledge = false;
         if (readArray[3] == 6) {
             acknowledge = true;
-            System.out.print("The message was sent successfully.");
+//            System.out.print("The message was sent successfully.");
         }
 //        if (line.equals(posAck)) {
 //            System.out.print("The message was sent successfully.");
