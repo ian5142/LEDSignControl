@@ -303,3 +303,10 @@ March 1, 2018 -     Set a static ip on the eth0 interface on the Raspberry Pi, a
                         }
                     Discussed with Robert next steps, finish PHP error handling and then focus on hardware.
                     Told Robert about the FTDI chip. He suggested finding a crystal oscillator test circuit.
+March 5, 2018 -     Built UART circuit on different breadboard. Soldered pin headers on the USB cable.
+                    Robert helped me troubleshoot the USB-to-UART circuit. Still not working, but at least it shows as USB not recognized in Windows.
+                    A 1.5kOhm resister was added to tie D+ high. Schematic was updated, PCB was not.
+                    CTS pin is tied high.
+                    Tried plugging the USB plug into the Raspberry Pi, it works. Or at least it now has a Oscillator output and data signal.
+                    Next step is to install linux drivers.
+                    Brian told me that it is mostly because my laptop is not grounded. DC-floating ground only, no earth ground.
