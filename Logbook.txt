@@ -312,3 +312,11 @@ March 5, 2018 -     Built UART circuit on different breadboard. Soldered pin hea
                     Brian told me that it is most likely because my laptop is not grounded. DC-floating ground only, no earth ground.
 March 6, 2018 -     Discussed with Brian USB error in Linux, on the Raspberry Pi. He suggested looking up USB error codes online.
                     https://paulphilippov.com/articles/how-to-fix-device-not-accepting-address-error This site told me it is caused by hardware failure, overcurrent protection being tripped.
+                    From that page's comments: 
+                        Unfortunately it did not solve my issue, but as soon as I read here the error explanation - about over-current protection - I found root cause for my case.
+
+                        For those guys, whom the first method (recommended by Paul) did not help, try to use a shorter cable to attach your device. 
+                        It may sounds strange, but in my case I found a series of connect/disconnect events into dmesg and syslog as well. 
+                        This behavior is a typical (as per my understanding) if you have a low-pass filter in between the usb port and the device attached - 
+                        This low-pass filter (just a basic RC chain) is the result of combination of high input impedance and capacity caused by your cable. 
+                        By using shorter (0.1m instead of 1m) cable did eventually solve the issue for me, but not power plug/unplug games...
