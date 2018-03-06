@@ -310,3 +310,5 @@ March 5, 2018 -     Built UART circuit on different breadboard. Soldered pin hea
                     Tried plugging the USB plug into the Raspberry Pi, it works. Or at least it now has a Oscillator output and data signal.
                     Next step is to install linux drivers.
                     Brian told me that it is most likely because my laptop is not grounded. DC-floating ground only, no earth ground.
+March 6, 2018 -     Discussed with Brian USB error in Linux, on the Raspberry Pi. He suggested looking up USB error codes online.
+                    https://paulphilippov.com/articles/how-to-fix-device-not-accepting-address-error This site told me it is caused by hardware failure, overcurrent protection being tripped.
