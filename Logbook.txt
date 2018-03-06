@@ -309,4 +309,4 @@ March 5, 2018 -     Built UART circuit on different breadboard. Soldered pin hea
                     CTS pin is tied high.
                     Tried plugging the USB plug into the Raspberry Pi, it works. Or at least it now has a Oscillator output and data signal.
                     Next step is to install linux drivers.
-                    Brian told me that it is mostly because my laptop is not grounded. DC-floating ground only, no earth ground.
+                    Brian told me that it is most likely because my laptop is not grounded. DC-floating ground only, no earth ground.
