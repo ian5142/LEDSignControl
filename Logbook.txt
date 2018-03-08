@@ -320,3 +320,13 @@ March 6, 2018 -     Discussed with Brian USB error in Linux, on the Raspberry Pi
                         This behavior is a typical (as per my understanding) if you have a low-pass filter in between the usb port and the device attached - 
                         This low-pass filter (just a basic RC chain) is the result of combination of high input impedance and capacity caused by your cable. 
                         By using shorter (0.1m instead of 1m) cable did eventually solve the issue for me, but not power plug/unplug games...           
+March 8, 2018 -     Discussion with Robert and Brian about USB cable grounding. They suggested adding a 1 Mohm resistor between the data lines and ground and the 5V line and ground.
+                    Tested, did not work.
+                    Tried with 15k resisters on the data lines, also did not work.
+                    Asked for Robert's advice on troubleshooting the circuit. I found I could no longer get a oscillator signal.
+                    He looked at the chip under a microscope and found that the chip was no longer soldered to the board.
+                    He suggested replacing the chip anyway and resoldering it to the board.
+                    I soldered a new MCP2200 chip to the Schmart board. 
+                    I verified that all of the pins have <7ohm resistance between board pins and the chip.
+                    Brian suggested soldering the crystal oscillator to the pins on the Schmart board.
+                    As it it is, I get a square wave on either oscillator pin, of 60Hz.
