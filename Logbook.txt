@@ -330,3 +330,4 @@ March 8, 2018 -     Discussion with Robert and Brian about USB cable grounding. 
                     I verified that all of the pins have <7ohm resistance between board pins and the chip.
                     Brian suggested soldering the crystal oscillator to the pins on the Schmart board.
                     As it it is, I get a square wave on either oscillator pin, of 60Hz.
+                    Found a mistake, oscilliscope ground was in the wrong spot. Now I get 2.4V dc voltage on either oscillator pin, of 60Hz.
