@@ -331,3 +331,20 @@ March 8, 2018 -     Discussion with Robert and Brian about USB cable grounding. 
                     Brian suggested soldering the crystal oscillator to the pins on the Schmart board.
                     As it it is, I get a square wave on either oscillator pin, of 60Hz.
                     Found a mistake, oscilloscope ground was in the wrong spot. Now I get 2.4V dc voltage on either oscillator pin, of 60Hz.
+March 9, 2018 -     Robert suggested building a crystal oscillator test circuit. He found one online: http://www.qsl.net/g3pto/xtest.html
+                    Built the circuit above and it oscillated at 12MHz.
+                    Robert helped me troubleshoot the circuit this afternoon.
+                    Before Robert left, we were able to get the circuit to oscillate at 12MHz.
+                    He suggested I use the USB cable instead of trying to use a power supply.
+                    The MCP2200 may require the D+ and D- lines in order to start oscillating.
+                    After Robert left, I was able to test send and recieve on the UART by connecting it to another UART (Rx-Tx crossed).
+                    Next step, wire up the MAX232 chip.
+                    Wired the Max232 chip as per schematic except C7 and C8 (which are supposed to be 1uF) are 0.1uF.
+                    The circuit works, at least Rx does. I have not tested Tx yet, can't figure out how to send characters via minicom.
+                    Changed port name to match what the MCP2200 comes up as "/dev/ttyACM0", Test.java
+                    Determined that the MCP2200 is receiving the characters I send it via my laptop (store bought cable) but I can't get anything to send from minicom (on the Pi), to my laptop.
+                    No UART signal is sent from the MCP2200 to the Max232. A UART signal is sent the other way though (the signal from the laptop). Nearly impossible to see the data being sent on the USB lines though.
+                    Nothing comes up in minicom or Bray's terminal. Tried switching Rx and Tx on the Max232.
+                    Tried switching to the other Rx/Tx driver on the Max232, different set of pins. Did not work.
+                    Burnt out two Max232 chips because I decided to use an external power supply on Pin 2 and 6, see datasheet for more info.
+                    Still have more chips available.
