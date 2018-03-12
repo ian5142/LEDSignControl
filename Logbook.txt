@@ -353,3 +353,12 @@ March 11, 2018 -    Tested MCP2200 Rx and Tx by first tying Rx and Tx together. 
                     I next tested the Max232 chip by tying its Tx and Rx lines on the output together. 
                     I can see what I type sometimes, but not everytime yet. It seems to send non-stop <break>.
                     http://ltxfaq.custhelp.com/app/answers/detail/a_id/736/~/what-is-a-serial-break%3F
+March 12, 2018 -    Tested RS232 using MCP2200 and pre-made UART to RS232 board. Can receive and transmit.
+                    Tried hooking up the MAX232 by sending it signals from the pre-made UART board. It did not receive anything. It only transmitted illegible characters.
+                    Used Pin 11, 9, 14, and 8 on the MAX232.
+                    Tried switching Rx and Tx on the lines sent to the computer (pre-made complete RS232 cable). Nothing is sent or received then.
+                    Hooked up the oscilloscope to the Rx and Tx lines after the RS232 chip, did not get the correct output. Replaced the chip.
+                    Discussed with Brian possible problems with the MAX232 circuit. He said that the C7 and C8 capacitors are used to hold the charge (for the 7-12V, either negative or positive). 
+                    Replaced 104 capacitors, C7 and C8 with ceramic 1uF orange capacitors.
+                    Tx and Rx lines are resting at 3V, should be between 7 and 12V. MAX232 output.
+                    
