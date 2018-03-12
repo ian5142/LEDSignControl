@@ -348,3 +348,8 @@ March 9, 2018 -     Robert suggested building a crystal oscillator test circuit.
                     Tried switching to the other Rx/Tx driver on the Max232, different set of pins. Did not work.
                     Burnt out two Max232 chips because I decided to use an external power supply on Pin 2 and 6, see datasheet for more info.
                     Still have more chips available.
+March 11, 2018 -    Tested MCP2200 Rx and Tx by first tying Rx and Tx together. It works, what you type, shows up on the screen.
+                    Next, I tested the MCP2200 by hooking it up to another UART and again it is sent correctly, both Rx and Tx.
+                    I next tested the Max232 chip by tying its Tx and Rx lines on the output together. 
+                    I can see what I type sometimes, but not everytime yet. It seems to send non-stop <break>.
+                    http://ltxfaq.custhelp.com/app/answers/detail/a_id/736/~/what-is-a-serial-break%3F
