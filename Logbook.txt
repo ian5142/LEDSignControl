@@ -374,3 +374,4 @@ March 13, 2018 -    Discussed with Robert and Brian issues with MAX232 circuit. 
                     Rx and Tx still work.
                     Moved some of the components and connections on the ExpressPCB board.
                     Brian suggested moving the Crystal and its capacitors closer to the MCP2200.
+                    He also suggested changing the 90 degree angles to 45 degrees.
