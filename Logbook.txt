@@ -367,3 +367,10 @@ March 13, 2018 -    Discussed with Robert and Brian issues with MAX232 circuit. 
                     With Brian's help the MAX232 circuit now works. The problem was a bad wire attached to the scope and a bad wire tying Rx and Tx together on the UART side of the MAX232.
                     I tested both chips together using my laptop. The test was successful, both Rx and Tx, using Bray's Terminal (my cable) and Arduino IDE serial Monitor (premade cable). 
                     Now, I have to change the circuit on the breadboard so that the MAX232 chip is powered via the USB bus and not an external supply.
+                    The mistake (problem) with the bypass capacitor tied to 5V and Pin 16. The reason why I made the mistake is because the MAX232 schematic p.10, shows the 5V to Pin 16 and 5V to the bypass capacitor.
+                    I thought the bypass capacitor went to Pin 16, not to ground, like in the schematic.
+                    It works with the MAX232 powered off of the USB bus, tested both Tx and Rx.
+                    Tested circuit again using ceramic capacitors on the MAX232, instead of electrolytic.
+                    Rx and Tx still work.
+                    Moved some of the components and connections on the ExpressPCB board.
+                    Brian suggested moving the Crystal and its capacitors closer to the MCP2200.
