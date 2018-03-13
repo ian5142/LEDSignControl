@@ -361,4 +361,9 @@ March 12, 2018 -    Tested RS232 using MCP2200 and pre-made UART to RS232 board.
                     Discussed with Brian possible problems with the MAX232 circuit. He said that the C7 and C8 capacitors are used to hold the charge (for the 7-12V, either negative or positive). 
                     Replaced 104 capacitors, C7 and C8 with ceramic 1uF orange capacitors.
                     Tx and Rx lines are resting at 3V, should be between 7 and 12V. MAX232 output.
-                    
+March 13, 2018 -    Discussed with Robert and Brian issues with MAX232 circuit. Brian suggested hooking up the pre-made USB to RS-232 cable to the MAX232. Got ~250mV peak output.
+                    Brian noticed that I had the Cbypass capacitor from 5V to Pin16, it should have been between 5V and ground.
+                    The current limit on the bench supply was turned down to low, turned it up until 5V is read with the chip attached.
+                    With Brian's help the MAX232 circuit now works. The problem was a bad wire attached to the scope and a bad wire tying Rx and Tx together on the UART side of the MAX232.
+                    I tested both chips together using my laptop. The test was successful, both Rx and Tx, using Bray's Terminal (my cable) and Arduino IDE serial Monitor (premade cable). 
+                    Now, I have to change the circuit on the breadboard so that the MAX232 chip is powered via the USB bus and not an external supply.
