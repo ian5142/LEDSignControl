@@ -375,3 +375,4 @@ March 13, 2018 -    Discussed with Robert and Brian issues with MAX232 circuit. 
                     Moved some of the components and connections on the ExpressPCB board.
                     Brian suggested moving the Crystal and its capacitors closer to the MCP2200.
                     He also suggested changing the 90 degree angles to 45 degrees.
+March 14, 2018 -    Started a new board revision in ExpressPCB due to recommendations from Brain (45 degree angles, oscillator should be closer).
