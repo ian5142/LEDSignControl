@@ -382,4 +382,5 @@ March 15, 2018 -    Consulted Brian on Board changes I made. I asked him several
                     Asked Brian about mounting screws, he suggested #6-32 or #4-40.
                     I also asked Brian about traces running under capacitors, in particular to the crystal (C2) and C5/C8 on the other side of the MAX232.
                     Brian and Robert told me the common distance from board edge for mounting holes is 0.063 in.
-                    I have determined that the constra
+                    I have determined that the constraints of the case will be determined later.
+                    The following data about screws is useful, comparing #6-32 or #4-40: #6-32 or #4-40.
