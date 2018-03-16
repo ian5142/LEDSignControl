@@ -384,3 +384,8 @@ March 15, 2018 -    Consulted Brian on Board changes I made. I asked him several
                     Brian and Robert told me the common distance from board edge for mounting holes is 0.063 in.
                     I have determined that the constraints of the case will be determined later.
                     The following data about screws is useful, comparing #6-32 or #4-40: #6-32 or #4-40.
+March 16, 2018 -    Got Brian's opinion on some small board changes that I noticed around the USB port.
+                    Asked Robert for smaller LEDs, I plan on connecting the Rx and Tx LED pins on the MCP2200. I have not designed the board for it yet.
+                    Discussed with Brian how to have the LEDs off normally and ON when data is being sent. Sink, instead of source the current.
+                    Tested the Tx LED on the board. It works. Have not yet tested Rx LED.
+                    I made changes to the MultiSim and ExpressPCB adding the 2 resistors and 2 LEDs required for Tx and Rx LEDs.
