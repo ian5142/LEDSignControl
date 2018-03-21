@@ -391,3 +391,12 @@ March 16, 2018 -    Got Brian's opinion on some small board changes that I notic
                     I made changes to the MultiSim and ExpressPCB adding the 2 resistors and 2 LEDs required for Tx and Rx LEDs.
 March 20, 2018 -    Tested Rx and Tx LEDs on the MCP2200 board. They work fine. They only flash when data is being sent and are normally off.
                     Changed R2 to a 0.6 in resister, unsure if a 0.4, like the rest of them will fit. R2, on the bread board is a bigger resistor than the others.
+March 21, 2018 -    Asked Robert about resistor sizes. He suggested measuring the resistors using the red resistor measuring tool found in the soldering lab.
+                    Discussed with Brian best ways to rotate both LEDs in ExpressPCB he suggested either deleting them
+                    and re-adding them or adding points, deleting the connecting traces, then rotate and reconnect the traces.
+                    Printed out the board layout on paper, actual size.
+                    Placed all of the components on the paper, with foam in behind. Found that R2 should be 0.4 in resistor, not 0.6 in.
+                    Asked Robert for an example 6-32 mounting screw. Determined hole-size is wrong. Robert showed me a table in the drill press room with screw sizes and tap sizes lined up.
+                    Brian suggested making sure all of the holes are far way from other components in case they need to be drilled out after board manufacturing.
+                    After making the holes bigger, I decided that only 4 screws, instead of 6, are needed. 
+                    Discussed with Brian number of mounting screws, he said 4 is plenty, 2 may do. I decided to get rid of the 5th screw and just have 4.
