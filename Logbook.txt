@@ -400,3 +400,6 @@ March 21, 2018 -    Asked Robert about resistor sizes. He suggested measuring th
                     Brian suggested making sure all of the holes are far way from other components in case they need to be drilled out after board manufacturing.
                     After making the holes bigger, I decided that only 4 screws, instead of 6, are needed. 
                     Discussed with Brian number of mounting screws, he said 4 is plenty, 2 may do. I decided to get rid of the 5th screw and just have 4.
+                    Reprinted the board on paper, sized the screws and R2, using a smaller 1.5k resistor. The smaller R2 resistor fits the 0.4 in hole spacing perfectly.
+                    Discussion with Brian about stand-offs, he suggested using something pre-made (not 3D printed), nylon stand-offs or for less height using nylon washers.
+                    Small trace angle changes around some of the components (mainly R2, R4, C4, and C3), in ExpressPCB.
