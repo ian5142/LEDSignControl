@@ -375,7 +375,7 @@ March 13, 2018 -    Discussed with Robert and Brian issues with MAX232 circuit. 
                     Moved some of the components and connections on the ExpressPCB board.
                     Brian suggested moving the Crystal and its capacitors closer to the MCP2200.
                     He also suggested changing the 90 degree angles to 45 degrees.
-March 14, 2018 -    Started a new board revision in ExpressPCB due to recommendations from Brain (45 degree angles, oscillator should be closer).
+March 14, 2018 -    Started a new board revision in ExpressPCB due to recommendations from Brian (45 degree angles, oscillator should be closer).
 March 15, 2018 -    Consulted Brian on Board changes I made. I asked him several questions regarding board design (angles to use/to avoid, trace thickness, etc).
                     Angles to use, 90 degrees when connecting in a T, 45 otherwise. Avoid sharp angles.
                     Trace thickness, Power and ground traces should be about double the thickness of data traces.
