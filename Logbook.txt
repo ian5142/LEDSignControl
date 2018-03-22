@@ -403,3 +403,7 @@ March 21, 2018 -    Asked Robert about resistor sizes. He suggested measuring th
                     Reprinted the board on paper, sized the screws and R2, using a smaller 1.5k resistor. The smaller R2 resistor fits the 0.4 in hole spacing perfectly.
                     Discussion with Brian about stand-offs, he suggested using something pre-made (not 3D printed), nylon stand-offs or for less height using nylon washers.
                     Small trace angle changes around some of the components (mainly R2, R4, C4, and C3), in ExpressPCB.
+March 22, 2018 -    After a quick last continuity test (just Power and ground), I clicked the Order board button and it gives an error.
+                    The error message says there are 3 items on the board with thicknesses or pad sizes less than 0.152mm
+                    I solved the errors which were caused by text (including + and - signs) being too small.
+                    I ordered the board from ExpressPCB, $71 + shipping, total $113 USD. Ships March 26, arrives April 2.
