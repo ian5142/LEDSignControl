@@ -407,3 +407,9 @@ March 22, 2018 -    After a quick last continuity test (just Power and ground), 
                     The error message says there are 3 items on the board with thicknesses or pad sizes less than 0.152mm
                     I solved the errors which were caused by text (including + and - signs) being too small.
                     I ordered the board from ExpressPCB, $71 + shipping, total $113 USD. Ships March 26, arrives April 2.
+March 23, 2018 -    Discussed Case design with Robert. He suggested using self-tapping screws and mounting the board with 4 screws plus another 4 screws for the case.
+                    Started designing a case in Fusion360. 
+                    Discussion with Robert about mounting pads on the case for both attaching the board to the bottom of the case and attaching the top of the case.
+                    He suggested going no smaller than 3/8".
+                    I decided to make my pads that hold the case together 1cm squared.
+                    I determined the inside height required for the case to be 18mm = 4mm (board mounting pads) + 1.5mm (board) + 10mm (capacitor, tallest component) + 2.5mm (extra space)
