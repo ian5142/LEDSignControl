@@ -413,3 +413,6 @@ March 23, 2018 -    Discussed Case design with Robert. He suggested using self-t
                     He suggested going no smaller than 3/8".
                     I decided to make my pads that hold the case together 1cm squared.
                     I determined the inside height required for the case to be 18mm = 4mm (board mounting pads) + 1.5mm (board) + 10mm (capacitor, tallest component) + 2.5mm (extra space)
+March 24, 2018 -    Decided to put indentations on the top of the case to recess the screws (2.5mm down, 8.5mm squared). Added 4 holes on the top half of the case, 2mm diameter.
+                    2mm is the hole size, #6-32 screws are 0.1380" in diameter, a little over 3.5mm.
+                    I have not yet added holes on the bottom half of the case because I don't know the exact screw length yet.
