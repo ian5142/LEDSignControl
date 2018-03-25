@@ -416,3 +416,9 @@ March 23, 2018 -    Discussed Case design with Robert. He suggested using self-t
 March 24, 2018 -    Decided to put indentations on the top of the case to recess the screws (2.5mm down, 8.5mm squared). Added 4 holes on the top half of the case, 2mm diameter.
                     2mm is the hole size, #6-32 screws are 0.1380" in diameter, a little over 3.5mm.
                     I have not yet added holes on the bottom half of the case because I don't know the exact screw length yet.
+                    Found some good 3D printing tips here: https://innovationstation.utexas.edu/tip-design/
+                    According to that site, vertical holes, which are what mine are should be calculated using this formula: 
+                    y = 1.0155x + 0.2795 vertical
+                    Where x is your desired hole diameter in mm, and y is the adjusted diameter (use for CAD drawing).
+                    In this case, in order to get a 2mm hole, I need to make my hole at least 2.3105 mm wide.
+                    I have not yet adjusted my design.
