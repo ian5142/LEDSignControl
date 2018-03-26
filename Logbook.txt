@@ -422,3 +422,13 @@ March 24, 2018 -    Decided to put indentations on the top of the case to recess
                     Where x is your desired hole diameter in mm, and y is the adjusted diameter (use for CAD drawing).
                     In this case, in order to get a 2mm hole, I need to make my hole at least 2.3105 mm wide.
                     I have not yet adjusted my design.
+March 25, 2018 -    I discussed with Brian hole sizes. 
+                    He suggested using the formula I found online and make the holes larger in Fusion360.
+                    New calculated hole size (desired finished hole = 3.3mm): 3.63mm
+                    Tested the hole on a 1cm cube, it still does not screw in easily.
+                    Did another one, just to be sure it would still be too small. It was.
+                    New calculated hole size (desired finished hole = 3.4mm): 3.73mm
+                    A little bigger than I wanted.
+                    New calculated hole size (desired finished hole = 3.35mm): 3.68mm
+                    This one was still a little to loose.
+                    Decided that the best hole size is finished 3.3mm, 3.63mm design.
