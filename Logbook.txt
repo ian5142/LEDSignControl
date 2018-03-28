@@ -432,3 +432,7 @@ March 25, 2018 -    I discussed with Brian hole sizes.
                     New calculated hole size (desired finished hole = 3.35mm): 3.68mm
                     This one was still a little to loose.
                     Decided that the best hole size is finished 3.3mm, 3.63mm design.
+March 28, 2018 -    Asked Brian about which parts to solder first.
+                    He confirmed my suggestion to start with the SOIC, MCP2200.
+                    My PCB arrived at my house today.
+                    I plan on starting the board tomorrow.
