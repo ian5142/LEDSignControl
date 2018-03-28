@@ -438,3 +438,4 @@ March 28, 2018 -    Asked Brian about which parts to solder first.
                     I plan on starting the board tomorrow.
                     Made several PHP adjustments. It now will display an error message if the java program can not send the message on the first try (within 15 seconds).
                     If it does send it, it will still wait 15 seconds before displaying the success message.
+                    I had to look up several things online, including sleep() in php, how to set a variable in php, new line character in php.
