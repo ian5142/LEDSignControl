@@ -439,3 +439,13 @@ March 28, 2018 -    Asked Brian about which parts to solder first.
                     Made several PHP adjustments. It now will display an error message if the java program can not send the message on the first try (within 15 seconds).
                     If it does send it, it will still wait 15 seconds before displaying the success message.
                     I had to look up several things online, including sleep() in php, how to set a variable in php, new line character in php.
+March 29, 2018 -    I started soldering the components to the board.
+                    I started with the MCP2200 and the Mini USB port.
+                    I had a small problem with soldering the Mini USB port.
+                    I accidentally created a solder bridge between 2 of the pin connectors on the back of the port.
+                    Brian had to show me how to desolder the bridge. 
+                    It turns out I was using the right method (using solder braid) but I should have used the smaller braid.
+                    Brian also suggested I use a chisel tip instead of a conical tip.
+                    Robert found a small chisel tip that I used to solder the rest of the components.
+                    When I was nearly finished solder the components (all except for the LEDs) I asked Robert for a hack-saw.
+                    Robert suggested next time I cut the board before soldering the components on it.
