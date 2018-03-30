@@ -463,3 +463,9 @@ March 29, 2018 -    I started soldering the components to the board.
                     Removed R1 and soldered a wire across it.
                     Tested it again. Still says device not recognized.
                     Checked oscillator, it is oscillating at 12MHz.
+March 30, 2018 -    Checked MultiSim schematic against board design, noticed that R2 in MultiSim is connected between Vcc and D+, not D- like on the board.
+                    Tried to removed R2 from the board. Ended up breaking it.
+                    I do not have another 1.5kOhm resistor at home so I tried a 1.6kOhm resistor from Vcc and Pin 19 on the MCP2200.
+                    I soldered the 1.6k resistor on the Vcc side but only touched it to the Pin on the MCP2200 side.
+                    Windows still shows USB device not recognized.
+                    I plan to go to NSCC tomorrow to get my other 1.5kOhm resistor that I left there.
