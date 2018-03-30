@@ -449,3 +449,17 @@ March 29, 2018 -    I started soldering the components to the board.
                     Robert found a small chisel tip that I used to solder the rest of the components.
                     When I was nearly finished solder the components (all except for the LEDs) I asked Robert for a hack-saw.
                     Robert suggested next time I cut the board before soldering the components on it.
+                    I cut the board, on the lines on the silk screen.
+                    I was off a little due to sawing back and forth.
+                    I asked Robert for a piece of 120 Grit sandpaper to smooth down the edges.
+                    It seems square enough now.
+                    Tested some LEDs again, found a Red and Green LED that both work.
+                    Discussed with Robert the height the LEDs should be, so that the user can see the light.
+                    He suggested attaching pin headers to the board and run Dupont cables to the LEDs that would be attached to the top case.
+                    I have attached bent pin headers to the board.
+                    I then soldered female pin headers to Dupont wires and clipped then into their black cases.
+                    Tested the finished circuit board. Windows says USB device not recognized.
+                    I check the oscilloscope output, nothing. Going to remove and short R1.
+                    Removed R1 and soldered a wire across it.
+                    Tested it again. Still says device not recognized.
+                    Checked oscillator, it is oscillating at 12MHz.
