@@ -469,3 +469,4 @@ March 30, 2018 -    Checked MultiSim schematic against board design, noticed tha
                     I soldered the 1.6k resistor on the Vcc side but only touched it to the Pin on the MCP2200 side.
                     Windows still shows USB device not recognized.
                     I plan to go to NSCC tomorrow to get my other 1.5kOhm resistor that I left there.
+                    I found a 1.5k resistor in one of my course kits, so tomorrow I will desolder the 1.6k and solder the 1.5k on the Vcc hole.
