@@ -475,3 +475,4 @@ April 1, 2018 -     This morning I e-mailed Brian to ask him if the campus was o
                     I described the problem. He suggested making sure the (Enable, his words) Reset line was tied High or Low as per the datasheet.
                     He also suggested checking if D+ and D- are swapped. I have not tested this yet.
                     I am trying to desolder C3 and replace it with a 0.22uF instead of a 0.47uF that is currently there. I believe my solder braid is too wide.
+                    I tried swapping D+ and D-, green and white wires. No change. Still comes up USB Device not recognized.
