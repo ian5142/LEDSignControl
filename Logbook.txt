@@ -470,3 +470,8 @@ March 30, 2018 -    Checked MultiSim schematic against board design, noticed tha
                     Windows still shows USB device not recognized.
                     I plan to go to NSCC tomorrow to get my other 1.5kOhm resistor that I left there.
                     I found a 1.5k resistor in one of my course kits, so tomorrow I will desolder the 1.6k and solder the 1.5k on the Vcc hole.
+March 31, 2018 -    I soldered the 1.5kohm resister between Pin 19 and Vcc. It did not fix the Unrecognized USB problem.
+April 1, 2018 -     This morning I e-mailed Brian to ask him if the campus was open. He did not know.
+                    I described the problem. He suggested making sure the (Enable, his words) Reset line was tied High or Low as per the datasheet.
+                    He also suggested checking if D+ and D- are swapped. I have not tested this yet.
+                    I am trying to desolder C3 and replace it with a 0.22uF instead of a 0.47uF that is currently there. I believe my solder braid is too wide.
