@@ -499,3 +499,5 @@ April 3, 2018 -     Printed the bottom case on the 3D-printer.
                     I rebuilt the circuit on a breadboard, using the already soldered Schmart board with MCP2200, 12MHz crystal and 20pF capacitors.
                     It works both with and without the 1.5kOhm R2 resistor tied to D+.
                     When I first hooked it up I was getting the USB device not recognized problem but then I switched D+ and D- and it worked fine.
+                    Green wire, Pin 19 are D+.
+                    White wire, Pin 18 are D-.
