@@ -486,3 +486,13 @@ April 3, 2018 -     Printed the bottom case on the 3D-printer.
                     I then cut out the supports and it looks fine. I have not tested it with the board yet.
                     Realized that the holes in the case bottom are slightly too large.
                     Brian suggested tapping them out to be threaded #6-32 size.
+                    I trimmed all of the leads on the board. 
+                    After some minor trimming on the bottom case it fits fine.
+                    Brian helped me troubleshoot the board circuit.
+                    He added a wire tying the USB shield to ground and desoldered the R2 resistor.
+                    Brian also suggested desoldering the wire (instead of R1) and connecting the crystal side pad of R1 to the trace connected to Pin 3 on the MCP2200.
+                    I have not done that yet.
+                    Brian did desolder the R2 resistor that I moved to Pin 19 on the MCP2200. No change.
+                    I re-verified the oscillator circuit, it is oscillating at 12MHz, not very noisy either.
+                    Pin 18 (D-) is at 5V when plugged in.
+                    Pin 19 (D+), shoots up to 5V when the USB is first connected and then is between 400-720mV peak. 
