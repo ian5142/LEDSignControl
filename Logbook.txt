@@ -495,4 +495,7 @@ April 3, 2018 -     Printed the bottom case on the 3D-printer.
                     Brian did desolder the R2 resistor that I moved to Pin 19 on the MCP2200. No change.
                     I re-verified the oscillator circuit, it is oscillating at 12MHz, not very noisy either.
                     Pin 18 (D-) is at 5V when plugged in.
-                    Pin 19 (D+), shoots up to 5V when the USB is first connected and then is between 400-720mV peak. 
+                    Pin 19 (D+), shoots up to 5V when the USB is first connected and then is between 400-720mV peak.
+                    I rebuilt the circuit on a breadboard, using the already soldered Schmart board with MCP2200, 12MHz crystal and 20pF capacitors.
+                    It works both with and without the 1.5kOhm R2 resistor tied to D+.
+                    When I first hooked it up I was getting the USB device not recognized problem but then I switched D+ and D- and it worked fine.
