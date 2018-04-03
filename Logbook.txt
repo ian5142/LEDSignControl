@@ -480,3 +480,7 @@ April 1, 2018 -     This morning I e-mailed Brian to ask him if the campus was o
                     Mounting holes are 3.63mm wide, finished hole 3.3mm. 3mm deep.
                     Case holes are 3.63mm wide, finished hole 3.3mm. Max 17mm deep.
                     I had to make the mounting pads on the bottom case larger, the holes required were much bigger than expected.
+April 3, 2018 -     Printed the bottom case on the 3D-printer.
+                    Had to stop it because I realized that it was missing supports so all of the overhangs drooped down.
+                    I added 1mm supports to the overhangs and it reprinted fine.
+                    I then cut out the supports and it looks fine. I have not tested it with the board yet.
