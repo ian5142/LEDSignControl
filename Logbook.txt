@@ -484,3 +484,5 @@ April 3, 2018 -     Printed the bottom case on the 3D-printer.
                     Had to stop it because I realized that it was missing supports so all of the overhangs drooped down.
                     I added 1mm supports to the overhangs and it reprinted fine.
                     I then cut out the supports and it looks fine. I have not tested it with the board yet.
+                    Realized that the holes in the case bottom are slightly too large.
+                    Brian suggested tapping them out to be threaded #6-32 size.
