@@ -16,15 +16,6 @@ public class RS232Tester {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-////        char c = 'C';
-////        byte b = 3;
-////        System.out.println(c + " is equal to " + b);]
-//
-//////Test Code
-////        String line = test2.read();
-////        
-////        System.out.println(line);
         try {
             SeriesTwo test2 = new SeriesTwo();
             CheckDB test = new CheckDB();
@@ -40,15 +31,15 @@ public class RS232Tester {
                     }
                     test2.write(message, scroll);
                     boolean acknowledge = test2.readAck();
-                    System.out.println("The message is: " + message);
-                    System.out.println("Isupdated is: " + test.selectisUpdated());
+                    //System.out.println("The message is: " + message);
+                    //System.out.println("Isupdated is: " + test.selectisUpdated());
 
                     //System.out.println("Acknowledged: " + acknowledge);
                     test.setisUpdated();
-                    System.out.println("Isupdated is: " + test.selectisUpdated());
+                    //System.out.println("Isupdated is: " + test.selectisUpdated());
                 }
 
-                Thread.sleep(15 * 1000);
+                Thread.sleep(15 * 1000); // 15 second delay to only check the database and write to the sign every 15 seconds
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
