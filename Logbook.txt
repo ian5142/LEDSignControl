@@ -501,3 +501,14 @@ April 3, 2018 -     Printed the bottom case on the 3D-printer.
                     When I first hooked it up I was getting the USB device not recognized problem but then I switched D+ and D- and it worked fine.
                     Green wire, Pin 19 are D+.
                     White wire, Pin 18 are D-.
+April 4, 2018 -     Started soldering components to a 2nd board.
+                    Only soldered the MCP2200 and its necessary components.
+                    Left off R2 (1.5kohm) and R1.
+                    Brian suggested scratching off the solder mask over the trace and trying to create solder bridge between the trace and crystal side pad of R1.
+                    I tried several times to create a bridge using just solder and then using a small cut resistor lead.
+                    The lead just stuck to the iron and not the trace and pad.
+                    I asked Brian for help and he used an uncut capacitor lead.
+                    Then cut off the lead as close as possible.
+                    I have to go to Value Village or rely on Brian to find a mini USB port.
+                    The only other option is to desolder the one on the first board. Not easy.
+                    For the USB-UART side of the board, everything is in place except the mini USB port.
