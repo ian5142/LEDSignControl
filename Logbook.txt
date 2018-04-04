@@ -512,3 +512,4 @@ April 4, 2018 -     Started soldering components to a 2nd board.
                     I have to go to Value Village or rely on Brian to find a mini USB port.
                     The only other option is to desolder the one on the first board. Not easy.
                     For the USB-UART side of the board, everything is in place except the mini USB port.
+                    Commented out print statements and removed not needed (already commented out) code, RS232Tester.java
