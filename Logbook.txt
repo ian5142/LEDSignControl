@@ -513,3 +513,6 @@ April 4, 2018 -     Started soldering components to a 2nd board.
                     The only other option is to desolder the one on the first board. Not easy.
                     For the USB-UART side of the board, everything is in place except the mini USB port.
                     Commented out print statements and removed not needed (already commented out) code, RS232Tester.java
+April 5, 2018 -     Found a Mini-USB port from an old MP3 again. Was able to desolder it fairly easily.
+                    Soldered it to the 2nd board, verifying that none of the data pins on the back of the port are bridged.
+                    Plugged in the device, still comes up USB not Recognized.
