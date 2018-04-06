@@ -29,16 +29,16 @@ public class SeriesTwo {
     String chksum;
     char CR;
     char newline;
-    Test tester;
+    RS232Control controller;
     char posAck;
     char negAck;
 
     /**
-     * Calls init() method and creates a Test object
+     * Calls init() method and creates a RS232Control object
      */
     public SeriesTwo() {
         init();
-        tester = new Test();
+        controller = new RS232Control();
     }
 
     /**
@@ -61,11 +61,11 @@ public class SeriesTwo {
     }
     
     /**
-     * Calls the serialConnected method in Test.java
+     * Calls the serialConnected method in RS232Control.java
      * @return Returns the value sent by serialConnected, true if the serial port is connected.
      */
     protected boolean getConnected () {
-        boolean connected = tester.serialConnected();
+        boolean connected = controller.serialConnected();
         return connected;
     }
     
@@ -135,7 +135,7 @@ public class SeriesTwo {
     }
 
     /**
-     * Creates the final Message, sends it to the Test object
+     * Creates the final Message, sends it to the RS232Control object
      *
      * @param body The message to write to the screen.
      * @param scroll
@@ -156,7 +156,7 @@ public class SeriesTwo {
         } else {
             message = header + address + startMes + body + endMes + numseq + chksum + CR;
         }
-        boolean success = tester.testWrite(message);
+        boolean success = controller.testWrite(message);
 //            if (success) {
 //                boolean acknowledge = readAck();
 //                while (!acknowledge) {
@@ -177,7 +177,7 @@ public class SeriesTwo {
     }
 
     protected boolean readAck() {
-        byte [] readArray = tester.testRead();
+        byte [] readArray = controller.testRead();
         boolean acknowledge = false;
         if (readArray[3] == 6) {
             acknowledge = true;
@@ -201,8 +201,8 @@ public class SeriesTwo {
      */
     protected String read() {
 //        System.out.println("Waiting for readline: ");
-//        String line = tester.testRead();
-        //boolean testWrite = tester.testWrite(line);
+//        String line = controller.testRead();
+        //boolean testWrite = controller.testWrite(line);
         return "";
     }
 
