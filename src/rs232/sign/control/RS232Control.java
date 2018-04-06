@@ -32,7 +32,7 @@ public class RS232Control {
      * Creates a serial port object
      */
     public RS232Control() {
-        portName = "/dev/ttyACM0";
+        portName = findPort();
         serialPort = new SerialPort(portName);
         message = new StringBuilder();
         receivingMessage = false;
