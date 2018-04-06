@@ -531,3 +531,4 @@ April 6, 2018 -     Added supports to top of case in Fusion360.
                     Renamed the package and several of the java files to make them more readable.
                     Made changes to call findPort() method in RS232Control.java (was Test.java), so that the user must input which COM port will be used.
                     I made some changes to findPort() method so that it is more user friendly.
+                    Commented out unnecessary println statements in SeriesTwo.java.
