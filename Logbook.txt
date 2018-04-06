@@ -528,3 +528,6 @@ April 6, 2018 -     Added supports to top of case in Fusion360.
                     I plan on finishing the second board and passing that one in instead.
                     I realized now that I forgot the LED holes in the top case. 
                     Tonight and tomorrow I have to update the top of the case design and finish soldering the components on the second board.
+                    Renamed the package and several of the java files to make them more readable.
+                    Made changes to call findPort() method in RS232Control.java (was Test.java), so that the user must input which COM port will be used.
+                    I made some changes to findPort() method so that it is more user friendly.
