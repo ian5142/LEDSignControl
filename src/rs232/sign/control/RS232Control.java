@@ -43,19 +43,21 @@ public class RS232Control {
 
     /**
      * Finds the serial port to be used, in Windows type COM1, for example In
-     * Linux, type /dev/pts/3 for example. All serial ports may not be listed.
+     * Linux, type /dev/pts/3 for example. The custom USB-RS232 device, using a MCP2200, is on /dev/ttyACM0/
+     * All serial ports may not be listed.
      *
      * @return The serial port name in String format, used to open and close the
      * port
      */
     private String findPort() {
-        System.out.println("What is the COM port you are using?");
-
+        System.out.println("List of COM ports:");
         String[] portNames = SerialPortList.getPortNames();
         for (String portName1 : portNames) {
             System.out.println(portName1);
         }
-
+        
+        System.out.println("What COM port are you using?");
+        System.out.println("Please type it in how it appears above.");
         Scanner sc = new Scanner(System.in);
         String port = "";
         if (sc.hasNext()) {
