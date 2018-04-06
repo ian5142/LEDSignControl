@@ -49,7 +49,7 @@ public class RS232Control {
      * port
      */
     private String findPort() {
-        System.out.println("What is the port you are using?");
+        System.out.println("What is the COM port you are using?");
 
         String[] portNames = SerialPortList.getPortNames();
         for (String portName1 : portNames) {
