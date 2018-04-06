@@ -523,3 +523,8 @@ April 6, 2018 -     Added supports to top of case in Fusion360.
                     He touched them up a bit.
                     Windows recognized it once.
                     On subsequent tries Windows does not recognize it.
+                    Touched up the USB port pins again and now it is recognized every time.
+                    I did the same on the first board and it works now as well.
+                    I plan on finishing the second board and passing that one in instead.
+                    I realized now that I forgot the LED holes in the top case. 
+                    Tonight and tomorrow I have to update the top of the case design and finish soldering the components on the second board.
