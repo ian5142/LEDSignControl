@@ -516,3 +516,10 @@ April 4, 2018 -     Started soldering components to a 2nd board.
 April 5, 2018 -     Found a Mini-USB port from an old MP3 again. Was able to desolder it fairly easily.
                     Soldered it to the 2nd board, verifying that none of the data pins on the back of the port are bridged.
                     Plugged in the device, still comes up USB not Recognized.
+April 6, 2018 -     Added supports to top of case in Fusion360.
+                    Printed the top of the case. It printed successfully.
+                    I had to use hot-air rework to reform some of the pads that the screws sit on.
+                    Brian found that 2 of the pins on the usb port were not soldered down perfectly (attached but not great).
+                    He touched them up a bit.
+                    Windows recognized it once.
+                    On subsequent tries Windows does not recognize it.
