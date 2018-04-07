@@ -535,3 +535,5 @@ April 6, 2018 -     Added supports to top of case in Fusion360.
                     Started writing a User manual for the java back-end.
                     When I was writing the User manual and using the first board as a test, it stopped being recognized.
                     The first board does not even show an error in Windows now. I suspect that the USB port is not soldered down properly again.
+                    It broke again shortly after. Fixed it by resoldering and then it broke again.
+                    It only refuses to work when I place it in the case.
