@@ -552,3 +552,5 @@ April 7, 2018 -     Resoldered both of the USB ports again.
                     Discussed with Brian and he suggested just cutting off the trace to Pin 1 on the DB9 and soldering a short jumper wire from Pin 8 on the Max232 to Pin 3 on the DB9.
                     I soldered the jumper wire and both Tx and Rx now work.
                     It is effectively now a null modem cable, Rx and Tx are swapped.
+                    Changed the MultiSim Schematic to match how the device is configured now.
+                    Added holes for LEDs to be seen in Top of Case, reprinted using 3D printer.
