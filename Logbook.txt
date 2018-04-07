@@ -537,3 +537,18 @@ April 6, 2018 -     Added supports to top of case in Fusion360.
                     The first board does not even show an error in Windows now. I suspect that the USB port is not soldered down properly again.
                     It broke again shortly after. Fixed it by resoldering and then it broke again.
                     It only refuses to work when I place it in the case.
+April 7, 2018 -     Resoldered both of the USB ports again.
+                    Discussed with Brian about adding more solder or just reheating the pads/pins.
+                    He suggested just reheating using hot-air rework.
+                    I also finished soldering the wires to the LEDs, including shrink wrap.
+                    Tested them, both LEDs work, only flash when data is sent.
+                    I then cut the board down to the correct size.
+                    The last component, the DB9 port was then soldered down.
+                    I then started testing the functions, Tx works fine, RS232 levels.
+                    Rx does not yet. The Rx LED does not even flash.
+                    Tested with an oscilloscope, no input on either side of the Rx for the Max232 (from DB9 or to MCP2200).
+                    Discovered that I connected the Rx Pin on the Max232, Pin 8, to Pin 1 on the DB9, should have been Pin 
+                    Also, Tx is on Pin 2 and should have been on Pin 3.
+                    Discussed with Brian and he suggested just cutting off the trace to Pin 1 on the DB9 and soldering a short jumper wire from Pin 8 on the Max232 to Pin 3 on the DB9.
+                    I soldered the jumper wire and both Tx and Rx now work.
+                    It is effectively now a null modem cable, Rx and Tx are swapped.
