@@ -554,3 +554,9 @@ April 7, 2018 -     Resoldered both of the USB ports again.
                     It is effectively now a null modem cable, Rx and Tx are swapped.
                     Changed the MultiSim Schematic to match how the device is configured now.
                     Added holes for LEDs to be seen in Top of Case, reprinted using 3D printer.
+                    I realized that I forgot to use the equation to calculate finished hole sizes for the LED holes.
+                    I decided that I will just drill them out later, I do not want to restart the print job.
+                    I grinded down 4 1/2in #6-32 machine screws so that they are about 1/4 of an inch, using the grinder (holding the screw with a pair of Vice Grips, 2 nuts on the screw).
+                    These will be used to attach the board to the bottom of the case.
+                    When the 3D print was done, I cut off the supports and touched up the corners to make them look better.
+                    I have not yet grinded down the 4 screws required to attach both halves of the case.
