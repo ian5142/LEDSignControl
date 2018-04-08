@@ -70,7 +70,7 @@ public class RS232Control {
     
     /**
      * Checks if the serial port is connected
-     * @return Returns true if any of the serial ports found using getPortNames() matches the portName global variable ("/dev/ttyUSB0").
+     * @return Returns true if any of the serial ports found using getPortNames() matches the portName global variable (what ever the user types in when findPort() is called).
      */
     protected boolean serialConnected () {
         boolean connected = false;
@@ -78,6 +78,7 @@ public class RS232Control {
         for (String portName1 : portNames) {
             if (portName1.equals(portName) ) {
                 connected = true;
+                System.out.println("Connected successfully to serial port: " + portName);
             }
         }
         return connected;
