@@ -39,7 +39,9 @@ public class RS232SignMain {
                     //System.out.println("Isupdated is: " + test.selectisUpdated());
 
                     //System.out.println("Acknowledged: " + acknowledge);
-                    test.setisUpdated();
+                    if (acknowledge) {
+                        test.setisUpdated();
+                    }
                     //System.out.println("Isupdated is: " + test.selectisUpdated());
                 }
 
