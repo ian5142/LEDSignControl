@@ -24,7 +24,7 @@ public class RS232SignMain {
                 boolean portConnected = test2.getConnected();
                 test.setPortError(portConnected);
                 if (index == 0 && portConnected) {
-                    System.out.println("Ready for message input.");
+                    System.out.println("Ready for message input via web page.");
                     index++;
                 }
                 if (!test.selectisUpdated() && portConnected) {
