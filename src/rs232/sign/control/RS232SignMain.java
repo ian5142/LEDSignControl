@@ -19,10 +19,14 @@ public class RS232SignMain {
         try {
             SeriesTwo test2 = new SeriesTwo();
             CheckDB test = new CheckDB();
-
+            int index = 0;
             while (true) {
                 boolean portConnected = test2.getConnected();
                 test.setPortError(portConnected);
+                if (index == 0 && portConnected) {
+                    System.out.println("Ready for message input.");
+                    index++;
+                }
                 if (!test.selectisUpdated() && portConnected) {
                     String message = test.selectMessage();
                     boolean scroll = false;
