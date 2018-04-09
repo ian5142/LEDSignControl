@@ -560,3 +560,20 @@ April 7, 2018 -     Resoldered both of the USB ports again.
                     These will be used to attach the board to the bottom of the case.
                     When the 3D print was done, I cut off the supports and touched up the corners to make them look better.
                     I have not yet grinded down the 4 screws required to attach both halves of the case.
+April 8, 2018 -     I hand drilled the holes in the top of the case so that the LED holders fit in.
+                    I then placed the LEDs in the holders. They clipped in fine.
+                    Next, the screws. I screwed in two of the board screws, the other two would not fit.
+                    Decided that the screws closest to the USB port were not necessary.
+                    Then, I measured the total hole size, with the case together, using a micrometer. 15mm
+                    I decided to cut the case screws to be 14mm.
+                    I cut all 4 case screws using the grinder.
+                    The screws screwed in fine.
+                    I have not done any extensive testing yet.
+                    I added a success message to serialConnected() in RS232Control.java.
+                    Added a ready for message input print statement in RS232SignMain.java.
+                    Added an if statement to check acknowledge before setting isUpdated, in RS232SignMain.java.
+                    Made some changes to PHP so that isUpdated is checked after 15 seconds before showing either a success or failure message.
+                    Tested the failure message. It comes up when it should.
+                    The success message also comes up when isUpdated is set via mariadb.
+                    Tested the custom board and determined it shows up every time if the wire is held a certain way.
+                    I plan on getting a new wire tomorrow.
