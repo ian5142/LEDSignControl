@@ -577,3 +577,5 @@ April 8, 2018 -     I hand drilled the holes in the top of the case so that the 
                     The success message also comes up when isUpdated is set via mariadb.
                     Tested the custom board and determined it shows up every time if the wire is held a certain way.
                     I plan on getting a new wire tomorrow.
+                    Updated Parts List with resistor, 3D printer and software, and machine screw info.
+                    Also added the Cbypass capacitor, it is a 104, 0.1uF not 1uF.
