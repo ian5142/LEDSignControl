@@ -581,3 +581,6 @@ April 8, 2018 -     I hand drilled the holes in the top of the case so that the 
                     Also added the Cbypass capacitor, it is a 104, 0.1uF not 1uF.
 April 9, 2018 -     Added shipping and import duties to ExpressPCB cost.
                     Added LEDs to the parts list and solder, flux and solder braid to tools.
+                    Added a 1.5kohm resistor between 5V and Pin 19, D+.
+                    I thought it would then show up under Linux, it still does not.
+                    It still shows up in Windows.
