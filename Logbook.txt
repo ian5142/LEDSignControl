@@ -580,3 +580,4 @@ April 8, 2018 -     I hand drilled the holes in the top of the case so that the 
                     Updated Parts List with resistor, 3D printer and software, and machine screw info.
                     Also added the Cbypass capacitor, it is a 104, 0.1uF not 1uF.
 April 9, 2018 -     Added shipping and import duties to ExpressPCB cost.
+                    Added LEDs to the parts list and solder, flux and solder braid to tools.
