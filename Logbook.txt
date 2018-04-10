@@ -596,3 +596,5 @@ April 9, 2018 -     Added shipping and import duties to ExpressPCB cost.
 April 10, 2018 -    I tested the custom device on one of the lab computers, it came up fine.
                     I still believe it is a missing driver on the Raspberry Pi.
                     Robert suggested trying it with another Raspberry Pi.
+                    Removed not required, already commented out code, in RS232Control.java, CheckDB.java, SeriesTwo.java
+                    read() method reads in a String by calling testRead() from RS232Control.java, read() is in SeriesTwo.java.
