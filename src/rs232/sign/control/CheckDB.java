@@ -41,13 +41,12 @@ public class CheckDB {
         password = "admin";
     }
     /**
-     * Opens the database
+     * Opens the database and prepares the database statements that will be called later.
      * @return Returns true if the database opened successfully.
      */
     private boolean openDB () {
         boolean DBopen = false;
         try {
-//            message = "This is a new message.";
             con = DriverManager.getConnection(url, user, password);
             st = con.createStatement();
             updated = con.prepareStatement("UPDATE t SET isupdated=TRUE");
@@ -55,11 +54,6 @@ public class CheckDB {
             clearError = con.prepareStatement("UPDATE t SET error=0");
 //            newMessage = con.prepareStatement("UPDATE t SET message='" + message + "'");
             DBopen = true;
-//            To be put in the update methods.
-//            newMessage.executeUpdate();
-//            newMessage.close();
-//            updated.executeUpdate();
-//            updated.close();
         } catch (SQLException ex) {
             Logger.getLogger(CheckDB.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -173,12 +167,7 @@ public class CheckDB {
     protected void setisUpdated () {
         try {
             if (openDB()) {
-//                rs.updateBoolean("isupdated", true);
-//                String [] s = new String [1];
-//                s[0] = "isupdated";
-//                updated.setString(1, "TRUE");
                 updated.executeUpdate();
-//                st.executeUpdate("t", s);
                 boolean closeDB = closeDB();
             }
         } catch (SQLException ex) {
