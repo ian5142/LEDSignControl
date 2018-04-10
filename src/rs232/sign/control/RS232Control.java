@@ -171,61 +171,10 @@ public class RS232Control {
     protected byte [] testRead() {
         byte [] readArray = null;
         try {
-            //        boolean success = false;
-//        String line = "";
-//        try {
-//            //openP();
-//            line = serialPort.readString(128);
-//            success = true;
-//            serialPort.closePort();
-//        } catch (SerialPortException ex) {
-//            Logger.getLogger(RS232Control.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        if (success == true) {
-//            System.out.println("Line read: " + line);
-//            return line;
-//        } else {
-//            line = "Did not read.";
-//            return line;
-//        }
-//            openP();
             readArray = serialPort.readBytes(9);
-//            String readLine3 = serialPort.readString(10);
-//            for (int i = 0 ; i < 9 ; i++) {
-//                System.out.print(" " + readArray[i]);
-//            }
-//            System.out.println();
-//            //serialPort.addEventListener(new SerialPortReader());
-//            String readLine2 = null;
-//            while ( (readLine2 == null) ){
-//                try {
-//                    readLine2 = serialPort.readString(10, 5000);
-//                } catch (SerialPortTimeoutException ex) {
-//                    System.out.println("Timed out.");
-//                }
-//                if (readLine2 != null) {
-//                    System.out.println("Readline2: " + readLine2 + "");
-//                }
-//            }
-//            System.out.println("Readline2: " + readLine2 + "");
-//            if(acknowledge == true) {
-//                System.out.println("The message was acknowledged");
-//            } 
-//            else {
-//                System.out.println("Not acknowledged.");
-//            }
             serialPort.closePort();
         } 
-//          catch (SerialPortException ex) {
-//            System.out.println("Error in receiving string from COM-port: " + ex);
-//        } catch (SerialPortTimeoutException ex) {
-//            Logger.getLogger(RS232Control.class.getName()).log(Level.INFO, null, ex);
-//            try {
-//                serialPort.closePort();
-//            } catch (SerialPortException ex1) {
-//                Logger.getLogger(RS232Control.class.getName()).log(Level.SEVERE, null, ex1);
-//            }
-        //} 
+        
         catch (SerialPortException ex) {
             Logger.getLogger(RS232Control.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -239,39 +188,6 @@ public class RS232Control {
      * of the data and change the status lines CTS and DSR
      */
     private class SerialPortReader implements SerialPortEventListener {
-//        StringBuilder message = new StringBuilder();
-//        Boolean receivingMessage = false;
-//
-//        @Override
-//        public void serialEvent(SerialPortEvent event) {
-//            if (event.isRXCHAR() && event.getEventValue() > 0) {
-//                try {
-//                    byte buffer[] = serialPort.readBytes();
-//                    for (byte b : buffer) {
-//                        if (b == '>') {
-//                            receivingMessage = true;
-//                            message.setLength(0);
-//                        } else if (receivingMessage == true) {
-//                            if (b == '\r') {
-//                                receivingMessage = false;
-//                                String toProcess = message.toString();
-//                                Platform.runLater(new Runnable() {
-//                                    @Override
-//                                    public void run() {
-//                                        processMessage(toProcess);
-//                                    }
-//                                });
-//                            } else {
-//                                message.append((char) b);
-//                            }
-//                        }
-//                    }
-//                } catch (SerialPortException ex) {
-//                    System.out.println(ex);
-//                    System.out.println("serialEvent");
-//                }
-//            }
-//        }
 
         /**
          * Reads the data bit by bit from the serial port Can throw a
@@ -292,60 +208,15 @@ public class RS232Control {
                         
                     }
                     else {
-//                        acknowledge = false;
+                        acknowledge = false;
                     }
 //                    System.out.println("Received response: " + readLine);
-//            byte buffer[] = serialPort.readBytes(10);
-//            for (byte b: buffer) {
-//                if (b == '>') {
-//                    receivingMessage = true;
-//                    message.setLength(0);
-//                }
-//                else if (receivingMessage == true) {
-//                    if (b == '\r') {
-//                        receivingMessage = false;
-//                        String toProcess = message.toString();
-//                        Platform.runLater(new Runnable() {
-//                            @Override public void run() {
-//                                processMessage(toProcess);
-//                           }
-//                        });
-//                    }
-//                    else {
-//                        message.append((char)b);
-//                    }
-//                }
-//            }                
+               
                 } catch (SerialPortException ex) {
                     System.out.println("Error in receiving string from COM-port: " + ex);
                 }
             }
         }
-
-//        public void serialEvent(SerialPortEvent event) {
-//            if (event.isRXCHAR()) {//If data is available
-//                if (event.getEventValue() == 10) {//Check bytes count in the input buffer
-//                    //Read data, if 10 bytes available 
-//                    try {
-//                        byte buffer[] = serialPort.readBytes(10);
-//                    } catch (SerialPortException ex) {
-//                        System.out.println(ex);
-//                    }
-//                }
-//            } else if (event.isCTS()) {//If CTS line has changed state
-//                if (event.getEventValue() == 1) {//If line is ON
-//                    System.out.println("CTS - ON");
-//                } else {
-//                    System.out.println("CTS - OFF");
-//                }
-//            } else if (event.isDSR()) {///If DSR line has changed state
-//                if (event.getEventValue() == 1) {//If line is ON
-//                    System.out.println("DSR - ON");
-//                } else {
-//                    System.out.println("DSR - OFF");
-//                }
-//            }
-//        }
     }
 
     /**
