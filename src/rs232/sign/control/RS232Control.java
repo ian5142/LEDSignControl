@@ -80,6 +80,9 @@ public class RS232Control {
                 connected = true;
                 System.out.println("Connected successfully to serial port: " + portName);
             }
+            else {
+                System.out.println("Can not connect to serial port: " + portName);
+            }
         }
         return connected;
     }
