@@ -600,3 +600,5 @@ April 10, 2018 -    I tested the custom device on one of the lab computers, it c
                     read() method reads in a String by calling testRead() from RS232Control.java, read() is in SeriesTwo.java.
                     Tried to add some basic error checking regarding port name but the changes did not work so I reverted the code using Git.
                     Tested it again just to make sure it reverted OK.
+                    Finished an AutoCAD drawing of the connections between the Raspberry Pi and the Sign using a premade USB-RS232 adapter.
+                    Printed off the drawing.
