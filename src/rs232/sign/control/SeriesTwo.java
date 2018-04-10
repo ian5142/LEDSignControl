@@ -171,10 +171,9 @@ public class SeriesTwo {
      * @return The line read from the serial port
      */
     protected String read() {
-//        System.out.println("Waiting for readline: ");
-//        String line = controller.testRead();
-        //boolean testWrite = controller.testWrite(line);
-        return "";
+        byte [] readArray = controller.testRead();
+        String readString = new String(readArray);
+        return readString;
     }
 
     /**
