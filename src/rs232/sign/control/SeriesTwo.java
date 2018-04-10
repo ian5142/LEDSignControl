@@ -142,14 +142,9 @@ public class SeriesTwo {
      */
     protected void write(String body, boolean scroll) {
 
-//        String message = header + address + startMes + body + endMes + numseq + 
-//                chksum + newline + CR;
         body = checkBlink(body);
         chksum = calculateChksum(body, scroll);
-//        String message = (char) 0x1 + "1" + (char) 0x2 + "This is a test." + (char) 0x4 + "1" + "8C" + CR;
-//        String message = header + address + startMes + body + 3 + endMes + numseq + chksum + CR;
         String message;
-//        System.out.println("Scroll ON: " + scroll);
         if (scroll) {
             char scrollChar = (char) 0x19;
             message = header + address + startMes + scrollChar + body + endMes + numseq + chksum + CR;
@@ -157,22 +152,6 @@ public class SeriesTwo {
             message = header + address + startMes + body + endMes + numseq + chksum + CR;
         }
         boolean success = controller.testWrite(message);
-//            if (success) {
-//                boolean acknowledge = readAck();
-//                while (!acknowledge) {
-//                    write(body);
-//                }
-//            }
-
-//        String s = "";
-//        for (int i = 0; i < message.length(); i++) {
-//            char [] array = message.toCharArray();
-//            for (int j = 0; j < array.length; j++) {
-//                byte b = (byte) array[j];
-//                s = s + " " + b;
-//            }
-//        }
-//        System.out.println(s);
         checkSeq();
     }
 
@@ -183,14 +162,6 @@ public class SeriesTwo {
             acknowledge = true;
 //            System.out.print("The message was sent successfully.");
         }
-//        if (line.equals(posAck)) {
-//            System.out.print("The message was sent successfully.");
-//            acknowledge = true;
-//        }
-//        else if (line.equals(negAck)) {
-//            System.out.println("The message was not sent");
-//            acknowledge = false;
-//        }
         return acknowledge;
     }
 
@@ -219,8 +190,6 @@ public class SeriesTwo {
         } else if (numseq == 0) {
             numseq++;
             seq = numseq + "";
-        } else {
-
         }
     }
 
@@ -228,10 +197,12 @@ public class SeriesTwo {
         ArrayList<Character> blinkfix = new ArrayList<Character>();
         int blinkON = -1;
         int blinkOFF = -1;
+        
         if (body.contains("~|^") && body.contains("^|~")) {
             blinkON = body.indexOf("~|^");
             blinkOFF = body.indexOf("^|~");
         }
+        
         for (int i = 0; i < body.length(); i++) {
             char current = body.charAt(i);
             if ( i == blinkON && blinkON != -1) {
@@ -242,45 +213,14 @@ public class SeriesTwo {
                 current = (char) 0x12;
                 i += 2;
             }
-//            if (current == '~') {
-//                if ((i + 1) < body.length()) {
-//                    if (body.charAt(i + 1) == '|') {
-//                        if ((i + 2) < body.length()) {
-//                            if (body.charAt(i + 2) == '^') {
-//
-//                            }
-//                        }
-//                    }
-//                }
-//            }
             blinkfix.add(current);
         }
-//        for (int j = 0 ; j < body.length() ; ) {
-//            if (j == blinkON && blinkON != 0) {
-//                blinkfix.remove(j+1);
-//                blinkfix.remove(j+2);
-//                j += 2;
-//            }
-//            else if (j == blinkOFF && blinkOFF != 0) {
-//                blinkfix.remove(j+1);
-//                blinkfix.remove(j+2);
-//                j += 2;
-//            }
-//            else {
-//                j++;
-//            }
-//        }
-//        if (body.contains("~|^")) {
-//            blinkfix = blinkfix.replaceAll("~|^", (char) 0x10 + "");
-//        }
-//        if (body.contains("^|~")) {
-//            blinkfix = blinkfix.replaceAll("^|~", (char) 0x12 + "");
-//        }
-//        System.out.println("Blink fix: " + blinkfix);
+        
         String newbody = "";
         for (int i = 0 ; i < blinkfix.size() ; i++) {
             newbody = newbody + blinkfix.get(i);
         }
+        
         return newbody;
     }
 }
