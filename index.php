@@ -1,5 +1,6 @@
-<?php // error_reporting(E_ALL);
-//ini_set('display_errors', 1);
+<?php 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 ?>
 <!doctype html>
 <!--
@@ -33,12 +34,41 @@ and open the template in the editor.
             return $data;
         }
         ?>
-        <div>
+        <!------jQuery
+        <script type="text/javascript">
+$(function () {
+    $('#button').on('click', function () {
+        var text = $('#text');
+        text.val(text.val() + ' after clicking');    
+    });
+});
+</script>--->
+<!------Javascript
+<script type="text/javascript">
+document.getElementById('button').addEventListener('click', function () {
+    var text = document.getElementById('text');
+    text.value += ' after clicking';
+});
+</script>--->
+<!----Javascript2--->
+<script language="javascript" type="text/javascript">
+
+function blinkONtext() {
+	var newtext = document.form1.message.value;
+	document.form1.message.value += "~|^";
+}
+function blinkOFFtext() {
+	var newtext = document.form1.message.value;
+	document.form1.message.value += "^|~";
+}
+</script>
+        <div id="example">
             <p class="h1">LED Display Message Update</p>
-            <p class="content">The LED Display can be updated by putting the new message in the textbox and clicking the Send to Display button.</p>
+            <p class="content">The LED Display can be updated by putting the new message in the textbox and selecting Scroll or None. Blink can not be used with Scroll. Note, there is  a 15 second delay after hitting the "Send to Display" button.</p>
             <p class="content">
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">Message: <input type="text" name="message" value="" width="600px">
+            <form method="post" action= "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" name="form1">Message: <input type="text" name="message" value="" width="600px">
             </p>
+            <input type="button" id="blinkON" value="Blink ON" onClick="blinkONtext()">&nbsp;<input type="button" id="blinkOFF" value="Blink OFF" onClick="blinkOFFtext()">
             <p>
             Sign options:
             </p>
@@ -46,11 +76,6 @@ and open the template in the editor.
             <input type="radio" name="textdec"
             <?php if (isset($textdec) && $textdec=="SCROLL") echo "checked";?>
 value="SCROLL">Scrolling Text
-			</p>
-			<p>
-			<input type="radio" name="textdec"
-            <?php if (isset($textdec) && $textdec=="BLINK") echo "checked";?>
-value="BLINK">Blinking Text
 			</p>
             <p>
 			<input type="radio" name="textdec"
@@ -60,22 +85,33 @@ value="NONE">None
                 <p class="h1"><input type="submit" name="submit" value="Send to Display"></p>
             </form>
         </p>
-            
         <?php
         $DBServer = 'localhost';
         $DBUser = 'client';
         $DBPass = 'admin';
         $DBName = 'messagedb';
         $conn = new mysqli($DBServer, $DBUser, $DBPass, $DBName);
-        // check connection
+        $error = 0;
+        $isupdated2 = 0;
+		// check connection
         if ($conn->connect_error) {
             trigger_error('Database connection failed: ' . $conn->connect_error, E_USER_ERROR);
         }
 
-        //Select
-        $sql = 'SELECT * FROM t';
+        //Select error from t
+		$sql = 'SELECT error FROM t';
+		$rs = $conn->query($sql);
+		
+		if ($rs->num_rows > 0) {
+    		// output data of each row
+			
+	    	while($row = $rs->fetch_assoc()) {
+        		$GLOBALS['error'] = $row["error"];
+    		}
+		} 
+		
+		$sql = 'SELECT * FROM t';
         $rs = $conn->query($sql);
-
         if ($rs === false) {
             trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->error, E_USER_ERROR);
         } else {
@@ -87,17 +123,10 @@ value="NONE">None
 
             $v1 = $conn->real_escape_string($message);
 			$scrollON = 0;
-			$blinkON = 0;
 			if ($textdec=="NONE") {
-				$scrollON = 0;
-				$blinkON = 0;
-			}
-			else if ($textdec=="BLINK") {
-				$blinkON = 1;
 				$scrollON = 0;
 			}
 			else if ($textdec=="SCROLL") {
-				$blinkON = 0;
 				$scrollON = 1;
 			}
 			
@@ -105,7 +134,7 @@ value="NONE">None
 			
 			//$blinkON = "'" . $conn->real_escape_string($blink) . "'";         
             
-            $sql = "UPDATE t SET message='$v1', isupdated='FALSE', scrollon='$scrollON', blinkon='$blinkON'";
+            $sql = "UPDATE t SET message='$v1', isupdated='FALSE', scrollon='$scrollON'";
 //            echo "<br />$sql<br />";
 
             if ($conn->query($sql) === false) {
@@ -113,7 +142,25 @@ value="NONE">None
             } else if ($message !== "") {
                 $affected_rows = $conn->affected_rows;
 //			exec("java -jar RS232_Example.jar", $output);
-                echo "<script type='text/javascript'>alert('The message, \"$message\", was sent successfully to the display.');</script>";
+				sleep(15);
+				
+				//Select error from t
+				$sql = 'SELECT isupdated FROM t';
+				$rs = $conn->query($sql);
+		
+				if ($rs->num_rows > 0) {
+    			// output data of each row
+			
+	    		while($row = $rs->fetch_assoc()) {
+        			$GLOBALS['isupdated2'] = $row["isupdated"];
+    			}
+		}
+				if ( ($GLOBALS['error'] === "0") && ($GLOBALS['isupdated2'] === "1") ) {
+                	echo "<script type='text/javascript'>alert('The message, \"$message\", was sent successfully to the display.');</script>";
+				}
+				else {
+					echo "<script type='text/javascript'>alert('There is a communications error. \\nThe sign will be updated after the Java back-end\\nis restarted and the connections are correct.');</script>";
+				}
             }
         }
         ?>
