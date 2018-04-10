@@ -593,3 +593,6 @@ April 9, 2018 -     Added shipping and import duties to ExpressPCB cost.
                     The second lists all of the USB devices connected to the Raspberry Pi.
                     It does not list the custom USB device. 
                     It should show up with a Vendor ID of 0x04D8, Product ID of 0x00DF.
+April 10, 2018 -    I tested the custom device on one of the lab computers, it came up fine.
+                    I still believe it is a missing driver on the Raspberry Pi.
+                    Robert suggested trying it with another Raspberry Pi.
