@@ -584,3 +584,12 @@ April 9, 2018 -     Added shipping and import duties to ExpressPCB cost.
                     Added a 1.5kohm resistor between 5V and Pin 19, D+.
                     I thought it would then show up under Linux, it still does not.
                     It still shows up in Windows.
+                    The device shows up fine in my Ubuntu 16.04 Virtual Machine.
+                    I tried several linux commands to see if the device shows up on the Raspberry Pi:
+                        sudo dmesg | grep cdc
+                        sudo lsusb
+                    Neither command outputs the correct thing.
+                    The first command nothing, when it should show something
+                    The second lists all of the USB devices connected to the Raspberry Pi.
+                    It does not list the custom USB device. 
+                    It should show up with a Vendor ID of 0x04D8, Product ID of 0x00DF.
