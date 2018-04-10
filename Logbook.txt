@@ -598,3 +598,5 @@ April 10, 2018 -    I tested the custom device on one of the lab computers, it c
                     Robert suggested trying it with another Raspberry Pi.
                     Removed not required, already commented out code, in RS232Control.java, CheckDB.java, SeriesTwo.java
                     read() method reads in a String by calling testRead() from RS232Control.java, read() is in SeriesTwo.java.
+                    Tried to add some basic error checking regarding port name but the changes did not work so I reverted the code using Git.
+                    Tested it again just to make sure it reverted OK.
