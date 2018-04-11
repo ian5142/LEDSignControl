@@ -60,7 +60,8 @@ public class SeriesTwo {
     
     /**
      * Calls the serialConnected method in RS232Control.java
-     * @return Returns the value sent by serialConnected, true if the serial port is connected.
+     * @return Returns the value sent by serialConnected, true if the serial 
+     * port is connected.
      */
     protected boolean getConnected () {
         boolean connected = controller.serialConnected();
@@ -145,7 +146,8 @@ public class SeriesTwo {
         String message;
         if (scroll) {
             char scrollChar = (char) 0x19;
-            message = header + address + startMes + scrollChar + body + endMes + numseq + chksum + CR;
+            message = header + address + startMes + scrollChar + body + endMes + 
+                    numseq + chksum + CR;
         } else {
             message = header + address + startMes + body + endMes + numseq + chksum + CR;
         }
@@ -180,7 +182,8 @@ public class SeriesTwo {
 
     /**
      * Updates the sequence number, numseq.
-     * The sequence number is a decimal number between 0 and 9. It is incremented after each message is sent. 
+     * The sequence number is a decimal number between 0 and 9. It is incremented 
+     * after each message is sent. 
      * When it gets to 9 it resets to 0. The sequence number helps identify the message.
      */
     private void checkSeq() {
