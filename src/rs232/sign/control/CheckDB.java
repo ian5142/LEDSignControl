@@ -5,7 +5,7 @@
  */
 package rs232.sign.control;
 
-import java.sql.*;
+import java.sql.*; // Java.sql contains all of the MySQL methods.
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
