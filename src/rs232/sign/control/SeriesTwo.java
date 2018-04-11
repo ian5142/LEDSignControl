@@ -73,7 +73,7 @@ public class SeriesTwo {
      * Calculates the checksum from a given String body
      *
      * @param body The string to calculate a checksum for
-     * @param scroll
+     * @param scroll True if scrolling text is required, else false
      * @return The checksum in String format
      */
     protected String calculateChksum(String body, boolean scroll) {
@@ -138,7 +138,7 @@ public class SeriesTwo {
      * Creates the final Message, sends it to the RS232Control object
      *
      * @param body The message to write to the screen.
-     * @param scroll
+     * @param scroll True if scrolling text is required, else false
      */
     protected void write(String body, boolean scroll) {
 
@@ -155,6 +155,10 @@ public class SeriesTwo {
         checkSeq();
     }
 
+    /**
+     * Reads the Acknowledge or Not Acknowledge character back from the sign
+     * @return Returns true if the Acknowledge character is received, else false.
+     */
     protected boolean readAck() {
         byte [] readArray = controller.testRead();
         boolean acknowledge = false;
@@ -178,6 +182,8 @@ public class SeriesTwo {
 
     /**
      * Updates the sequence number, numseq.
+     * The sequence number is a decimal number between 0 and 9. It is incremented after each message is sent. 
+     * When it gets to 9 it resets to 0. The sequence number helps identify the message.
      */
     private void checkSeq() {
         if (numseq == 9) {
@@ -191,7 +197,15 @@ public class SeriesTwo {
             seq = numseq + "";
         }
     }
-
+    
+    /**
+     * Checks if there are any blink character sequences in the body.
+     * The Start Blink character sequence is "~|^".
+     * The Stop Blink character sequence is "^|~".
+     * These are replaced with 0x10 and 0x12 respectively.
+     * @param body
+     * @return 
+     */
     private String checkBlink(String body) {
         ArrayList<Character> blinkfix = new ArrayList<Character>();
         int blinkON = -1;
