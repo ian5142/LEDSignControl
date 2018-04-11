@@ -87,8 +87,8 @@ public class RS232Control {
     }
 
     /**
-     * Opens a COM port at the specified settings, can throw an error opening
-     * the port
+     * Opens a COM port at the specified settings (9600 8N1)
+     * Can throw an error opening the port
      */
     private void openP() {
         try {
@@ -168,7 +168,7 @@ public class RS232Control {
      * Opens the serial port. Tries to read a string from the serial port.
      * Closes the serial port.
      *
-     * @return
+     * @return Returns the byte array read from the serial port.
      */
     protected byte [] testRead() {
         byte [] readArray = null;
