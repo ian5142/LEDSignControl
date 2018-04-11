@@ -602,3 +602,8 @@ April 10, 2018 -    I tested the custom device on one of the lab computers, it c
                     Tested it again just to make sure it reverted OK.
                     Finished an AutoCAD drawing of the connections between the Raspberry Pi and the Sign using a premade USB-RS232 adapter.
                     Printed off the drawing.
+                    Touched up the User Manual, decided to break it up into 2 parts, initial setup and How to send a message to the LED sign.
+                    Decided to change the text on the webpage from None to Normal Text (no back-end changes required).
+                    I decided to split the project in two sections, custom USB-RS232 device and LED Sign Control via Raspberry Pi.
+                    This decision is based on the fact that I can not get the Raspberry Pi to recognize the custom USB-RS232 device, even though Windows and Ubuntu does.
+                    Finished the documentation.
