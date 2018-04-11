@@ -16,7 +16,7 @@ import jssc.*; // Java Simple Serial Connector, the library that contains the se
  * @author Ian Van Schaick
  */
 public class RS232Control {
-
+    
     static SerialPort serialPort;
     String portName;
     static long portOpen;
