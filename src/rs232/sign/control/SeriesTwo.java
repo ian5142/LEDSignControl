@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import javax.xml.bind.DatatypeConverter;
 
 /**
- * Creates string to send via RS232 via serial.
+ * Creates string to send via RS232 via serial using RS232Control
  *
  * @author Ian Van Schaick
  */
