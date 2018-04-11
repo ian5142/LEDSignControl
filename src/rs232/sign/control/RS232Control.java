@@ -42,7 +42,8 @@ public class RS232Control {
 
     /**
      * Finds the serial port to be used, in Windows type COM1, for example In
-     * Linux, type /dev/pts/3 for example. The custom USB-RS232 device, using a MCP2200, is on /dev/ttyACM0/
+     * Linux, type /dev/pts/3 for example. The custom USB-RS232 device, using a
+     * MCP2200, is on /dev/ttyACM0/
      * All serial ports may not be listed.
      *
      * @return The serial port name in String format, used to open and close the
@@ -69,7 +70,9 @@ public class RS232Control {
     
     /**
      * Checks if the serial port is connected
-     * @return Returns true if any of the serial ports found using getPortNames() matches the portName global variable (what ever the user types in when findPort() is called).
+     * @return Returns true if any of the serial ports found using getPortNames() 
+     * matches the portName global variable (what ever the user types in when 
+     * findPort() is called).
      */
     protected boolean serialConnected () {
         boolean connected = false;
