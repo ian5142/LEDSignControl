@@ -8,7 +8,7 @@ package rs232.sign.control;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import jssc.*;
+import jssc.*; // Java Simple Serial Connector, the library that contains the serial methods
 
 /**
  * Contains methods to open, close, read, write to a serial port
