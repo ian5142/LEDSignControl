@@ -8,7 +8,6 @@ package rs232.sign.control;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.application.Platform;
 import jssc.*;
 
 /**
