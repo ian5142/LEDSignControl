@@ -622,3 +622,5 @@ April 23, 2018 -    I arrived early and helped Eric solve a customer's computer 
                     Still looking for a 5cm fan, it may need replacing.
                     I had some trouble figuring out where to mount the SSD in the case.
                     It ended up being in a different location then the HDD was.
+                    Eric showed me how they test a device: by hooking it up to a GPS in simulator mode
+                        Set to go 1 knot per hour towards Port-aux-Basques and then let it run all night.
