@@ -619,4 +619,6 @@ April 23, 2018 -    I arrived early and helped Eric solve a customer's computer 
                     It was just a static IP problem.
                     Eric suggested replacing the harddrive (upgrading to SSD) and replacing the USB backup.
                     I formatted the SSD and copied the data from the old HHD to the SSD.
-                    Still looking fir a 5cm fan.
+                    Still looking for a 5cm fan, it may need replacing.
+                    I had some trouble figuring out where to mount the SSD in the case.
+                    It ended up being in a different location then the HDD was.
