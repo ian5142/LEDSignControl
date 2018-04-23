@@ -607,3 +607,16 @@ April 10, 2018 -    I tested the custom device on one of the lab computers, it c
                     I decided to split the project in two sections, custom USB-RS232 device and LED Sign Control via Raspberry Pi.
                     This decision is based on the fact that I can not get the Raspberry Pi to recognize the custom USB-RS232 device, even though Windows and Ubuntu does.
                     Finished the documentation and presentation.
+April 18, 2018 -    Started my work term at Atlantic Electronics in North Sydney.
+                    Eric Tell and I filled out the required NSCC paperwork. I plan on sending it to Robert soon.
+                    Did a little bit of wireless networking for them. Upgraded their router to dd-wrt.
+                    Played around with a chart program they sell called TZ Pro. We sold two copies of the program to fishermen. 
+                    One of which was looking to buy a cheaper alternative but we suggested he upgrade to TZ Pro.
+                    I was able to discuss some of the benefits of the program and what the added features would mean to the fisherman.
+                    Found out that the SI-TEX Explorer NavPro does not show has much chart detail as TZ Pro or the Hondex HDX-121, even though they use the  
+April 19-22, 2018 - I was off, away in Halifax on Bird Island Tours business. I let Eric know about it on April 18.
+April 23, 2018 -    I arrived early and helped Eric solve a customer's computer LAN problem. Their computer would not connect to the Internet.
+                    It was just a static IP problem.
+                    Eric suggested replacing the harddrive (upgrading to SSD) and replacing the USB backup.
+                    I formatted the SSD and copied the data from the old HHD to the SSD.
+                    Still looking fir a 5cm fan.
