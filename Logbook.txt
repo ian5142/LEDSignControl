@@ -624,3 +624,9 @@ April 23, 2018 -    I arrived early and helped Eric solve a customer's computer 
                     It ended up being in a different location then the HDD was.
                     Eric showed me how they test a device: by hooking it up to a GPS in simulator mode
                         Set to go 1 knot per hour towards Port-aux-Basques and then let it run all night.
+April 24, 2018 -    Made up a "How to Auto Configure TZ Pro" instruction document, with screenshots and all.
+                    Gave file to Jason and he printed several copies of it to give to customers.
+                    Jason walked me through how to put DB-9 ends on cables.
+                    I have done two so far and plan on doing more.
+                    He also showed me how to connect a 6-pin connector for NMEA data.
+                    I actually did the soldering he just showed me what to connect where.
