@@ -630,3 +630,7 @@ April 24, 2018 -    Made up a "How to Auto Configure TZ Pro" instruction documen
                     I have done two so far and plan on doing more.
                     He also showed me how to connect a 6-pin connector for NMEA data.
                     I actually did the soldering he just showed me what to connect where.
+April 25, 2018 -    Installed a WDS Station using one of my routers from home.
+                    Set it up in the workshop.
+                    Shipment arrived, unpacked it and checked it against the packing slips.
+                    Helping to set up two TZ Pro machines, waiting for Eric to get the license keys.
