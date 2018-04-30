@@ -642,3 +642,4 @@ April 30, 2018 -    A shipment arrived from Halifax, I helped put it away, with 
                     Eric showed me how to hook up a class B AIS transceiver, the demo unit.
                     Finished installing TZ Pro on two computers (including activations and updates).
                     Was shown how to upgrade a VMS (Vessel Monitoring System) firmware.
+                    Helped with a little bit of accounting (credit card settlement cross-referencing).
