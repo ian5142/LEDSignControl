@@ -647,3 +647,5 @@ May 1, 2018 -       Decided to start taking apart a Hondex HE-770 depth sounder 
                     Went on a service call with Jason to install a Si-tex Nav Pro black box plotter and a screen.
                     Install did not go as planned. Jason hooked up the screen backwards and blew all of the caps in it.
                     He showed me what wires to hook up where. He just connected the wrong wire coming from the screen to ground.
+                    Back at the shop, Eric and I found some new settings in TZ Pro to demo to potential customers.
+                    I also brought out the screen that a customer blew up yesterday. Eric is looking to see if it is possible to replace just the PCBs inside the screen.
