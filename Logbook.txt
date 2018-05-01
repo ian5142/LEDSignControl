@@ -643,3 +643,7 @@ April 30, 2018 -    A shipment arrived from Halifax, I helped put it away, with 
                     Finished installing TZ Pro on two computers (including activations and updates).
                     Was shown how to upgrade a VMS (Vessel Monitoring System) firmware.
                     Helped with a little bit of accounting (credit card settlement cross-referencing).
+May 1, 2018 -       Decided to start taking apart a Hondex HE-770 depth sounder that was not working, it was on the broken and abandoned shelf.
+                    Went on a service call with Jason to install a Si-tex Nav Pro black box plotter and a screen.
+                    Install did not go as planned. Jason hooked up the screen backwards and blew all of the caps in it.
+                    He showed me what wires to hook up where. He just connected the wrong wire coming from the screen to ground.
