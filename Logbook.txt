@@ -649,3 +649,8 @@ May 1, 2018 -       Decided to start taking apart a Hondex HE-770 depth sounder 
                     He showed me what wires to hook up where. He just connected the wrong wire coming from the screen to ground.
                     Back at the shop, Eric and I found some new settings in TZ Pro to demo to potential customers.
                     I also brought out the screen that a customer blew up yesterday. Eric is looking to see if it is possible to replace just the PCBs inside the screen.
+May 2, 2018 -       I hooked up the Hondex HE-770 depth sounder that was already broken, to try and fix it.
+                    Eric came over to help and determined that I had the power reversed. No caps blew but I may have blew a diode on the board.
+                    I have decided to contact Hondex about what to replace the diode with.
+                    Eric drove me home as both Jason and himself had to drive to long service calls (after 5PM).
+                    I have to attend an awards ceremony at 6PM today.
