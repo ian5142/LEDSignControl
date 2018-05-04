@@ -654,3 +654,14 @@ May 2, 2018 -       I hooked up the Hondex HE-770 depth sounder that was already
                     I have decided to contact Hondex about what to replace the diode with.
                     Eric drove me home as both Jason and himself had to drive to long service calls (after 5PM).
                     I have to attend an awards ceremony at 6PM today.
+May 3, 2018 -       Soldered some DB-9 connectors on to several cables.
+                    Customer brought in a GP32 with a broken connector that I wanted to find another connector for. 
+                    Jason called Eric and found out that it would just be better to get a new GPS.
+                    I helped Jason try and find a service manual for an old Koden sounder.
+                    He was worried about the power pin wiring. The sounder would not turn on.
+                    Someone came in looking to get a PL-259 connector soldered on the end of their antenna.
+                    I soldered one on without any problems.
+                    Jason decided to ohm out the antenna and it seemed like it was not connected.
+                    He cut off the connector and brought out a new antenna.
+                    The new one had a tag on it that it did not have continuity.
+                    Jason soldered on the connector again and gave the customer the old antenna.
