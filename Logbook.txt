@@ -665,3 +665,13 @@ May 3, 2018 -       Soldered some DB-9 connectors on to several cables.
                     He cut off the connector and brought out a new antenna.
                     The new one had a tag on it that it did not have continuity.
                     Jason soldered on the connector again and gave the customer the old antenna.
+May 4, 2018 -       I described to Eric the drop-offs from yesterday.
+                    One of the Koden sounders, it was literally just a button that needed to be pressed and the screen was fine.
+                    The other Koden sounder had to be replaced with a newer model.
+                    I decided to try and get one of the broken screens working.
+                    We received a shipment that had a circuit board for the screen.
+                    I opened up the screen Jason blew up and it looked fine except for one capacitor on the high voltage board.
+                    I replaced the capacitor with a 220uF 25V one from an old board.
+                    Eric then determined that a diode blew on the main board as well, so I swapped it with the one from Halifax.
+                    Tested it, it did not turn on, LED backlight never turns on, just the Green power LED, which then turns yellow.
+                    Made some 3-wire DB-9 Cables, ohmed them all out. Wired fine.
