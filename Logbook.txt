@@ -675,3 +675,15 @@ May 4, 2018 -       I described to Eric the drop-offs from yesterday.
                     Eric then determined that a diode blew on the main board as well, so I swapped it with the one from Halifax.
                     Tested it, it did not turn on, LED backlight never turns on, just the Green power LED, which then turns yellow.
                     Made some 3-wire DB-9 Cables, ohmed them all out. Wired fine.
+May 5-6, 2018 -     I was off for the weekend, office is closed on the weekend.
+May 7, 2018 -       No new stock, still waiting on screens.
+                    I decided to make some 2-wire power connectors, 5 total.
+                    All ohmed out fine.
+                    Jason told me that the serial cables need to be taped before putting on the plastic connector.
+                    I opened up all of the serial cables and added the tape where necessary.
+                    Two customers dropped off devices to be fixed (VHF radio and very old depth sounder)
+                    I also tried to measure some voltages or resistances off of the HE-770 depth sounder, no luck yet.
+                    Hondex has sent me the HE770 schematics so I can troubleshoot it now.
+                    They even recommended some places to check: D504, T501, T502.
+                    I plan on looking at them in greater detail tomorrow.
+                    Both Eric and Jason were out on service calls, leaving me to look after the shop (answer the phone and receive any repair requests).
