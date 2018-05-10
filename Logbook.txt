@@ -698,3 +698,11 @@ May 8, 2018 -       Both Eric and Jason are out on service calls.
                     I then printed off the entire Operations Manual on Jason's printer for him.
                     Eric arrived just before I took off for the day. I gave him the messages I took during the day.
 May 9, 2018 -       I took the day off due to appointments.
+May 10, 2018 -      When I first arrived Eric told me that he had a MarineNav computer for me to look at (updates mostly).
+                    The MarineNav computer also had a faulty fan, I scavenged one from the other spare parts MarineNav.
+                    Then a customer came in looking for a demonstration on TimeZero's Bottom Hardness feature, so I had to hook up another customer's computer so Eric could show him.
+                    A guy came in looking for a replacement Furuno GPS antenna, I tested his using the GP-39 demo unit. It did not work, so I tested a new one that came up instantly.
+                    I made seven 3-wire serial cables.
+                    30 screens arrived this morning and I am slowly unpacking them and checking the serial numbers against the packing slip.
+                    Attached a black and red power cable to a screen so it is easier to hook up. I plan on doing more tomorrow.
+                    Not finished putting the MarineNav computer back together. That is tomorrow morning's job.
