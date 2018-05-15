@@ -715,3 +715,9 @@ May 11, 2018 -      When I arrived, I started making connector wires for the DC 
                     I also found out that when I replaced the faulty fan, I installed the new one backwards so I switched it.
                     I installed a copy of TZ Pro on a customer's computer as well.
                     I also found out that there are newer charts available for TZ Pro, I put a copy on Eric's memory stick.
+May 12-13, 2018 -   I was off for the weekend, office is closed on the weekend. Eric and Jason were on service calls though.
+May 14, 2018 -      One guy came in looking for a transducer, another looking for new depth sounder (ended up getting a Hondex HE-881).
+                    After Eric and Jason left, I got to making some power cables first, I ended up making 5 in total.
+                    Then I started to make four 3-wire serial cables. I plan on finishing them tomorrow, the soldering is done though.
+                    Throughout the day the phone rang and I, being the only one in the office, answered it.
+                    Some calls I was able to handle on my own, others required a quick call to Eric (mainly for prices), still others I took messages for Eric.
