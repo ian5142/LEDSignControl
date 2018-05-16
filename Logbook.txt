@@ -721,3 +721,8 @@ May 14, 2018 -      One guy came in looking for a transducer, another looking fo
                     Then I started to make four 3-wire serial cables. I plan on finishing them tomorrow, the soldering is done though.
                     Throughout the day the phone rang and I, being the only one in the office, answered it.
                     Some calls I was able to handle on my own, others required a quick call to Eric (mainly for prices), still others I took messages for Eric.
+May 15, 2018 -      I finished the four 3-wire serial cables I started yesterday.
+                    I then re-setup the demo PC's Time Zero Pro with AIS, depth and GPS data.
+                    Helped with what to order for stock.
+                    I had to fix a small networking problem that I may have been the cause of (DHCP server on the main router was not running).
+                    I did a little bit of vacuuming of the shop to tidy up.
