@@ -726,3 +726,24 @@ May 15, 2018 -      I finished the four 3-wire serial cables I started yesterday
                     Helped with what to order for stock.
                     I had to fix a small networking problem that I may have been the cause of (DHCP server on the main router was not running).
                     I did a little bit of vacuuming of the shop to tidy up.
+May 16, 2018 -      I unpacked some stuff that was shipped up from Halifax.
+                    I also sold two Icom VHF radios.
+                    I started working on digitizing the Customer Accounts list.
+May 17, 2018 -      I finished the Customer Accounts list.
+                    Jason helped me verify it against the old version.
+                    It is now in Alphabetical order and Eric says he plans to delete some of them as they are dead.
+                    Left early as there was no work for me to do.
+May 18, 2018 -      Helped solve a problem with how to connect a Furuno depth sounder and Furuno Radar to TZ Pro.
+                    Eric was told the IP addresses are too close together so that only one works at a time.
+                    My suggestion was to use a wired router. 
+                    The techs in Newfoundland suggested just getting a cheap hub (not a switch).
+                    Eric plans to try this.
+                    I packed up the broken computer (power button not working), ready to be picked up by SameDay.
+                    I started troubleshooting the Hondex HE-770.
+                    So far, I get 13V on either side of the first transformer (T502). I can't get any voltage on the first side of the second transformer (T501).
+                    With the unit powered on the Gate of the MOSFET (Q507) is at 1.3V, it should be at 4 or 5V.
+                    I then went on Arrow and Digikey looking for a replacement.
+                    I came up with several possibilities none of which are in stock.
+                    I then found one in stock at Digikey (https://www.digikey.com/products/en?keywords=stf40nf06)
+                    I decided to take one of the working demo screens apart in order to test the individual parts of the broken screens.
+                    I found out that both of the actual LCD screens work, it is just the boards inside them that are not working.
