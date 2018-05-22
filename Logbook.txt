@@ -747,3 +747,7 @@ May 18, 2018 -      Helped solve a problem with how to connect a Furuno depth so
                     I then found one in stock at Digikey (https://www.digikey.com/products/en?keywords=stf40nf06)
                     I decided to take one of the working demo screens apart in order to test the individual parts of the broken screens.
                     I found out that both of the actual LCD screens work, it is just the boards inside them that are not working.
+May 19-21, 2018 -   Off, the office was closed for the long weekend.
+May 22, 2018 -      Came in and Eric and Jason went over what they did on Friday, plus what calls Eric received on the weekend.
+                    I updated a VMS system once Eric provided me with a DB-9 serial extension cable.
+                    I decided to head home early because of no work to do.
