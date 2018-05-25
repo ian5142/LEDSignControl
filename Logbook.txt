@@ -751,3 +751,23 @@ May 19-21, 2018 -   Off, the office was closed for the long weekend.
 May 22, 2018 -      Came in and Eric and Jason went over what they did on Friday, plus what calls Eric received on the weekend.
                     I updated a VMS system once Eric provided me with a DB-9 serial extension cable.
                     I decided to head home early because of no work to do.
+May 23, 2018 -      Helped swap a motherboard out of a customer's AEL computer with one from the demo computer.
+                    I was the one that took off most and replaced most of the screws.
+                    Eric showed me that screwdrvier size does make a huge difference between stripping a screw and not stripping it.
+                    Told Eric I had to leave early because I had to be a first-mate on a 3pm tour (I left at 2:15pm).
+May 24, 2018 -      Eric discussed with Jason and I some details on how to calibrate an autopilot system.
+                    Two clients came in. First one was looking for suggestions on how to troubleshoot his MaxSea setup that was not working.
+                    Ended up up-selling a Hondex 121-BB (Black box plotter) and Hondex depth sounder.
+                    The second customer came in looking for a keyboard.
+                    Another customer came in with a Furuno GP-30 GPS that would not lock in.
+                    After more than an hour of trying to get it to lock in, Jason and I tried to get his waypoints transferred to a new GP-39.
+                    I tried to use a PC program called GPS Utility to transfer between the to.
+                    I was able to get his waypoints off of the the GP-30 easily enough.
+                    The problem was getting the waypoint to the GP-39.
+                    We tried transferring them directly, did not work.
+                    In the GPS Utility, we could not find the correct format to load onto the GP-39.
+May 25, 2018 -      Discussion with Eric and Jason about how to transfer from GP-30 to GP-39.
+                    Eric said it should be able to be done via a direct connection.
+                    The guy came in and picked up a new GP-39 and Jason handed him a printout of all of his waypoints, yesterday, after I left.
+                    Eric told and Jason and I that Timezero should always be hooked up to both a GPS and a depth sounder.
+                    Neither Jason nor myself knew this. Eric was shocked.
