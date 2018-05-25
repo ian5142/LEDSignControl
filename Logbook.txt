@@ -771,3 +771,7 @@ May 25, 2018 -      Discussion with Eric and Jason about how to transfer from GP
                     The guy came in and picked up a new GP-39 and Jason handed him a printout of all of his waypoints, yesterday, after I left.
                     Eric told and Jason and I that Timezero should always be hooked up to both a GPS and a depth sounder.
                     Neither Jason nor myself knew this. Eric was shocked.
+                    Eric showed me how to hook up a sounder to OpenCPN. Very easy to configure.
+                    I was able to get the AIS transciever hooked up to OpenCPN as well.
+                    I made up a longer DB-9 cable for Jason.
+                    I discussed with Eric filling out the forms. I can't seem to find the paper or digital copy, so I will have to send them to Eric via e-mail.
