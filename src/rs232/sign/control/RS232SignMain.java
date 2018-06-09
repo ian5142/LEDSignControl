@@ -27,25 +27,35 @@ public class RS232SignMain {
                     System.out.println("Ready for tour time input via web page. Default is 10AM");
                     index++;
                 }
-                if (!test.selectisUpdated() && portConnected) {
-                    String message = test.selectMessage();
-                    boolean scroll = false;
-                    if (test.selectscrollON()) {
-                        scroll = true;
-                    }
-                    test2.write(message, scroll);
-                    boolean acknowledge = test2.readAck();
-                    //System.out.println("The message is: " + message);
-                    //System.out.println("Isupdated is: " + test.selectisUpdated());
+//                if (!test.selectisUpdated() && portConnected) {
+                String nextTour = test.selectMessage();
+                boolean acknowledge = false;
+                do {
+                    test2.writeNextTour(nextTour);
+                    acknowledge = test2.readAck();
+                } while (acknowledge == false);
 
-                    //System.out.println("Acknowledged: " + acknowledge);
-                    if (acknowledge) {
-                        test.setisUpdated();
-                    }
-                    //System.out.println("Isupdated is: " + test.selectisUpdated());
-                }
-
-                Thread.sleep(15 * 1000); // 15 second delay to only check the database and write to the sign every 15 seconds
+//                    boolean scroll = false;
+//                    if (test.selectscrollON()) {
+//                        scroll = true;
+//                    }
+                //System.out.println("The message is: " + message);
+                //System.out.println("Isupdated is: " + test.selectisUpdated());
+                //System.out.println("Acknowledged: " + acknowledge);
+//                    if (acknowledge) {
+//                        test.setisUpdated();
+//                    }
+                //System.out.println("Isupdated is: " + test.selectisUpdated());
+//                }
+                Thread.sleep(8 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
+                
+                boolean acknowledge2 = false;
+                do {
+                    test2.writeCottagesAvail();
+                    acknowledge2 = test2.readAck();
+                } while (acknowledge2 == false);
+                
+                Thread.sleep(8 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
