@@ -24,7 +24,7 @@ public class RS232SignMain {
                 boolean portConnected = test2.getConnected();
                 test.setPortError(portConnected);
                 if (index == 0 && portConnected) {
-                    System.out.println("Ready for message input via web page.");
+                    System.out.println("Ready for tour time input via web page. Default is 10AM");
                     index++;
                 }
                 if (!test.selectisUpdated() && portConnected) {
