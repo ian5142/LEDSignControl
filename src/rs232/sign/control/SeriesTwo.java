@@ -173,6 +173,30 @@ public class SeriesTwo {
         boolean success = controller.testWrite(message);
         checkSeq();
     }
+    
+    /**
+     * Creates the final fillChar Message, sends it to the RS232Control object
+     *
+     */
+    protected void writeFillChars() {
+        String body = "";
+        char fillChar = (char) 0x1F;
+        for (int i = 0 ; i < 20 ; i++) {
+            body = "" + fillChar;
+        }
+        
+        chksum = calculateChksum(body);
+        String message;
+//        if (scroll) {
+//            char scrollChar = (char) 0x19;
+//            message = header + address + startMes + scrollChar + body + endMes + 
+//                    numseq + chksum + CR;
+//        } else {
+            message = header + address + startMes + body + endMes + numseq + chksum + CR;
+//        }
+        boolean success = controller.testWrite(message);
+        checkSeq();
+    }
 
     /**
      * Reads the Acknowledge or Not Acknowledge character back from the sign
