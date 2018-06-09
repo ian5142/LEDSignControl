@@ -75,7 +75,7 @@ public class SeriesTwo {
      * @param scroll True if scrolling text is required, else false
      * @return The checksum in String format
      */
-    protected String calculateChksum(String body, boolean scroll) {
+    protected String calculateChksum(String body) {
         int hexHeader = 0x1;
 
         ArrayList<String> addressArray = toHex(address);
@@ -88,10 +88,10 @@ public class SeriesTwo {
 
         long hexSeq = Long.parseLong(seqArray.get(0) + "", 16);
         long sum = hexHeader + hexAddress + hexStartMes + hexEndMes + hexSeq;
-        if (scroll) {
-            int scrollint = 25;
-            sum += scrollint;
-        }
+//        if (scroll) {
+//            int scrollint = 25;
+//            sum += scrollint;
+//        }
 
         ArrayList<String> bodyArray = toHex(body);
 
@@ -134,23 +134,42 @@ public class SeriesTwo {
     }
 
     /**
-     * Creates the final Message, sends it to the RS232Control object
+     * Creates the final Next Boat Tour Message, sends it to the RS232Control object
      *
-     * @param body The message to write to the screen.
-     * @param scroll True if scrolling text is required, else false
+     * @param nextTour The next tour time in string format (ex: 10AM)
      */
-    protected void write(String body, boolean scroll) {
+    protected void writeNextTour(String nextTour) {
 
-        body = checkBlink(body);
-        chksum = calculateChksum(body, scroll);
+        String body = "Next Boat Tour: " + nextTour;
+        chksum = calculateChksum(body);
         String message;
-        if (scroll) {
-            char scrollChar = (char) 0x19;
-            message = header + address + startMes + scrollChar + body + endMes + 
-                    numseq + chksum + CR;
-        } else {
+//        if (scroll) {
+//            char scrollChar = (char) 0x19;
+//            message = header + address + startMes + scrollChar + body + endMes + 
+//                    numseq + chksum + CR;
+//        } else {
             message = header + address + startMes + body + endMes + numseq + chksum + CR;
-        }
+//        }
+        boolean success = controller.testWrite(message);
+        checkSeq();
+    }
+    
+    /**
+     * Creates the final Cottages Available Message, sends it to the RS232Control object
+     *
+     */
+    protected void writeCottagesAvail() {
+
+        String body = "Cottages Available";
+        chksum = calculateChksum(body);
+        String message;
+//        if (scroll) {
+//            char scrollChar = (char) 0x19;
+//            message = header + address + startMes + scrollChar + body + endMes + 
+//                    numseq + chksum + CR;
+//        } else {
+            message = header + address + startMes + body + endMes + numseq + chksum + CR;
+//        }
         boolean success = controller.testWrite(message);
         checkSeq();
     }
