@@ -49,6 +49,13 @@ public class RS232SignMain {
 //                }
                 Thread.sleep(8 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
                 
+                boolean acknowledge3 = false;
+                do {
+                    test2.writeFillChars();
+                    acknowledge3 = test2.readAck();
+                } while (acknowledge3 == false);
+                Thread.sleep(500); // 500 ms delay to blank the screen
+                
                 boolean acknowledge2 = false;
                 do {
                     test2.writeCottagesAvail();
@@ -56,6 +63,13 @@ public class RS232SignMain {
                 } while (acknowledge2 == false);
                 
                 Thread.sleep(8 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
+                
+                boolean acknowledge4 = false;
+                do {
+                    test2.writeFillChars();
+                    acknowledge4 = test2.readAck();
+                } while (acknowledge4 == false);
+                Thread.sleep(500); // 500 ms delay to blank the screen
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
