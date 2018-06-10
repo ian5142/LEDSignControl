@@ -182,7 +182,7 @@ public class SeriesTwo {
         String body = "";
         char fillChar = (char) 0x1F;
         for (int i = 0 ; i < 20 ; i++) {
-            body = "" + fillChar;
+            body += "" + fillChar;
         }
         
         chksum = calculateChksum(body);
