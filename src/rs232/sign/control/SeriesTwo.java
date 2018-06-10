@@ -159,8 +159,8 @@ public class SeriesTwo {
      *
      */
     protected void writeCottagesAvail() {
-
-        String body = "Cottages Available";
+        char cursor = (char) 0x14;
+        String body = cursor + "02" + startMes + "Cottages Available";
         chksum = calculateChksum(body);
         String message;
 //        if (scroll) {
