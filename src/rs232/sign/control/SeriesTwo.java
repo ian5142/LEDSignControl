@@ -158,10 +158,16 @@ public class SeriesTwo {
      * Creates the final Cottages Available Message, sends it to the RS232Control object
      *
      */
-    protected void writeCottagesAvail() {
+    protected void writeCottagesAvail(boolean cottagesAvail) {
+        String body;
+        if (cottagesAvail) {
         char cursor = (char) 0x14;
 //        String body = cursor + "02" + startMes + "Cottages Available";
-        String body = "Cottages     Avail.";
+        body = "Cottages     Avail.";
+        }
+        else {
+            body = "Cottages     No Vac.";
+        }
         chksum = calculateChksum(body);
         String message;
 //        if (scroll) {
