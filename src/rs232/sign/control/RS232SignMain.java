@@ -32,7 +32,7 @@ public class RS232SignMain {
                 }
 //                if (!test.selectisUpdated() && portConnected) {
                 LocalTime now = LocalTime.now();
-                LocalTime onLimit = LocalTime.parse("19:00");
+                LocalTime onLimit = LocalTime.parse("18:00");
                 LocalTime offLimit = LocalTime.parse("08:00");
                 
                 LocalTime onLimit2 = LocalTime.parse("07:00");
@@ -100,20 +100,20 @@ public class RS232SignMain {
                 Thread.sleep(250); // 250 ms delay to blank the screen
                 
 //                if (now.isAfter(onLimit2) && now.isBefore(offLimit2)) {
-                boolean acknowledge7 = false;
-                do {
-                    test2.writeOfficeOpens();
-                    acknowledge7 = test2.readAck();
-                } while (acknowledge7 == false);
-
-                Thread.sleep(8 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
-
-                boolean acknowledge8 = false;
-                do {
-                    test2.writeFillChars();
-                    acknowledge8 = test2.readAck();
-                } while (acknowledge8 == false);
-                Thread.sleep(250); // 250 ms delay to blank the screen
+//                boolean acknowledge7 = false;
+//                do {
+//                    test2.writeOfficeOpens();
+//                    acknowledge7 = test2.readAck();
+//                } while (acknowledge7 == false);
+//
+//                Thread.sleep(8 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
+//
+//                boolean acknowledge8 = false;
+//                do {
+//                    test2.writeFillChars();
+//                    acknowledge8 = test2.readAck();
+//                } while (acknowledge8 == false);
+//                Thread.sleep(250); // 250 ms delay to blank the screen
 //            }
             }
         } catch (InterruptedException e) {
