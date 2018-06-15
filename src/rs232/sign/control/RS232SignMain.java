@@ -33,7 +33,12 @@ public class RS232SignMain {
 //                if (!test.selectisUpdated() && portConnected) {
                 LocalTime now = LocalTime.now();
                 LocalTime onLimit = LocalTime.parse("19:00");
-//                if (now.isAfter(onLimit)) {
+                LocalTime offLimit = LocalTime.parse("08:00");
+                
+                LocalTime onLimit2 = LocalTime.parse("07:00");
+                LocalTime offLimit2 = LocalTime.parse("09:30");
+                
+                if (now.isAfter(onLimit) && now.isBefore(offLimit)) {
                     String nextTour = test.selectMessage();
                     boolean acknowledge = false;
                     do {
@@ -41,10 +46,10 @@ public class RS232SignMain {
                         acknowledge = test2.readAck();
                     } while (acknowledge == false);
 
-//                    boolean scroll = false;
-//                    if (test.selectscrollON()) {
-//                        scroll = true;
-//                    }
+                    boolean cottagesAvail = false;
+                    if (test.selectscrollON()) {
+                        cottagesAvail = true;
+                    }
                     //System.out.println("The message is: " + message);
                     //System.out.println("Isupdated is: " + test.selectisUpdated());
                     //System.out.println("Acknowledged: " + acknowledge);
@@ -64,7 +69,7 @@ public class RS232SignMain {
 
                     boolean acknowledge2 = false;
                     do {
-                        test2.writeCottagesAvail();
+                        test2.writeCottagesAvail(cottagesAvail);
                         acknowledge2 = test2.readAck();
                     } while (acknowledge2 == false);
 
@@ -77,7 +82,7 @@ public class RS232SignMain {
                     } while (acknowledge4 == false);
                     Thread.sleep(250); // 250 ms delay to blank the screen
 
-//                } //End of time check
+                } //End of time check
                 
                 boolean acknowledge5 = false;
                 do {
@@ -93,6 +98,23 @@ public class RS232SignMain {
                     acknowledge6 = test2.readAck();
                 } while (acknowledge6 == false);
                 Thread.sleep(250); // 250 ms delay to blank the screen
+                
+//                if (now.isAfter(onLimit2) && now.isBefore(offLimit2)) {
+                boolean acknowledge7 = false;
+                do {
+                    test2.writeOfficeOpens();
+                    acknowledge7 = test2.readAck();
+                } while (acknowledge7 == false);
+
+                Thread.sleep(8 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
+
+                boolean acknowledge8 = false;
+                do {
+                    test2.writeFillChars();
+                    acknowledge8 = test2.readAck();
+                } while (acknowledge8 == false);
+                Thread.sleep(250); // 250 ms delay to blank the screen
+//            }
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
