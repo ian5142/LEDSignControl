@@ -3,6 +3,7 @@ package rs232.sign.control;
 //import jssc.SerialPortException;
 
 import java.time.LocalTime;
+import java.time.ZoneId;
 
 /**
  * Creates a SeriesTwo and CheckDB objects calls the various methods in both
@@ -23,6 +24,14 @@ public class RS232SignMain {
             SeriesTwo test2 = new SeriesTwo();
             CheckDB test = new CheckDB();
             int index = 0;
+            
+            ZoneId z = ZoneId.of("Canada/Atlantic");
+            LocalTime onLimit = LocalTime.parse("18:00");
+            LocalTime offLimit = LocalTime.parse("08:00");
+
+            LocalTime onLimit2 = LocalTime.parse("07:00");
+            LocalTime offLimit2 = LocalTime.parse("09:30");
+            
             while (true) {
                 boolean portConnected = test2.getConnected();
                 test.setPortError(portConnected);
@@ -32,11 +41,7 @@ public class RS232SignMain {
                 }
 //                if (!test.selectisUpdated() && portConnected) {
                 LocalTime now = LocalTime.now();
-                LocalTime onLimit = LocalTime.parse("18:00");
-                LocalTime offLimit = LocalTime.parse("08:00");
                 
-                LocalTime onLimit2 = LocalTime.parse("07:00");
-                LocalTime offLimit2 = LocalTime.parse("09:30");
                 
                 if (now.isAfter(onLimit) && now.isBefore(offLimit)) {
                     String nextTour = test.selectMessage();
