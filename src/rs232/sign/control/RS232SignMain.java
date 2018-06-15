@@ -70,6 +70,21 @@ public class RS232SignMain {
                     acknowledge4 = test2.readAck();
                 } while (acknowledge4 == false);
                 Thread.sleep(250); // 250 ms delay to blank the screen
+                
+                boolean acknowledge5 = false;
+                do {
+                    test2.writeCottagesAvail();
+                    acknowledge5 = test2.readAck();
+                } while (acknowledge5 == false);
+                
+                Thread.sleep(8 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
+                
+                boolean acknowledge6 = false;
+                do {
+                    test2.writeFillChars();
+                    acknowledge6 = test2.readAck();
+                } while (acknowledge6 == false);
+                Thread.sleep(250); // 250 ms delay to blank the screen
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
