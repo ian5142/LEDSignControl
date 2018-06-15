@@ -1,6 +1,9 @@
 package rs232.sign.control;
 
 //import jssc.SerialPortException;
+
+import java.time.LocalTime;
+
 /**
  * Creates a SeriesTwo and CheckDB objects calls the various methods in both
  * classes
@@ -28,48 +31,53 @@ public class RS232SignMain {
                     index++;
                 }
 //                if (!test.selectisUpdated() && portConnected) {
-                String nextTour = test.selectMessage();
-                boolean acknowledge = false;
-                do {
-                    test2.writeNextTour(nextTour);
-                    acknowledge = test2.readAck();
-                } while (acknowledge == false);
+                LocalTime now = LocalTime.now();
+                LocalTime onLimit = LocalTime.parse("19:00");
+                if (now.isAfter(onLimit)) {
+                    String nextTour = test.selectMessage();
+                    boolean acknowledge = false;
+                    do {
+                        test2.writeNextTour(nextTour);
+                        acknowledge = test2.readAck();
+                    } while (acknowledge == false);
 
 //                    boolean scroll = false;
 //                    if (test.selectscrollON()) {
 //                        scroll = true;
 //                    }
-                //System.out.println("The message is: " + message);
-                //System.out.println("Isupdated is: " + test.selectisUpdated());
-                //System.out.println("Acknowledged: " + acknowledge);
+                    //System.out.println("The message is: " + message);
+                    //System.out.println("Isupdated is: " + test.selectisUpdated());
+                    //System.out.println("Acknowledged: " + acknowledge);
 //                    if (acknowledge) {
 //                        test.setisUpdated();
 //                    }
-                //System.out.println("Isupdated is: " + test.selectisUpdated());
+                    //System.out.println("Isupdated is: " + test.selectisUpdated());
 //                }
-                Thread.sleep(8 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
-                
-                boolean acknowledge3 = false;
-                do {
-                    test2.writeFillChars();
-                    acknowledge3 = test2.readAck();
-                } while (acknowledge3 == false);
-                Thread.sleep(250); // 250 ms delay to blank the screen
-                
-                boolean acknowledge2 = false;
-                do {
-                    test2.writeCottagesAvail();
-                    acknowledge2 = test2.readAck();
-                } while (acknowledge2 == false);
-                
-                Thread.sleep(8 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
-                
-                boolean acknowledge4 = false;
-                do {
-                    test2.writeFillChars();
-                    acknowledge4 = test2.readAck();
-                } while (acknowledge4 == false);
-                Thread.sleep(250); // 250 ms delay to blank the screen
+                    Thread.sleep(8 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
+
+                    boolean acknowledge3 = false;
+                    do {
+                        test2.writeFillChars();
+                        acknowledge3 = test2.readAck();
+                    } while (acknowledge3 == false);
+                    Thread.sleep(250); // 250 ms delay to blank the screen
+
+                    boolean acknowledge2 = false;
+                    do {
+                        test2.writeCottagesAvail();
+                        acknowledge2 = test2.readAck();
+                    } while (acknowledge2 == false);
+
+                    Thread.sleep(8 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
+
+                    boolean acknowledge4 = false;
+                    do {
+                        test2.writeFillChars();
+                        acknowledge4 = test2.readAck();
+                    } while (acknowledge4 == false);
+                    Thread.sleep(250); // 250 ms delay to blank the screen
+
+                }
                 
                 boolean acknowledge5 = false;
                 do {
