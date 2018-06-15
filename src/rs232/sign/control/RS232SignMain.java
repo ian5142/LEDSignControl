@@ -25,7 +25,7 @@ public class RS232SignMain {
             CheckDB test = new CheckDB();
             int index = 0;
             
-            ZoneId z = ZoneId.of("Canada/Atlantic");
+            ZoneId z = ZoneId.of("America/Glace_Bay");
             LocalTime onLimit = LocalTime.parse("18:00");
             LocalTime offLimit = LocalTime.parse("08:00");
 
@@ -43,7 +43,7 @@ public class RS232SignMain {
                 LocalTime now = LocalTime.now();
                 
                 
-                if (now.isAfter(onLimit) && now.isBefore(offLimit)) {
+                if (now.isAfter(onLimit) || now.isBefore(offLimit)) {
                     String nextTour = test.selectMessage();
                     boolean acknowledge = false;
                     do {
@@ -104,7 +104,7 @@ public class RS232SignMain {
                 } while (acknowledge6 == false);
                 Thread.sleep(250); // 250 ms delay to blank the screen
                 
-//                if (now.isAfter(onLimit2) && now.isBefore(offLimit2)) {
+//                if (now.isAfter(onLimit2) || now.isBefore(offLimit2)) {
 //                boolean acknowledge7 = false;
 //                do {
 //                    test2.writeOfficeOpens();
