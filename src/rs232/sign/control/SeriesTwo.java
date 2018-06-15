@@ -205,7 +205,7 @@ public class SeriesTwo {
      */
     protected void writeOfficeOpens() {
         char cursor = (char) 0x14;
-        String body = "Office Opens at 9:30AM";
+        String body = "Office    Opens 9:30";
         chksum = calculateChksum(body);
         String message;
 //        if (scroll) {
