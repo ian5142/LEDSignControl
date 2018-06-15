@@ -139,8 +139,8 @@ public class SeriesTwo {
      * @param nextTour The next tour time in string format (ex: 10AM)
      */
     protected void writeNextTour(String nextTour) {
-
-        String body = "Next Boat Tour: " + nextTour;
+        char cursor = (char) 0x14;
+        String body = "Next" + cursor + "10" + startMes + "Tour: " + nextTour;
         chksum = calculateChksum(body);
         String message;
 //        if (scroll) {
@@ -160,7 +160,27 @@ public class SeriesTwo {
      */
     protected void writeCottagesAvail() {
         char cursor = (char) 0x14;
-        String body = cursor + "02" + startMes + "Cottages Available";
+//        String body = cursor + "02" + startMes + "Cottages Available";
+        String body = "Cottages   Available";
+        chksum = calculateChksum(body);
+        String message;
+//        if (scroll) {
+//            char scrollChar = (char) 0x19;
+//            message = header + address + startMes + scrollChar + body + endMes + 
+//                    numseq + chksum + CR;
+//        } else {
+            message = header + address + startMes + body + endMes + numseq + chksum + CR;
+//        }
+        boolean success = controller.testWrite(message);
+        checkSeq();
+    }
+    
+    /**
+     * Creates the final Office Direction Message, sends it to the RS232Control object
+     */
+    protected void writeOfficeDir() {
+        char cursor = (char) 0x14;
+        String body = "}Office}}}}this way}";
         chksum = calculateChksum(body);
         String message;
 //        if (scroll) {
