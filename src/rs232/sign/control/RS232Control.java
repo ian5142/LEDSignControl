@@ -80,7 +80,7 @@ public class RS232Control {
         for (String portName1 : portNames) {
             if (portName1.equals(portName) ) {
                 connected = true;
-                System.out.println("Connected successfully to serial port: " + portName);
+//                System.out.println("Connected successfully to serial port: " + portName);
             }
             else {
 //                System.out.println("Can not connect to serial port: " + portName);
