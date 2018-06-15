@@ -33,7 +33,7 @@ public class RS232SignMain {
 //                if (!test.selectisUpdated() && portConnected) {
                 LocalTime now = LocalTime.now();
                 LocalTime onLimit = LocalTime.parse("19:00");
-                if (now.isAfter(onLimit)) {
+//                if (now.isAfter(onLimit)) {
                     String nextTour = test.selectMessage();
                     boolean acknowledge = false;
                     do {
@@ -77,7 +77,7 @@ public class RS232SignMain {
                     } while (acknowledge4 == false);
                     Thread.sleep(250); // 250 ms delay to blank the screen
 
-                }
+//                } //End of time check
                 
                 boolean acknowledge5 = false;
                 do {
