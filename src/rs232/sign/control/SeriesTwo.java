@@ -140,7 +140,7 @@ public class SeriesTwo {
      */
     protected void writeNextTour(String nextTour) {
         char cursor = (char) 0x14;
-        String body = "Next" + cursor + "10" + startMes + "Tour: " + nextTour;
+        String body = "Next Tour: " + cursor + "14" + startMes + nextTour;
         chksum = calculateChksum(body);
         String message;
 //        if (scroll) {
@@ -161,7 +161,7 @@ public class SeriesTwo {
     protected void writeCottagesAvail() {
         char cursor = (char) 0x14;
 //        String body = cursor + "02" + startMes + "Cottages Available";
-        String body = "Cottages   Available";
+        String body = "Cottages     Avail.";
         chksum = calculateChksum(body);
         String message;
 //        if (scroll) {
@@ -180,7 +180,7 @@ public class SeriesTwo {
      */
     protected void writeOfficeDir() {
         char cursor = (char) 0x14;
-        String body = "}Office}}}}this way}";
+        String body = "}Office}}}}}this way";
         chksum = calculateChksum(body);
         String message;
 //        if (scroll) {
