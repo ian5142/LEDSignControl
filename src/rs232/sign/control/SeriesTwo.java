@@ -201,6 +201,25 @@ public class SeriesTwo {
     }
     
     /**
+     * Creates the final Office Direction Message, sends it to the RS232Control object
+     */
+    protected void writeOfficeOpens() {
+        char cursor = (char) 0x14;
+        String body = "Office Opens at 9:30AM";
+        chksum = calculateChksum(body);
+        String message;
+//        if (scroll) {
+//            char scrollChar = (char) 0x19;
+//            message = header + address + startMes + scrollChar + body + endMes + 
+//                    numseq + chksum + CR;
+//        } else {
+            message = header + address + startMes + body + endMes + numseq + chksum + CR;
+//        }
+        boolean success = controller.testWrite(message);
+        checkSeq();
+    }
+    
+    /**
      * Creates the final fillChar Message, sends it to the RS232Control object
      *
      */
