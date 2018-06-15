@@ -73,7 +73,7 @@ public class RS232SignMain {
                 
                 boolean acknowledge5 = false;
                 do {
-                    test2.writeCottagesAvail();
+                    test2.writeOfficeDir();
                     acknowledge5 = test2.readAck();
                 } while (acknowledge5 == false);
                 
