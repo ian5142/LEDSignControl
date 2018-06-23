@@ -63,7 +63,7 @@ public class RS232SignMain {
 //                    }
                     //System.out.println("Isupdated is: " + test.selectisUpdated());
 //                }
-                    Thread.sleep(8 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
+                    Thread.sleep(6 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
 
                     boolean acknowledge3 = false;
                     do {
@@ -78,7 +78,7 @@ public class RS232SignMain {
                         acknowledge2 = test2.readAck();
                     } while (acknowledge2 == false);
 
-                    Thread.sleep(8 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
+                    Thread.sleep(6 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
 
                     boolean acknowledge4 = false;
                     do {
@@ -95,7 +95,7 @@ public class RS232SignMain {
                     acknowledge5 = test2.readAck();
                 } while (acknowledge5 == false);
                 
-                Thread.sleep(8 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
+                Thread.sleep(6 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
                 
                 boolean acknowledge6 = false;
                 do {
@@ -111,7 +111,7 @@ public class RS232SignMain {
 //                    acknowledge7 = test2.readAck();
 //                } while (acknowledge7 == false);
 //
-//                Thread.sleep(8 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
+//                Thread.sleep(6 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
 //
 //                boolean acknowledge8 = false;
 //                do {
