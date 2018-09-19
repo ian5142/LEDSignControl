@@ -46,8 +46,10 @@ public class RS232SignMain {
                 if (now.isAfter(onLimit) || now.isBefore(offLimit)) {
                     String nextTour = test.selectMessage();
                     boolean acknowledge = false;
+                    
                     do {
-                        test2.writeNextTour(nextTour);
+                        //Uncomment for Next Tour message
+//                        test2.writeNextTour(nextTour);
                         acknowledge = test2.readAck();
                     } while (acknowledge == false);
 
@@ -55,6 +57,8 @@ public class RS232SignMain {
                     if (test.selectscrollON()) {
                         cottagesAvail = true;
                     }
+//                    Thread.sleep(6 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
+                    
                     //System.out.println("The message is: " + message);
                     //System.out.println("Isupdated is: " + test.selectisUpdated());
                     //System.out.println("Acknowledged: " + acknowledge);
@@ -63,7 +67,7 @@ public class RS232SignMain {
 //                    }
                     //System.out.println("Isupdated is: " + test.selectisUpdated());
 //                }
-                    Thread.sleep(6 * 1000); // 8 second delay to hold the message on the screen for 8 seconds
+                    
 
                     boolean acknowledge3 = false;
                     do {
