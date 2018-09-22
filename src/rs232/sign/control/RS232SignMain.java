@@ -69,13 +69,13 @@ public class RS232SignMain {
                     //System.out.println("Isupdated is: " + test.selectisUpdated());
 //                }
                     
-
-                    boolean acknowledge3 = false;
-                    do {
-                        test2.writeFillChars();
-                        acknowledge3 = test2.readAck();
-                    } while (acknowledge3 == false);
-                    Thread.sleep(250); // 250 ms delay to blank the screen
+                    //Uncomment for Next Tour message
+//                    boolean acknowledge3 = false;
+//                    do {
+//                        test2.writeFillChars();
+//                        acknowledge3 = test2.readAck();
+//                    } while (acknowledge3 == false);
+//                    Thread.sleep(250); // 250 ms delay to blank the screen
 
                     boolean acknowledge2 = false;
                     do {
