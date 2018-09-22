@@ -26,7 +26,7 @@ public class RS232SignMain {
             int index = 0;
             
             ZoneId z = ZoneId.of("America/Glace_Bay");
-            LocalTime onLimit = LocalTime.parse("18:00");
+            LocalTime onLimit = LocalTime.parse("16:00");
             LocalTime offLimit = LocalTime.parse("08:00");
 
             LocalTime onLimit2 = LocalTime.parse("07:00");
