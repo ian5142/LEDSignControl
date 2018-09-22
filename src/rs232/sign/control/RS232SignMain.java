@@ -47,11 +47,12 @@ public class RS232SignMain {
                     String nextTour = test.selectMessage();
                     boolean acknowledge = false;
                     
-                    do {
-                        //Uncomment for Next Tour message
+                    //Uncomment for Next Tour message
+//                    do {
+//                        
 //                        test2.writeNextTour(nextTour);
-                        acknowledge = test2.readAck();
-                    } while (acknowledge == false);
+//                        acknowledge = test2.readAck();
+//                    } while (acknowledge == false);
 
                     boolean cottagesAvail = false;
                     if (test.selectscrollON()) {
