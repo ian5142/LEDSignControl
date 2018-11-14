@@ -1,4 +1,4 @@
-# RS232-Example
+# LEDSignControl
 RS232 with MySQL database
 
 This is a Java program built to run on a Raspberry Pi to control a RS232 sign (specifically Cincinnati Series Two 20-character LED sign).
