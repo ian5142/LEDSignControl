@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 /**
  *
@@ -30,5 +31,10 @@ public class GetWeather {
         } catch (IOException ex) {
             Logger.getLogger(GetWeather.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    private Elements selectForecast () {
+        Elements allRows = doc.select("tbody td");
+        return allRows;
     }
 }
