@@ -5,15 +5,30 @@
  */
 package rs232.sign.control;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.jsoup.HttpStatusException;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
 /**
  *
  * @author Ian Van Schaick
  */
 public class GetWeather {
-    
+    Document doc;
     public GetWeather () {
-        
+        getDoc();
     }
     
-    
+    private void getDoc () {
+        try {
+            doc = Jsoup.connect("https://weather.gc.ca/city/pages/ns-31_metric_e.html").get();
+        } catch (HttpStatusException ex) {
+            System.out.println("Error: 404.");
+        } catch (IOException ex) {
+            Logger.getLogger(GetWeather.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
