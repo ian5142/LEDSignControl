@@ -79,7 +79,7 @@ public class GetWeather {
         ArrayList<String> forecast = new ArrayList<> ();
         Elements unformattedForecast = selectForecast();
         forecast = format(unformattedForecast);
-        forecast.forEach(String -> System.out.println("Line:" + String));
+//        forecast.forEach(String -> System.out.println("Line:" + String));
         return forecast;
     }
     
