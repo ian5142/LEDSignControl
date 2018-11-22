@@ -9,9 +9,11 @@ package rs232.sign.control;
  *
  * @author Ian Van Schaick
  */
-public class SeriesTwoTester {
-    public static void main(String[] args) {
-        SeriesTwo test2 = new SeriesTwo();
-        String calculateChksum = test2.calculateChksum("This is a test.");
+public class GetWeather {
+    
+    public GetWeather () {
+        
     }
+    
+    
 }
