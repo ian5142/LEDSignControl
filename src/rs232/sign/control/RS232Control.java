@@ -31,14 +31,14 @@ public class RS232Control {
      * Creates a serial port object
      */
     public RS232Control() {
-        portName = findPort();
+        portName = "/dev/ttyUSB0";
         serialPort = new SerialPort(portName);
         message = new StringBuilder();
         receivingMessage = false;
         reader = new SerialPortReader();
         readLine = "";
         acknowledge = false;
-    }
+}
 
     /**
      * Finds the serial port to be used, in Windows type COM1, for example In
