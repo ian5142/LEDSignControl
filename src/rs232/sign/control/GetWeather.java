@@ -91,7 +91,7 @@ public class GetWeather {
                 newForecast.add(line);
             }
         }
-        newForecast.forEach(String -> System.out.println("Line:" + String));
+//        newForecast.forEach(String -> System.out.println("Line:" + String));
         return newForecast;
     }
     
