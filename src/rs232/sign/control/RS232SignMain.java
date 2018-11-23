@@ -68,7 +68,7 @@ public class RS232SignMain {
                     //+ forecast.get(i+1)
                     boolean acknowledge = test2.readAck();
                     
-                    System.out.println("The message is: " + i);
+//                    System.out.println("The message is: " + i);
                     //System.out.println("Isupdated is: " + test.selectisUpdated());
 
                     //System.out.println("Acknowledged: " + acknowledge);
