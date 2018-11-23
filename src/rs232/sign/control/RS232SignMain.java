@@ -43,7 +43,6 @@ public class RS232SignMain {
                 //(current.after(hour) && current.before(halfhour)) && 
 //                if (current.after(hour) && current.before(halfhour)) {
 //                System.out.println("Getting Forecast");
-                weather.getDoc();
                 forecast = weather.getForecast();
                 lastUpdated = weather.getLastUpdated();
 //                }
