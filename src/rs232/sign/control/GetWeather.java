@@ -59,7 +59,7 @@ public class GetWeather {
     }
     
     /**
-     * Formats the Unformatted Elements from the HTML into an ArrayList<String>
+     * Formats the Unformatted Elements from the HTML into an ArrayList<String>, Removed the HTML tags, etc.
      * @param unformatted The unformatted Elements (returned from one of the select methods.
      * @return An ArrayList<String> with all of the text from the elements.
      */
@@ -79,8 +79,20 @@ public class GetWeather {
         ArrayList<String> forecast = new ArrayList<> ();
         Elements unformattedForecast = selectForecast();
         forecast = format(unformattedForecast);
-//        forecast.forEach(String -> System.out.println("Line:" + String));
-        return forecast;
+        ArrayList<String> newForecast = new ArrayList<> ();
+        for (String line : forecast) {
+            if (line.length() > 20 ) {;
+                String paragraph[] = line.split("\\.");
+                for(String shortLine : paragraph) {
+                    newForecast.add(shortLine + ".");
+                }
+            }
+            else {
+                newForecast.add(line);
+            }
+        }
+        newForecast.forEach(String -> System.out.println("Line:" + String));
+        return newForecast;
     }
     
     /**
