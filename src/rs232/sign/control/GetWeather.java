@@ -24,11 +24,11 @@ public class GetWeather {
      * Creates the GetWeather object. Calls getDoc.
      */
     public GetWeather () {
-        getDoc();
+        
     }
     
     /**
-     * Gets the HTML document, initially called by the constructor
+     * Gets the HTML document, required before any of the other methods can be called.
      */
     protected void getDoc () {
         try {
