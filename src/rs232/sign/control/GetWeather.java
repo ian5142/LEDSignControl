@@ -39,7 +39,7 @@ public class GetWeather {
             System.out.println("Error: 404.");
             downloaded = false;
         } catch (IOException ex) {
-            System.out.println("IO Error");
+//            System.out.println("getDoc IO Error");
             downloaded = false;
         }
         return downloaded;
