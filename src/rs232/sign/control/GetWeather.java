@@ -81,7 +81,7 @@ public class GetWeather {
         forecast = format(unformattedForecast);
         ArrayList<String> newForecast = new ArrayList<> ();
         for (String line : forecast) {
-            if (line.length() > 20 ) {;
+            if (line.length() > 20 ) {
                 String paragraph[] = line.split("\\.");
                 for(String shortLine : paragraph) {
                     newForecast.add(shortLine + ".");
