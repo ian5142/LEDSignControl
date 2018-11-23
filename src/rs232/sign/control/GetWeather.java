@@ -21,7 +21,7 @@ import org.jsoup.select.Elements;
 public class GetWeather {
     Document doc;
     /**
-     * Creates the GetWeather object. Calls getDoc.
+     * Creates the GetWeather object.
      */
     public GetWeather () {
         
@@ -30,14 +30,19 @@ public class GetWeather {
     /**
      * Gets the HTML document, required before any of the other methods can be called.
      */
-    protected void getDoc () {
+    private boolean getDoc () {
+        boolean downloaded;
         try {
             doc = Jsoup.connect("https://weather.gc.ca/city/pages/ns-31_metric_e.html").get();
+            downloaded = true;
         } catch (HttpStatusException ex) {
             System.out.println("Error: 404.");
+            downloaded = false;
         } catch (IOException ex) {
-            System.out.println("Error: 404.");
+            System.out.println("IO Error");
+            downloaded = false;
         }
+        return downloaded;
     }
     
     /**
@@ -77,6 +82,10 @@ public class GetWeather {
      */
     protected ArrayList<String> getForecast () {
         ArrayList<String> forecast = new ArrayList<> ();
+        boolean downloaded = false;
+        do {
+            downloaded = getDoc();
+        } while (!downloaded);
         Elements unformattedForecast = selectForecast();
         forecast = format(unformattedForecast);
         ArrayList<String> newForecast = new ArrayList<> ();
